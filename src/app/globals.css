@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1920px) {
+  .container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-left: 3.33vw;
+    padding-right: 3.33vw;
+  }
+}
