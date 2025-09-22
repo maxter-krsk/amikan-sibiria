@@ -5,23 +5,23 @@
   --foreground: #000;
 }
 
+@theme {
+  --breakpoint-md: 48rem;     /* 768px  */
+  --breakpoint-desk: 92.5rem; /* 1480px */
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
 }
 
 .container {
-  max-width: 1440px;
-  padding: 0 20px;
+  max-width: 90rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   margin: 0 auto;
 }
 
 @media (min-width: 1920px) {
-  .container {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding-left: 3.33vw;
-    padding-right: 3.33vw;
-  }
+  html { font-size: calc(100vw / 120); }
 }
