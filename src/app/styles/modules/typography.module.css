@@ -1,0 +1,46 @@
+@reference "../../globals.css";
+
+/* Заголовок h1 */
+.heading {
+	@apply text-[1.8rem] md:text-[3.7rem] desk:text-[4.3rem] font-bold uppercase text-darkGreen;
+}
+
+/* Мелкий текст */
+.overline {
+	@apply text-[0.8rem];
+}
+
+.caption {
+	@apply text-[0.9rem];
+}
+
+/* Основной текст */
+.body {
+	@apply text-[1rem];
+}
+
+.body-lg {
+	@apply text-[1.1rem];
+}
+
+/* Подзаголовки и подводки */
+.subtitle {
+	@apply text-[1.2rem];
+}
+
+.lead {
+	@apply text-[1.3rem];
+}
+
+.title {
+	@apply text-[1.5rem];
+}
+
+/* Крупные заголовочные роли */
+.headline {
+	@apply text-[1.8];
+}
+
+.display {
+	@apply text-[2.5rem];
+}
