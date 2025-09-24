@@ -1,6 +1,6 @@
 import Link from "next/link";
 import t from "@/app/styles/modules/typography.module.css";
-import Button from "@/app/components/ui/Button";
+import { Button } from "@/app/components/ui/Button";
 import { Checkbox } from "@/components/ui/checkbox";
 
 export default function FooterForm() {
@@ -38,7 +38,7 @@ export default function FooterForm() {
             </Link>
           </p>
         </div>
-        <Button />
+        <Button type="submit">Отправить</Button>
       </form>
     </div>
   );
