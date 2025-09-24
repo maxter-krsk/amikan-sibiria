@@ -3,6 +3,7 @@ import Image from "next/image";
 import FooterNav from "./FooterNav";
 import FooterContacts from "./FooterContacts";
 import FooterForm from "./FooterForm";
+import FooterPolicy from "./FooterPolicy";
 import t from "@/app/styles/modules/typography.module.css";
 
 export default function Footer() {
@@ -20,7 +21,10 @@ export default function Footer() {
         </Link>
         <div className="flex justify-between">
           <FooterNav />
-          <FooterContacts />
+          <div>
+            <FooterContacts />
+            <FooterPolicy />
+          </div>
           <FooterForm />
         </div>
       </div>
