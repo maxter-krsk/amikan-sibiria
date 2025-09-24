@@ -1,4 +1,7 @@
+import Link from "next/link";
 import t from "@/app/styles/modules/typography.module.css";
+import FormButton from "./FormButton";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default function FooterForm() {
   return (
@@ -23,9 +26,16 @@ export default function FooterForm() {
           placeholder="Ваш телефон"
           value="+7 (XXX) XXX-XX-XX"
         />
-        <button type="submit" className="bg-black text-white py-2 px-4 rounded">
-          Отправить
-        </button>
+        <div className="flex gap-[0.62rem] items-center">
+          <Checkbox className="h-[1rem] w-[1rem]" />
+          <p className={`${t["overline"]}`}>
+            Я согласен с{" "}
+            <Link className="underline" href="/privacy-policy">
+              политикой конфиденциальности
+            </Link>
+          </p>
+        </div>
+        <FormButton />
       </form>
     </div>
   );
