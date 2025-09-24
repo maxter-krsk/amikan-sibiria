@@ -11,9 +11,9 @@
 }
 
 
-/* 15px desktop, 14px tablet, 12px mobile  */
+/* 16px desktop, 14px tablet, 12px mobile  */
 .caption {
-	@apply desk:text-[0.93rem] md:text-[0.87rem] text-[0.75rem];
+	@apply desk:text-[1rem] md:text-[0.87rem] text-[0.75rem];
 }
 
 /* Основной текст */
