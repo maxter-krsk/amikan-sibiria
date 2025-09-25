@@ -1,7 +1,8 @@
 import Link from "next/link";
 import t from "@/app/styles/modules/typography.module.css";
 import { IconLink } from "@/app/components/ui/socials/IconLink";
-import PhoneIcon from "@/app/components/ui/socials/PhoneIcon";
+import { PhoneIcon } from "@/app/components/ui/socials/PhoneIcon";
+import { EmailIcon } from "@/app/components/ui/socials/EmailIcon";
 import ContactsForm from "./ContactsForm";
 
 export default function Contacts() {
@@ -24,7 +25,7 @@ export default function Contacts() {
                 +7 (908) 023-34-38
               </Link>
               <Link className="bg-red-500 inline-flex" href="tel:+79080233438">
-                <PhoneIcon />
+                <EmailIcon />
                 +7 (908) 023-34-38
               </Link>
             </div>
