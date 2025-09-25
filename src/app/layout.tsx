@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { montserrat } from "./components/ui/fonts"
 import "./globals.css";
+
+import Footer from "@/app/components/Footer/Footer"
 import Header from "@/app/components/Header/Header"
-import Footer from "@/app/components/Footer"
+
 
 // Мета-данные
 

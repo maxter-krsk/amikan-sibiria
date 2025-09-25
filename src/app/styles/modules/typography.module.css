@@ -1,46 +1,58 @@
 @reference "../../globals.css";
 
-/* Заголовок h1 */
+/* Заголовок h1 70px desktop, tablet 60px, mobile 28px */
 .heading {
-	@apply text-[1.8rem] md:text-[3.7rem] desk:text-[4.3rem] font-bold uppercase text-darkGreen;
+	@apply desk:text-[4.37rem] md:text-[3.75rem] text-[1.75rem];
 }
 
-/* Мелкий текст */
+/* Мелкий текст 14px desktop/tablet, 12px mobile */
 .overline {
-	@apply text-[0.8rem];
+	@apply md:text-[0.87rem] text-[0.75rem];
 }
 
+
+/* 16px desktop, 14px tablet, 12px mobile  */
 .caption {
-	@apply text-[0.9rem];
+	@apply desk:text-[1rem] md:text-[0.87rem] text-[0.75rem];
 }
 
 /* Основной текст */
+
+/* 16px desktop/tablet, 12px mobile */
 .body {
-	@apply text-[1rem];
+	@apply md:text-[1rem] text-[0.75rem];
 }
 
+/* 18px desktop/tablet, 16px mobile */
 .body-lg {
-	@apply text-[1.1rem];
+	@apply md:text-[1.12rem] text-[1rem];
 }
 
 /* Подзаголовки и подводки */
+
+/* 20px desktop, 18px tablet, 16px mobile */
 .subtitle {
-	@apply text-[1.2rem];
+	@apply desk:text-[1.25rem] md:text-[1.12rem] text-[0.75rem];
 }
 
+/* 22px desktop/tablet, 16px mobile */
 .lead {
-	@apply text-[1.3rem];
+	@apply md:text-[1.37rem] text-[0.75rem] ;
 }
 
+/* 24px desktop, 20px tablet, 16px mobile */
 .title {
-	@apply text-[1.5rem];
+	@apply desk:text-[1.5rem] md:text-[1.25rem] text-[0.75rem];
 }
 
 /* Крупные заголовочные роли */
+
+/* 30px desktop/tablet, 16px mobile */
 .headline {
-	@apply text-[1.8];
+	@apply md:text-[1.87rem] text-[1.18rem];
 }
 
+/* 40px desktop/tablet, 20px mobile */
 .display {
-	@apply text-[2.5rem];
+	@apply md:text-[2.5rem] text-[1.25rem] text-beige uppercase font-bold;
 }
