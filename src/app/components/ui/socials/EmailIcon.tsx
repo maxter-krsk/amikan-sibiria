@@ -2,7 +2,7 @@ type EmailIconProps = {
 	className?: string;
 }
 
-export default function EmailIcon ({className}: EmailIconProps) {
+export function EmailIcon ({className}: EmailIconProps) {
 	return (
 		<img src="/icons/ui/socials-icons/mail.svg"
 		width={24}
