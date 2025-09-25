@@ -11,18 +11,19 @@ export default function Contacts() {
         <div className="flex flex-col items-end md:items-center md:flex-row md:gap-[2.5rem] mb-[3.12rem]">
           <h1 className={`${t["heading"]} uppercase font-bold`}>Контакты</h1>
           <caption className="text-right md:text-left">
-            Оставьте ваши контактные данные, наш менеджер<br/>
+            Оставьте ваши контактные данные, наш менеджер
+            <br />
             свяжется с вами и проконсультирует по всем вопросам
           </caption>
         </div>
-        <div className="flex justify-between">
+        <div className="flex gap-[12.5rem]">
           <div className="flex flex-col gap-[3.5rem]">
-            <div className="bg-red-500 gap-[1.25rem]">
-              <Link className="bg-red-500" href="tel:+79080233438">
+            <div className="bg-red-500 flex flex-col gap-[1.25rem]">
+              <Link className="bg-red-500 inline-flex" href="tel:+79080233438">
                 <PhoneIcon />
                 +7 (908) 023-34-38
               </Link>
-              <Link className="bg-red-500" href="tel:+79080233438">
+              <Link className="bg-red-500 inline-flex" href="tel:+79080233438">
                 <PhoneIcon />
                 +7 (908) 023-34-38
               </Link>
@@ -78,7 +79,9 @@ export default function Contacts() {
               </li>
             </ul>
           </div>
-          <ContactsForm />
+          <div className="flex-1 min-w-0">
+            <ContactsForm />
+          </div>
         </div>
       </div>
     </section>
