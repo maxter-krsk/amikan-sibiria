@@ -1,6 +1,6 @@
 import Link from "next/link";
-import PhoneIcon from "../ui/socials/PhoneIcon";
-import EmailIcon from "../ui/socials/EmailIcon";
+import { PhoneIcon } from "../ui/socials/PhoneIcon";
+import { EmailIcon } from "../ui/socials/EmailIcon";
 import t from "@/app/styles/modules/typography.module.css";
 import { IconLink } from "@/app/components/ui/socials/IconLink";
 
