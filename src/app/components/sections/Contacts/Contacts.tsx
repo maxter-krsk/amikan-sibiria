@@ -19,14 +19,14 @@ export default function Contacts() {
         </div>
         <div className="flex gap-[12.5rem]">
           <div className="flex flex-col gap-[3.5rem]">
-            <div className="bg-red-500 flex flex-col gap-[1.25rem]">
-              <Link className="bg-red-500 inline-flex" href="tel:+79080233438">
-                <PhoneIcon />
+            <div className="flex flex-col gap-[1.25rem]">
+              <Link className="inline-flex" href="tel:+79080233438">
+                <PhoneIcon className="bg-sand rounded-full" />
                 +7 (908) 023-34-38
               </Link>
-              <Link className="bg-red-500 inline-flex" href="tel:+79080233438">
-                <EmailIcon />
-                +7 (908) 023-34-38
+              <Link className="inline-flex" href="mailto:amikantravel@mail.ru">
+                <EmailIcon className="bg-sand rounded-full"/>
+                amikantravel@mail.ru
               </Link>
             </div>
             <ul className="flex gap-[1.25rem]">
