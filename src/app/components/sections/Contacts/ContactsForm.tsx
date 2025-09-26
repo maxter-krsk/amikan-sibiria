@@ -9,14 +9,14 @@ export default function ContactsForm() {
       className={`${t["body-lg"]} flex flex-col gap-4 text-darkGreen w-full`}
     >
       <input
-        className="bg-transparent md:py-[1.25rem] md:pl-[2.18rem] border border-darkGreen rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
+        className="bg-transparent md:py-[1.25rem] md:pl-[2.18rem] border border-darkGreen focus:border-sand focus:outline-none rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
         type="text"
         name="Имя"
         placeholder="Ваше имя"
         value="Имя"
       />
       <input
-        className="bg-transparent md:py-[1.25rem] md:pl-[2.18rem] border border-darkGreen rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
+        className="bg-transparent md:py-[1.25rem] md:pl-[2.18rem] border border-darkGreen focus:border-sand focus:outline-none rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
         type="tel"
         name="Телефон"
         placeholder="Ваш телефон"
