@@ -12,20 +12,24 @@ export default function ContactsForm() {
         className="bg-transparent md:py-[1.25rem] md:pl-[2.18rem] border border-darkGreen focus:border-sand focus:outline-none rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
         type="text"
         name="Имя"
-        placeholder="Ваше имя"
-        value="Имя"
+        placeholder="Имя"
+        minLength={2}
+        required
       />
       <input
         className="bg-transparent md:py-[1.25rem] md:pl-[2.18rem] border border-darkGreen focus:border-sand focus:outline-none rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
         type="tel"
         name="Телефон"
-        placeholder="Ваш телефон"
-        value="+7 (XXX) XXX-XX-XX"
+        placeholder="+7 (XXX) XXX-XX-XX"
+        minLength={11}
+        maxLength={11}
+        required
       />
       <div className="flex gap-[0.62rem] items-center">
         <Checkbox
           className="h-[1rem] w-[1rem] border border-darkGreen rounded-[0.2rem] data-[state=checked]:bg-transparent
-    data-[state=checked]:text-darkGreen data-[state=checked]:border-darkGreen"
+          data-[state=checked]:text-darkGreen data-[state=checked]:border-darkGreen"
+          required
         />
         <p className={`${t["overline"]}`}>
           Я согласен с{" "}
