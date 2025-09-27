@@ -60,7 +60,7 @@ export default function FeedbackCard() {
         {card.map((carditem, i) => (
           <CarouselItem
             key={i}
-            className="pl-[1.25rem] basis-full md:basis-1/2 desk:basis-1/3.5 pl-[1.25rem] select-none"
+            className="basis-full md:basis-1/2 desk:basis-1/3.5 pl-[1.25rem] select-none"
           >
             <div className="bg-lightGreen  text-beige  rounded-[1.87rem] p-[1.87rem] min-h-[23rem]">
               <div className="flex gap-[1.25rem] mb-[1.25rem]">
