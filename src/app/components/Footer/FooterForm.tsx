@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import t from "@/app/styles/modules/typography.module.css";
 import { Button } from "@/app/components/ui/Button";
@@ -13,18 +15,21 @@ export default function FooterForm() {
       </p>
       <form className={`${t["body-lg"]} flex flex-col gap-4 text-beige`}>
         <input
-          className="bg-transparent md:py-[1.25rem] md:pl-[2.18rem] border border-beige rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
+          className="bg-transparent focus:border-sand focus:outline-none md:py-[1.25rem] md:pl-[2.18rem] border border-beige rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
           type="text"
           name="Имя"
           placeholder="Ваше имя"
-          value="Имя"
+          required
+          minLength={2}
         />
         <input
-          className="bg-transparent md:py-[1.25rem] md:pl-[2.18rem] border border-beige rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
+          className="bg-transparent focus:border-sand focus:outline-none md:py-[1.25rem] md:pl-[2.18rem] border border-beige rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
           type="tel"
           name="Телефон"
-          placeholder="Ваш телефон"
-          value="+7 (XXX) XXX-XX-XX"
+          placeholder="+7 (XXX) XXX-XX-XX"
+          required
+          minLength={11}
+          maxLength={11}
         />
         <div className="flex gap-[0.62rem] items-center">
           <Checkbox
