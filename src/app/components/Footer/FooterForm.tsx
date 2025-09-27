@@ -35,6 +35,7 @@ export default function FooterForm() {
           <Checkbox
             className="h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] data-[state=checked]:bg-transparent
     data-[state=checked]:text-beige data-[state=checked]:border-beige"
+            required
           />
           <p className={`${t["overline"]}`}>
             Я согласен с{" "}
