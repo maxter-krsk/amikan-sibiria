@@ -50,10 +50,10 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
       >
         <div className="relative z-30 w-[4rem] h-[4rem] bg-sand rounded-full flex flex-col justify-center items-center gap-[0.35rem]">
           <motion.span
-            className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
+            className="w-[2rem] h-[0.15rem] bg-beige rounded-[0.125rem]"
             variants={{
               closed: { rotate: 0, y: 0 },
-              open: { rotate: 45, y: 10.5 },
+              open: { rotate: 45, y: 11.9 },
             }}
             initial={false}
             animate={isOpen ? "open" : "closed"}
@@ -61,7 +61,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
           ></motion.span>
 
           <motion.span
-            className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
+            className="w-[2rem] h-[0.15rem] bg-beige rounded-[0.125rem]"
             variants={{
               closed: { opacity: 1 },
               open: { opacity: 0 },
@@ -72,7 +72,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
           />
 
           <motion.span
-            className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
+            className="w-[2rem] h-[0.15rem] bg-beige rounded-[0.125rem]"
             variants={{
               closed: { opacity: 1 },
               open: { opacity: 0 },
@@ -83,10 +83,10 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
           />
 
           <motion.span
-            className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
+            className="w-[2rem] h-[0.15rem] bg-beige rounded-[0.125rem]"
             variants={{
               closed: { rotate: 0, y: 0 },
-              open: { rotate: -45, y: -10.5 },
+              open: { rotate: -45, y: -11.9 },
             }}
             initial={false}
             animate={isOpen ? "open" : "closed"}
