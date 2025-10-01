@@ -49,10 +49,49 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
         aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
       >
         <div className="relative z-30 w-[4rem] h-[4rem] bg-sand rounded-full flex flex-col justify-center items-center gap-[0.35rem]">
-          <span className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"></span>
-          <span className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"></span>
-          <span className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"></span>
-          <span className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"></span>
+          <motion.span
+            className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
+            variants={{
+              closed: { rotate: 0, y: 0 },
+              open: { rotate: 45, y: 10.5 },
+            }}
+            initial={false}
+            animate={isOpen ? "open" : "closed"}
+            transition={{ duration: 0.3 }}
+          ></motion.span>
+
+          <motion.span
+            className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
+            variants={{
+              closed: { opacity: 1 },
+              open: { opacity: 0 },
+            }}
+            initial={false}
+            animate={isOpen ? "open" : "closed"}
+            transition={{ duration: 0.2 }}
+          />
+
+          <motion.span
+            className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
+            variants={{
+              closed: { opacity: 1 },
+              open: { opacity: 0 },
+            }}
+            initial={false}
+            animate={isOpen ? "open" : "closed"}
+            transition={{ duration: 0.2 }}
+          />
+
+          <motion.span
+            className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
+            variants={{
+              closed: { rotate: 0, y: 0 },
+              open: { rotate: -45, y: -10.5 },
+            }}
+            initial={false}
+            animate={isOpen ? "open" : "closed"}
+            transition={{ duration: 0.3 }}
+          />
         </div>
       </button>
 
