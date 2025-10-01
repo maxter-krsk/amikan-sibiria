@@ -1,0 +1,5 @@
+@reference "../../globals.css";
+
+.heroBg {
+    @apply bg-[url('/images/hero/hero-background.jpg')] bg-cover bg-no-repeat bg-center top-0 w-auto h-full rounded-[3.12rem];
+}
