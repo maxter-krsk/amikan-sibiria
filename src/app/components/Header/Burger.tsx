@@ -1,4 +1,4 @@
-"use client"; // если это client-компонент в Next.js App Router
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -11,8 +11,7 @@ type BurgerMenuProps = {
   toggleMenu: () => void;
 };
 
-// Варианты анимаций для панели (свайп справа)
-const panelVariants = {
+const panelAnimation = {
   hidden: { x: "100%", opacity: 0, scale: 0.98 },
   visible: {
     x: 0,
@@ -28,8 +27,7 @@ const panelVariants = {
   },
 } as const satisfies Variants;
 
-// Варианты для затемнения фона (оверлей)
-const overlayVariants = {
+const overlayAnimation = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 0.5,
@@ -44,7 +42,6 @@ const overlayVariants = {
 export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
   return (
     <div className="desk:hidden">
-      {/* Кнопка-бургер */}
       <button
         onClick={toggleMenu}
         aria-expanded={isOpen}
@@ -52,7 +49,6 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
         aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
       >
         <div className="relative z-30 w-[4rem] h-[4rem] bg-sand rounded-full flex flex-col justify-center items-center gap-[0.35rem]">
-          {/* Тут можно добавить анимацию линий в крестик, но это опционально */}
           <span className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"></span>
           <span className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"></span>
           <span className="w-[2rem] h-[0.1rem] bg-beige rounded-[0.125rem]"></span>
@@ -60,25 +56,22 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
         </div>
       </button>
 
-      {/* AnimatePresence даёт возможность проиграть exit-анимацию при размонтировании */}
       <AnimatePresence initial={false}>
         {isOpen && (
           <div className="fixed inset-0" id="mobile-menu">
-            {/* Затемнение фона — отдельный motion.div с exit */}
             <motion.div
               onClick={toggleMenu}
               className="z-10 w-full h-full fixed bg-black"
-              variants={overlayVariants }
+              variants={overlayAnimation}
               initial="hidden"
               animate="visible"
               exit="exit"
             />
 
-            {/* Панель меню справа */}
             <motion.div
               role="dialog"
               aria-modal="true"
-              variants={panelVariants}
+              variants={panelAnimation}
               initial="hidden"
               animate="visible"
               exit="exit"
