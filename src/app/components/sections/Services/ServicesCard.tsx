@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { title } from "process";
 
 export default function ServicesCard() {
   const servicesCard = [
@@ -26,17 +27,44 @@ export default function ServicesCard() {
   ];
 
   return (
-    <>
-      {servicesCard.map((carditem, i) => (
-        <div className="">
-            <Image
-              src={`${carditem.image}`}
-              width={200}
-              height={200}
-              alt="Изображение"
-            />
-        </div>
-      ))}
-    </>
+    <div className="space-y-[1.25rem]">
+      <div className="flex flex-col md:flex-row gap-[1.25rem]">
+        {servicesCard.slice(0, 2).map((card) => (
+          <div key={card.title} className="flex-1">
+            <div className="relative overflow-hidden rounded-[1.87rem] max-h-[14.18rem] md:max-h-full">
+              <Image
+                src={card.image}
+                alt={card.title}
+                width={1200}
+                height={800}
+                className="block w-full h-auto"
+              />
+              <h3 className="absolute inset-x-0 bottom-0 m-0 p-[1.25rem] md:p-[0.93rem] desk:p-[1.87rem] text-beige text-[0.75rem] desk:text-[1.5rem] font-semibold bg-gradient-to-t from-[#142B23E6] via-[#142B2380] to-[#142B2300]">
+                {card.title}
+              </h3>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-5">
+        {servicesCard.slice(2).map((card) => (
+          <div key={card.title} className="flex-1">
+            <div className="relative overflow-hidden rounded-[1.87rem] max-h-[14.18rem] md:max-h-full">
+              <Image
+                src={card.image}
+                alt={card.title}
+                width={1200}
+                height={800}
+                className="block w-full h-auto"
+              />
+              <h3 className="absolute inset-x-0 bottom-0 m-0 p-[1.25rem] md:p-[0.93rem] desk:p-[1.87rem] text-beige text-[0.75rem] desk:text-[1.5rem] font-semibold bg-gradient-to-t from-[#142B23E6] via-[#142B2380] to-[#142B2300]">
+                {card.title}
+              </h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
