@@ -1,5 +1,4 @@
 import t from "@/app/styles/modules/typography.module.css";
-import { act } from "react";
 export default function Tour() {
   const tour = [
     {
@@ -55,10 +54,7 @@ export default function Tour() {
   ];
 
   return (
-    <section
-      className="relative py-10 bg-cover bg-no-repeat [background-position:-230px_top]"
-      style={{ backgroundImage: "url('/icons/ui/background-line.svg')" }}
-    >
+    <section className="relative py-10 bg-no-repeat bg-cover [background-position:-230px_top] md:bg-[url('/icons/ui/background-line.svg')] bg-none">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-y-0 left-5 md:left-1/2 md:-translate-x-1/2 w-[48px] md:w-[134px] desk:w-[259px] bg-darkGreen z-0"
@@ -78,12 +74,19 @@ export default function Tour() {
                 max-w-[52%] flex gap-[2.5rem] md:gap-[1.87rem] desk:gap-[3.12rem]
                 ${
                   isEven
-                    ? "mr-auto flex-row-reverse text-right"
-                    : "ml-auto flex-row text-left"
+                    ? "md:mr-auto md:flex-row-reverse md:text-right"
+                    : "md:ml-auto md:flex-row md:text-left"
                 }
               `}
             >
-              <div className="text-beige font-bold text-right">
+              <div className={`
+                text-beige font-bold text-right
+                ${
+                  isEven
+                    ? "md:text-left"
+                    : "md:text-right"
+                }
+                `}>
                 <p className="text-[2.5rem] md:text-[3.75rem] desk:text-[6.25rem]">
                   {touritem.dayNumber}
                 </p>
