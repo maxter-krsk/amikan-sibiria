@@ -3,7 +3,8 @@ import { act } from "react";
 export default function Tour() {
   const tour = [
     {
-      day: "1 День",
+      dayNumber: "1",
+      dayLabel: "День",
       title: "Прибытие в Абакан",
       activities: [
         "После приезда в Абакан вас встретят, отвезут на завтрак и пригласят на экскурсию в историко‑этнографический комплекс «Шушенское»",
@@ -12,7 +13,8 @@ export default function Tour() {
       ],
     },
     {
-      day: "2 День",
+      dayNumber: "2",
+      dayLabel: "День",
       title: "Рыбалка на водохранилище",
       activities: [
         "На второй день после завтрака вас ожидает рыбалка в акватории Саяно‑Шушенского биосферного заповедника",
@@ -21,7 +23,8 @@ export default function Tour() {
       ],
     },
     {
-      day: "3 День",
+      dayNumber: "3",
+      dayLabel: "День",
       title: "Переход на реку Кантегир",
       activities: [
         "Следующим утром стартует переход на аэролодках: примерно 60 км по водохранилищу и ещё 50 км вверх по горной реке Кантегир",
@@ -30,7 +33,8 @@ export default function Tour() {
       ],
     },
     {
-      day: "4 День",
+      dayNumber: "4",
+      dayLabel: "День",
       title: "Сплав и возвращение",
       activities: [
         "Четвёртый день начинается с завтрака и неспешного возвращения по течению обратно к плавкомплексу",
@@ -38,7 +42,8 @@ export default function Tour() {
       ],
     },
     {
-      day: "5 День",
+      dayNumber: "5",
+      dayLabel: "День",
       title: "Экскурсии и завершение тура",
       activities: [
         "Заключительный день тура начинается с выезда с плавкомплекса",
@@ -64,23 +69,42 @@ export default function Tour() {
         >
           Программа тура
         </h1>
-        {tour.map((touritem, i) => (
-          <div
-            key={i}
-            className="ml-auto max-w-[52%] flex gap-[2.5rem] md:gap-[1.87rem] desk:gap-[3.12rem]"
-          >
-            <p className="font-bold text-beige text-[3.12rem] text-right">
-              {touritem.day}
-            </p>
-            <div className="flex flex-col gap-[1.87rem]">
-              <p>{touritem.title}</p>
-              <p>{touritem.activities[0]}</p>
-              <p>{touritem.activities[1]}</p>
-              <p>{touritem.activities[2]}</p>
-              <p>{touritem.activities[3]}</p>
+        {tour.map((touritem, i) => {
+          const isEven = (i + 1) % 2 === 0;
+          return (
+            <div
+              key={i}
+              className={`
+                max-w-[52%] flex gap-[2.5rem] md:gap-[1.87rem] desk:gap-[3.12rem]
+                ${
+                  isEven
+                    ? "mr-auto flex-row-reverse text-right"
+                    : "ml-auto flex-row text-left"
+                }
+              `}
+            >
+              <div className="text-beige font-bold text-right">
+                <p className="text-[2.5rem] md:text-[3.75rem] desk:text-[6.25rem]">
+                  {touritem.dayNumber}
+                </p>
+                <p className="text-[0.62rem] md:text-[1.87rem] desk:text-[2.5rem]">
+                  {touritem.dayLabel}
+                </p>
+              </div>
+              <div className="flex flex-col gap-[1.87rem]">
+                <p className="text-[1.12rem] md:text-[1.5rem] desk:text-[1.87rem] font-medium text-darkGreen">
+                  {touritem.title}
+                </p>
+                <div className="flex flex-col gap-[0.93rem] md:gap-[1.25rem] desk:gap-[1.87rem] text-darkGreen font-normal text-[0.62rem] md:text-[0.87rem] desk:text-[1.12rem]">
+                  <p>{touritem.activities[0]}</p>
+                  <p>{touritem.activities[1]}</p>
+                  <p>{touritem.activities[2]}</p>
+                  <p>{touritem.activities[3]}</p>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
