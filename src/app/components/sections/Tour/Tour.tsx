@@ -1,54 +1,86 @@
 import t from "@/app/styles/modules/typography.module.css";
+import { act } from "react";
 export default function Tour() {
+  const tour = [
+    {
+      day: "1 День",
+      title: "Прибытие в Абакан",
+      activities: [
+        "После приезда в Абакан вас встретят, отвезут на завтрак и пригласят на экскурсию в историко‑этнографический комплекс «Шушенское»",
+        "Вы посетите дом‑музей им. В.И. Ленина, насладитесь обедом и отправитесь к Саяно‑Шушенской ГЭС, где расположился наш плавкомплекс",
+        "Вечером — размещение, ужин и отдых на воде",
+      ],
+    },
+    {
+      day: "2 День",
+      title: "Рыбалка на водохранилище",
+      activities: [
+        "На второй день после завтрака вас ожидает рыбалка в акватории Саяно‑Шушенского биосферного заповедника",
+        "Вы проведёте время на катере, попробуете ловлю в разных местах, отдохнёте, пообедав на природе, и к вечеру вернётесь на базу",
+        "Вечером — баня, ужинин и общение в дружеской атмосфере",
+      ],
+    },
+    {
+      day: "3 День",
+      title: "Переход на реку Кантегир",
+      activities: [
+        "Следующим утром стартует переход на аэролодках: примерно 60 км по водохранилищу и ещё 50 км вверх по горной реке Кантегир",
+        "По пути вы будете рыбачить на хариуса, пообедаете на берегу и к вечеру заселитесь в уютную таёжную базу Ярыгина",
+        "Здесь — ужин из свежего улова и заслуженный отдых",
+      ],
+    },
+    {
+      day: "4 День",
+      title: "Сплав и возвращение",
+      activities: [
+        "Четвёртый день начинается с завтрака и неспешного возвращения по течению обратно к плавкомплексу",
+        "Вы вновь останавливаетесь на рыбных местах, обедаете на природе и ближе к вечеру оказываетесь на базе, где вас ждут ужин, банные процедуры и расслабленный вечер",
+      ],
+    },
+    {
+      day: "5 День",
+      title: "Экскурсии и завершение тура",
+      activities: [
+        "Заключительный день тура начинается с выезда с плавкомплекса",
+        "В программе — джип‑тур на смотровую площадку СШГЭС и подъём на вершину Гладенькой",
+        "На обед вы попробуете местную форель, а после отправитесь в Абакан",
+        "Далее — заселение в гостиницу для завершения отдыха или вылет в пункт назначения, если вы планируете сразу возвращаться домой",
+      ],
+    },
+  ];
+
   return (
-    <section className="relative py-10">
+    <section
+      className="relative py-10 bg-cover bg-no-repeat [background-position:-230px_top]"
+      style={{ backgroundImage: "url('/icons/ui/background-line.svg')" }}
+    >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-[259px] bg-darkGreen z-0"
+        className="pointer-events-none absolute inset-y-0 left-5 md:left-1/2 md:-translate-x-1/2 w-[48px] md:w-[134px] desk:w-[259px] bg-darkGreen z-0"
       />
       <div className="container relative z-10">
         <h1
-          className={`${t.heading} font-bold uppercase text-darkGreen w-[50%]`}
+          className={`${t.heading} text-right md:text-left font-bold uppercase text-darkGreen md:w-[50%]`}
         >
           Программа тура
         </h1>
-        <div className="ml-auto max-w-[52%] flex gap-[2.5rem] md:gap-[1.87rem] desk:gap-[3.12rem]">
-          <p className="font-bold text-beige text-[3.12rem] text-right">
-            День 1
-          </p>
-          <div className="flex flex-col gap-[1.87rem]">
-            <p>Прибытие в Абакан</p>
-            <p>
-              После приезда в Абакан вас встретят, отвезут на завтрак и
-              пригласят на экскурсию в историко‑этнографический комплекс
-              «Шушенское»
+        {tour.map((touritem, i) => (
+          <div
+            key={i}
+            className="ml-auto max-w-[52%] flex gap-[2.5rem] md:gap-[1.87rem] desk:gap-[3.12rem]"
+          >
+            <p className="font-bold text-beige text-[3.12rem] text-right">
+              {touritem.day}
             </p>
-            <p>
-              Вы посетите дом‑музей им. В.И. Ленина, насладитесь обедом и
-              отправитесь к Саяно‑Шушенской ГЭС, где расположился наш
-              плавкомплекс
-            </p>
-            <p>Вечером — размещение, ужин и отдых на воде</p>
+            <div className="flex flex-col gap-[1.87rem]">
+              <p>{touritem.title}</p>
+              <p>{touritem.activities[0]}</p>
+              <p>{touritem.activities[1]}</p>
+              <p>{touritem.activities[2]}</p>
+              <p>{touritem.activities[3]}</p>
+            </div>
           </div>
-        </div>
-
-        <div className="mr-auto max-w-[80%] pr-4 flex gap-[2.5rem] md:gap-[1.87rem] desk:gap-[3.12rem]">
-          <div className="flex flex-col gap-[1.87rem] text-right">
-            <p>Прибытие в Абакан</p>
-            <p>
-              После приезда в Абакан вас встретят, отвезут на завтрак и
-              пригласят на экскурсию в историко‑этнографический комплекс
-              «Шушенское»
-            </p>
-            <p>
-              Вы посетите дом‑музей им. В.И. Ленина, насладитесь обедом и
-              отправитесь к Саяно‑Шушенской ГЭС, где расположился наш
-              плавкомплекс
-            </p>
-            <p>Вечером — размещение, ужин и отдых на воде</p>
-          </div>
-          <p className="font-bold text-beige text-[3.12rem] w-full">2 День</p>
-        </div>
+        ))}
       </div>
     </section>
   );
