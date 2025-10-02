@@ -36,8 +36,12 @@ export default function Gallery() {
       <Carousel
         opts={{
           align: "center",
-		  loop: true,
-		  slidesToScroll: 3,
+          loop: true,
+          slidesToScroll: 1,
+          breakpoints: {
+            "(min-desk: 90rem)": { slidesToScroll: 2 }, // sm
+            "(min-width: 64rem)": { slidesToScroll: 3 }, // lg
+          },
         }}
         className="w-full"
       >
