@@ -1,9 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import t from "@/app/styles/modules/typography.module.css";
 import { Button } from "@/app/components/ui/Button";
+import ProgramPopup from "../../ui/popups/ProgramPopup";
 import bg from "@/app/styles/modules/herobg.module.css";
 export default function Hero() {
+  
+  const [open, setOpen] = useState(false);
+
+  const ProgramPopupHandler = () => {
+    setOpen(true);
+  };
+
   return (
     <section
       className={`${bg.heroBg} mx-[20px] mb-[150px] pb-[60px] pt-[145px]`}
@@ -26,9 +37,14 @@ export default function Hero() {
           className="flex flex-col gap-[1.25rem] mb-[3.12rem]"
           aria-describedby="cta-hint"
         >
-          <Button className="max-w-[28.75rem]" type="button">
+          <Button
+            onClick={ProgramPopupHandler}
+            className="max-w-[28.75rem]"
+            type="button"
+          >
             Получить программу тура
           </Button>
+          <ProgramPopup open={open} onOpenChange={() => setOpen(!open)} />
           <p id="cta-hint" className="font-normal text-[16px] text-[#FFFFFF]">
             Оставьте контакты — мы пришлем подробное описание
           </p>
