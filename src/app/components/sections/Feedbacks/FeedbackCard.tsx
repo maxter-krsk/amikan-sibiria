@@ -57,7 +57,6 @@ export default function FeedbackCard() {
   ];
 
   useEffect(() => {
-    
     if (!api) return;
 
     const onSelect = () => {
@@ -114,11 +113,11 @@ export default function FeedbackCard() {
         </CarouselContent>
       </Carousel>
 
-      <div className="flex justify-center mt-4 gap-2">
+      <div className="flex justify-center mt-4 gap-[0.31rem] md:gap-[0.62rem]">
         {card.map((_, i) => (
           <button
             key={i}
-            className={`cursor-pointer w-[0.62rem] h-[0.62rem] rounded-full transition-colors ${
+            className={`cursor-pointer w-[0.37rem] h-[0.37rem] md:w-[0.62rem] md:h-[0.62rem] rounded-full transition-colors ${
               i === currentSlide ? "bg-darkGreen" : "bg-[#A4A69B]"
             }`}
             onClick={() => api?.scrollTo(i)}
