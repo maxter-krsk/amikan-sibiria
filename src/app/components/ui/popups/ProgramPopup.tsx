@@ -28,11 +28,11 @@ export default function ProgramPopup({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="bg-darkGreen text-beige border-none rounded-[3.12rem] p-[1.87rem] sm:max-w-[64.37rem] w-full gap-[1.25rem] md:gap-[1.87rem] desk:gap-[25.rem]"
+        className="bg-darkGreen text-beige border-none rounded-[1.25rem] desk:rounded-[3.12rem] p-[0.62rem] md:p-[1.87rem] max-w-[18.75rem] md:max-w-[38.75rem] desk:max-w-[64.37rem] gap-[1.25rem] md:gap-[1.87rem] desk:gap-[2.5rem]"
       >
         <DialogHeader>
-          <div className="flex justify-between">
-            <DialogTitle className="text-[2.5rem] pr-[1.25rem] uppercase font-bold text-left">
+          <div className="flex flex-col-reverse md:flex md:flex-row justify-between">
+            <DialogTitle className="text-[1.5rem] md:text-[1.87rem] desk:text-[2.5rem] pr-[1.25rem] uppercase font-bold text-left">
               Получить программу тура
             </DialogTitle>
             <PopupClose />
@@ -40,7 +40,7 @@ export default function ProgramPopup({
         </DialogHeader>
         <form>
           <input
-            className="border border-beige rounded-[3.12rem] w-full py-[1.25rem] px-[2.18rem] text-[1.12rem] mb-[0.62rem]
+            className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[1.12rem] mb-[0.62rem]
 			focus:border-sand focus:outline-none"
             type="text"
             name="Имя"
@@ -49,7 +49,7 @@ export default function ProgramPopup({
             minLength={2}
           />
           <input
-            className="border border-beige rounded-[3.12rem] w-full py-[1.25rem] px-[2.18rem] text-[1.12rem] mb-[1.25rem]
+            className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[1.12rem] mb-[1.25rem]
 			focus:border-sand focus:outline-none"
             type="tel"
             name="Телефон"
