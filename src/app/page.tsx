@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/Link";
 import Faq from "@/app/components/sections/FAQ/Faq";
 import Contacts from "@/app/components/sections/Contacts/Contacts";
 import Feedbacks from "@/app/components/sections/Feedbacks/Feedbacks";
