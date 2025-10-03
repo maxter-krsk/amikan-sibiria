@@ -26,13 +26,21 @@ export default function ProgramPopup({
 }: ProgramPopupProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-darkGreen text-beige border-none rounded-[3.12rem] p-[1.87rem] sm:max-w-[64.37rem] w-full">
+      <DialogContent
+        showCloseButton={false}
+        className="bg-darkGreen text-beige border-none rounded-[3.12rem] p-[1.87rem] sm:max-w-[64.37rem] w-full"
+      >
         <DialogHeader>
           <div className="flex justify-between">
-            <DialogTitle className="text-[2.5rem] uppercase font-bold">
+            <DialogTitle className="text-[2.5rem] pr-[1.25rem] uppercase font-bold text-left">
               Получить программу тура
             </DialogTitle>
-            <DialogClose />
+            <DialogClose className="flex-shrink-0 cursor-pointer bg-sand rounded-full w-[2.18rem] h-[2.18rem] flex items-center justify-center">
+              <img
+                src="/icons/ui/close-icon.svg"
+                alt="Закрыть"
+              />
+            </DialogClose>
           </div>
         </DialogHeader>
         <form>
