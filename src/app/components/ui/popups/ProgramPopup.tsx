@@ -14,6 +14,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/app/components/ui/Button";
 import t from "@/app/styles/modules/typography.module.css";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 
 type ProgramPopupProps = {
   open: boolean;
@@ -35,12 +36,23 @@ export default function ProgramPopup({
             <DialogTitle className="text-[2.5rem] pr-[1.25rem] uppercase font-bold text-left">
               Получить программу тура
             </DialogTitle>
-            <DialogClose className="flex-shrink-0 cursor-pointer bg-sand rounded-full w-[2.18rem] h-[2.18rem] flex items-center justify-center">
-              <img
-                src="/icons/ui/close-icon.svg"
-                alt="Закрыть"
-              />
-            </DialogClose>
+            <AnimatePresence>
+              <DialogClose asChild>
+                <motion.button
+                  className="pointer-events-auto flex-shrink-0 cursor-pointer bg-sand rounded-full w-[2.5rem] h-[2.5rem] flex items-center justify-center shadow-lg"
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 50 }}
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: 90,
+                  }}
+                >
+                  <img src="/icons/ui/close-icon.svg" alt="Закрыть" />
+                </motion.button>
+              </DialogClose>
+            </AnimatePresence>
           </div>
         </DialogHeader>
         <form>
