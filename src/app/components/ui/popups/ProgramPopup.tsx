@@ -7,14 +7,13 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
 } from "@/components/ui/dialog";
 
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/app/components/ui/Button";
+import PopupClose from "./PopupClose";
 import t from "@/app/styles/modules/typography.module.css";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
 
 type ProgramPopupProps = {
   open: boolean;
@@ -29,30 +28,14 @@ export default function ProgramPopup({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="bg-darkGreen text-beige border-none rounded-[3.12rem] p-[1.87rem] sm:max-w-[64.37rem] w-full"
+        className="bg-darkGreen text-beige border-none rounded-[3.12rem] p-[1.87rem] sm:max-w-[64.37rem] w-full gap-[1.25rem] md:gap-[1.87rem] desk:gap-[25.rem]"
       >
         <DialogHeader>
           <div className="flex justify-between">
             <DialogTitle className="text-[2.5rem] pr-[1.25rem] uppercase font-bold text-left">
               Получить программу тура
             </DialogTitle>
-            <AnimatePresence>
-              <DialogClose asChild>
-                <motion.button
-                  className="pointer-events-auto flex-shrink-0 cursor-pointer bg-sand rounded-full w-[2.5rem] h-[2.5rem] flex items-center justify-center shadow-lg"
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0, opacity: 0 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 50 }}
-                  whileHover={{
-                    scale: 1.1,
-                    rotate: 90,
-                  }}
-                >
-                  <img src="/icons/ui/close-icon.svg" alt="Закрыть" />
-                </motion.button>
-              </DialogClose>
-            </AnimatePresence>
+            <PopupClose />
           </div>
         </DialogHeader>
         <form>
