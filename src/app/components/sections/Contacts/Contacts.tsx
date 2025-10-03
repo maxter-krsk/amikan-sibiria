@@ -13,11 +13,11 @@ export default function Contacts() {
           <h1 className={`${t["heading"]} uppercase font-bold text-darkGreen`}>
             Контакты
           </h1>
-          <caption className="text-right md:text-left text-[0.75rem] md:text-[0.87rem] desk:text-[1.12rem]">
+          <p className="text-right md:text-left text-[0.75rem] md:text-[0.87rem] desk:text-[1.12rem]">
             Оставьте ваши контактные данные, наш менеджер
             <br />
             свяжется с вами и проконсультирует по всем вопросам
-          </caption>
+          </p>
         </div>
         <div className="flex flex-col-reverse gap-[2.18rem] md:flex md:flex-row md:gap-[12.5rem] md:items-end items-stretch">
           <div className="flex flex-col gap-[1.25rem]">

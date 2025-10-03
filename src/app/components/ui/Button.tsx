@@ -7,12 +7,14 @@ type ButtonProps = {
   type?: "button" | "submit";
   children: React.ReactNode;
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 export function Button({
   href,
   type = "button",
   children,
   className,
+  onClick,
 }: ButtonProps) {
   const classes = cn(`${t["btn"]} cursor-pointer`, className);
 
@@ -21,7 +23,7 @@ export function Button({
       {children}
     </Link>
   ) : (
-    <button type={type} className={classes}>
+    <button type={type} onClick={onClick} className={classes}>
       {children}
     </button>
   );
