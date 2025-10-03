@@ -3,8 +3,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 export default function Gallery() {
@@ -32,15 +30,15 @@ export default function Gallery() {
   ];
 
   return (
-    <section className="mb-[9.37rem]">
+    <section className="my-[9.37rem]">
       <Carousel
         opts={{
           align: "center",
           loop: true,
           slidesToScroll: 1,
           breakpoints: {
-            "(min-desk: 90rem)": { slidesToScroll: 2 }, // sm
-            "(min-width: 64rem)": { slidesToScroll: 3 }, // lg
+            "(min-desk: 90rem)": { slidesToScroll: 2 },
+            "(min-width: 64rem)": { slidesToScroll: 3 },
           },
         }}
         className="w-full"
