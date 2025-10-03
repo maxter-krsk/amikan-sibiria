@@ -5,7 +5,11 @@ import t from "@/app/styles/modules/typography.module.css";
 import { Button } from "@/app/components/ui/Button";
 import { Checkbox } from "@/components/ui/checkbox";
 
-export default function FooterForm() {
+type FooterFormProps = {
+  className?: string;
+};
+
+export default function FooterForm({ className }: FooterFormProps) {
   return (
     <div>
       <p

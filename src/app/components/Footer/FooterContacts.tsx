@@ -3,7 +3,11 @@ import { PhoneIcon } from "../ui/socials/PhoneIcon";
 import { EmailIcon } from "../ui/socials/EmailIcon";
 import { IconLink } from "@/app/components/ui/socials/IconLink";
 
-export default function FooterContacts() {
+type FooterContactsProps = {
+  className?: string;
+};
+
+export default function FooterContacts({ className }: FooterContactsProps) {
   return (
     <div className="text-beige text-[0.75] md:text-[1rem] desk:[1.12rem]">
       <div className="flex gap-[1.2rem] mb-[0.62rem]">
@@ -16,7 +20,7 @@ export default function FooterContacts() {
           amikantravel@mail.ru
         </Link>
       </div>
-      <ul className="grid grid-cols-2 md:flex gap-[1.25rem] md:py-[1.25rem] py-[0.93rem]">
+      <ul className="flex gap-[1.25rem] md:py-[1.25rem] py-[0.93rem]">
         <li>
           <IconLink
             href="#"
