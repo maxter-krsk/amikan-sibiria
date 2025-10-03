@@ -4,7 +4,6 @@ import FooterNav from "./FooterNav";
 import FooterContacts from "./FooterContacts";
 import FooterForm from "./FooterForm";
 import FooterPolicy from "./FooterPolicy";
-import t from "@/app/styles/modules/typography.module.css";
 
 export default function Footer() {
   return (
