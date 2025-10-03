@@ -85,27 +85,29 @@ export default function FeedbackCard() {
               key={i}
               className="basis-full md:basis-1/2 desk:basis-1/3.5 pl-[1.25rem] select-none"
             >
-              <div className="bg-lightGreen  text-beige  rounded-[1.87rem] p-[1.87rem] min-h-[23rem]">
-                <div className="flex gap-[1.25rem] mb-[1.25rem]">
+              <div className="bg-lightGreen  text-beige rounded-[1.25rem] desk:rounded-[1.87rem] p-[0.93rem] desk:p-[1.87rem] h-full">
+                <div className="flex gap-[0.62rem] desk:gap-[1.25rem] mb-[1.25rem]">
                   <Image
                     src={`${carditem.image}`}
                     width={92}
                     height={92}
-                    alt="Фотография Александра"
-                    className="rounded-full"
+                    alt="Фотография клиента"
+                    className="rounded-full w-[4.12rem] h-[4.12rem] desk:w-[5.75rem] desk:h-[5.75rem]"
                   />
                   <div>
-                    <p>
+                    <p className="text-[1rem] desk:text-[1.25rem]">
                       <span className="font-semibold">{`${carditem.name}`}</span>
                       {", "}
                       {`${carditem.yearsOld}`}
                     </p>
-                    <span>{`${carditem.city}`}</span>
+                    <span className="text-[0.87rem] desk:text-[1.25rem]">{`${carditem.city}`}</span>
                   </div>
                 </div>
                 <div className="flex gap-[0.62rem] items-start">
-                  <span className="text-[2.5rem] font-semibold">{"“"}</span>
-                  <p className="mt-[0.55rem] text-[1.12rem]">{`${carditem.caption}`}</p>
+                  <span className="text-[1.87rem] desk:text-[2.5rem] font-semibold">
+                    {"“"}
+                  </span>
+                  <p className="mt-[0.55rem] text-[0.75rem] desk:text-[1.12rem]">{`${carditem.caption}`}</p>
                 </div>
               </div>
             </CarouselItem>
