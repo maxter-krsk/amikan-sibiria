@@ -7,11 +7,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
 } from "@/components/ui/dialog";
 
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/app/components/ui/Button";
+import PopupClose from "./PopupClose";
 import t from "@/app/styles/modules/typography.module.css";
 import Link from "next/link";
 
@@ -26,18 +26,21 @@ export default function ProgramPopup({
 }: ProgramPopupProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-darkGreen text-beige border-none rounded-[3.12rem] p-[1.87rem] sm:max-w-[64.37rem] w-full">
+      <DialogContent
+        showCloseButton={false}
+        className="bg-darkGreen text-beige border-none rounded-[1.25rem] desk:rounded-[3.12rem] p-[0.62rem] md:p-[1.87rem] max-w-[18.75rem] md:max-w-[38.75rem] desk:max-w-[64.37rem] gap-[1.25rem] md:gap-[1.87rem] desk:gap-[2.5rem]"
+      >
         <DialogHeader>
-          <div className="flex justify-between">
-            <DialogTitle className="text-[2.5rem] uppercase font-bold">
+          <div className="flex flex-col-reverse md:flex md:flex-row justify-between">
+            <DialogTitle className="text-[1.5rem] md:text-[1.87rem] desk:text-[2.5rem] pr-[1.25rem] uppercase font-bold text-left">
               Получить программу тура
             </DialogTitle>
-            <DialogClose />
+            <PopupClose />
           </div>
         </DialogHeader>
         <form>
           <input
-            className="border border-beige rounded-[3.12rem] w-full py-[1.25rem] px-[2.18rem] text-[1.12rem] mb-[0.62rem]
+            className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[1.12rem] mb-[0.62rem]
 			focus:border-sand focus:outline-none"
             type="text"
             name="Имя"
@@ -46,7 +49,7 @@ export default function ProgramPopup({
             minLength={2}
           />
           <input
-            className="border border-beige rounded-[3.12rem] w-full py-[1.25rem] px-[2.18rem] text-[1.12rem] mb-[1.25rem]
+            className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[1.12rem] mb-[1.25rem]
 			focus:border-sand focus:outline-none"
             type="tel"
             name="Телефон"
