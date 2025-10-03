@@ -1,11 +1,18 @@
+"use client";
+
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  type CarouselApi,
 } from "@/components/ui/carousel";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function FeedbackCard() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
+
   const card = [
     {
       image: "/images/feedbacks/alex-photo2x.jpg",
@@ -49,45 +56,75 @@ export default function FeedbackCard() {
     },
   ];
 
+  useEffect(() => {
+    
+    if (!api) return;
+
+    const onSelect = () => {
+      setCurrentSlide(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
   return (
-    <Carousel
-      opts={{
-        loop: true,
-      }}
-      className="w-full"
-    >
-      <CarouselContent>
-        {card.map((carditem, i) => (
-          <CarouselItem
-            key={i}
-            className="basis-full md:basis-1/2 desk:basis-1/3.5 pl-[1.25rem] select-none"
-          >
-            <div className="bg-lightGreen  text-beige  rounded-[1.87rem] p-[1.87rem] min-h-[23rem]">
-              <div className="flex gap-[1.25rem] mb-[1.25rem]">
-                <Image
-                  src={`${carditem.image}`}
-                  width={92}
-                  height={92}
-                  alt="Фотография Александра"
-                  className="rounded-full"
-                />
-                <div>
-                  <p>
-                    <span className="font-semibold">{`${carditem.name}`}</span>
-                    {", "}
-                    {`${carditem.yearsOld}`}
-                  </p>
-                  <span>{`${carditem.city}`}</span>
+    <>
+      <Carousel
+        setApi={setApi}
+        opts={{
+          loop: true,
+        }}
+        className="w-full"
+      >
+        <CarouselContent>
+          {card.map((carditem, i) => (
+            <CarouselItem
+              key={i}
+              className="basis-full md:basis-1/2 desk:basis-1/3.5 pl-[1.25rem] select-none"
+            >
+              <div className="bg-lightGreen  text-beige  rounded-[1.87rem] p-[1.87rem] min-h-[23rem]">
+                <div className="flex gap-[1.25rem] mb-[1.25rem]">
+                  <Image
+                    src={`${carditem.image}`}
+                    width={92}
+                    height={92}
+                    alt="Фотография Александра"
+                    className="rounded-full"
+                  />
+                  <div>
+                    <p>
+                      <span className="font-semibold">{`${carditem.name}`}</span>
+                      {", "}
+                      {`${carditem.yearsOld}`}
+                    </p>
+                    <span>{`${carditem.city}`}</span>
+                  </div>
+                </div>
+                <div className="flex gap-[0.62rem] items-start">
+                  <span className="text-[2.5rem] font-semibold">{"“"}</span>
+                  <p className="mt-[0.55rem] text-[1.12rem]">{`${carditem.caption}`}</p>
                 </div>
               </div>
-              <div className="flex gap-[0.62rem] items-start">
-                <span className="text-[2.5rem] font-semibold">{"“"}</span>
-                <p className="mt-[0.55rem] text-[1.12rem]">{`${carditem.caption}`}</p>
-              </div>
-            </div>
-          </CarouselItem>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+
+      <div className="flex justify-center mt-4 gap-2">
+        {card.map((_, i) => (
+          <button
+            key={i}
+            className={`cursor-pointer w-[0.62rem] h-[0.62rem] rounded-full transition-colors ${
+              i === currentSlide ? "bg-darkGreen" : "bg-[#A4A69B]"
+            }`}
+            onClick={() => api?.scrollTo(i)}
+          />
         ))}
-      </CarouselContent>
-    </Carousel>
+      </div>
+    </>
   );
 }
