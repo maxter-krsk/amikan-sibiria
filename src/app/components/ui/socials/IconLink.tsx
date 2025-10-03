@@ -14,7 +14,7 @@ export function IconLink({ href, label, icon, className }: IconLinkProps) {
       href={href}
       aria-label={label}
       className={cn(
-        "inline-flex h-[2.68rem] w-[2.68rem] items-center justify-center rounded-full bg-sand",
+        "inline-flex h-[2.69rem] w-[2.69rem] items-center justify-center rounded-full bg-sand",
         className
       )}
     >
