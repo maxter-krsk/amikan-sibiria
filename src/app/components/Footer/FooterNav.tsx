@@ -1,5 +1,4 @@
 import Link from "next/link";
-import t from "@/app/styles/modules/typography.module.css";
 
 export default function FooterNav() {
   return (
