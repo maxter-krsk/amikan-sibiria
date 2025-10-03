@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import t from "@/app/styles/modules/typography.module.css"
+import t from "@/app/styles/modules/typography.module.css";
+import btn from "@/app/styles/modules/faq-button.module.css";
 
 type FaqListProps = {
   name: string;
@@ -19,7 +20,7 @@ export default function FaqList({ name, descr, className }: FaqListProps) {
   return (
     <div>
       <button
-        className="cursor-pointer text-[0.87rem] md:text-[1.5rem] desk:text-[1.87rem] font-bold uppercase text-beige bg-lightGreen py-[1.43rem] px-[1.87rem] rounded-[1.87rem] w-full text-left mb-[1.25rem]"
+        className={`${btn.faqButton}`}
         onClick={HandleClick}
       >
         <div className="flex justify-between items-center">
@@ -31,7 +32,9 @@ export default function FaqList({ name, descr, className }: FaqListProps) {
       </button>
       {isOpen && (
         <div>
-          <p className={`${t["body-lg"]} text-darkGreen font-normal mb-[1.25rem] pt-[3rem] p-[1.87rem] border border-lightGreen rounded-bl-[1.87rem] rounded-br-[1.87rem] -mt-[3rem]`}>
+          <p
+            className={`${t["body-lg"]} text-darkGreen font-normal mb-[1.25rem] pt-[3rem] p-[1.87rem] border border-lightGreen rounded-bl-[1.87rem] rounded-br-[1.87rem] -mt-[3rem]`}
+          >
             {descr}
           </p>
         </div>
