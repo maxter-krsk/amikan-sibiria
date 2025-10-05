@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import DevelopedBy from "../ui/DevelopedBy";
 import FooterNav from "./FooterNav";
 import FooterContacts from "./FooterContacts";
 import FooterForm from "./FooterForm";
@@ -28,6 +30,7 @@ export default function Footer() {
           <FooterCopyright className="col-start-1 col-span-2 row-start-5 md:col-span-1 md:row-start-3 md:col-start-3 lg:col-start-1 lg:row-start-4" />
           <FooterLegal className="col-span-2 md:col-start-1 md:col-span-2 md:row-start-3 lg:col-start-2 lg:row-start-1 lg:relative lg:top-[9rem] lg:w-fit" />
           <FooterPolicy className="col-start-1 col-span-2 row-start-4 md:col-span-1 md:col-start-3 md:row-start-2 lg:row-start-4 lg:col-start-2" />
+          <DevelopedBy />
         </div>
       </div>
     </footer>
