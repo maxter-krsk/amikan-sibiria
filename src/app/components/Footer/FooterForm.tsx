@@ -11,15 +11,17 @@ type FooterFormProps = {
 
 export default function FooterForm({ className }: FooterFormProps) {
   return (
-    <div>
+    <div className={`${className}`}>
       <p
-        className={`${t["body-lg"]} text-beige hidden md:block mb-[1.25rem] font-medium`}
+        className={`${t["body-lg"]} text-beige hidden lg:block mb-[1.25rem] font-medium`}
       >
         Оставьте свои данные, и мы свяжемся с вами
       </p>
-      <form className={`${t["body-lg"]} flex flex-col gap-4 text-beige`}>
+      <form
+        className={`${t["body-lg"]} flex flex-col gap-[0.62rem] text-beige `}
+      >
         <input
-          className="bg-transparent focus:border-sand focus:outline-none md:py-[1.25rem] md:pl-[2.18rem] border border-beige rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
+          className="bg-transparent focus:border-sand focus:outline-none md:py-[1.25rem] md:pl-[2.18rem] border border-beige rounded-[3.12rem] py-[0.93rem] pl-[1.87rem] text-[0.75rem] md:text-[1rem] desk:text-[1.12rem]"
           type="text"
           name="Имя"
           placeholder="Ваше имя"
@@ -27,7 +29,7 @@ export default function FooterForm({ className }: FooterFormProps) {
           minLength={2}
         />
         <input
-          className="bg-transparent focus:border-sand focus:outline-none md:py-[1.25rem] md:pl-[2.18rem] border border-beige rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
+          className="bg-transparent focus:border-sand focus:outline-none md:py-[1.25rem] md:pl-[2.18rem] border border-beige rounded-[3.12rem] py-[0.93rem] pl-[1.87rem] text-[0.75rem] md:text-[1rem] desk:text-[1.12rem]"
           type="tel"
           name="Телефон"
           placeholder="+7 (XXX) XXX-XX-XX"
@@ -35,7 +37,7 @@ export default function FooterForm({ className }: FooterFormProps) {
           minLength={11}
           maxLength={11}
         />
-        <div className="flex gap-[0.62rem] items-center">
+        <div className="flex gap-[0.62rem] items-center my-[0.62rem]">
           <Checkbox
             className="h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] data-[state=checked]:bg-transparent
     data-[state=checked]:text-beige data-[state=checked]:border-beige"

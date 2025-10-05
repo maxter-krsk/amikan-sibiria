@@ -5,6 +5,7 @@ type FooterNavProps = {
 };
 export default function FooterNav( { className }: FooterNavProps) {
   return (
+    <div className={`${className}`}>
     <div className="flex flex-col">
       <nav className="text-beige text-[0.87rem] desk:text-[1.12rem]">
         <ul className="flex flex-col gap-[0.62rem] md:gap-[1.25rem]">
@@ -31,9 +32,7 @@ export default function FooterNav( { className }: FooterNavProps) {
           </li>
         </ul>
       </nav>
-      <span className="mt-auto text-beige text-[1.12rem]">
-        &copy; Amikan Travel, {new Date().getFullYear()}
-      </span>
+    </div>
     </div>
   );
 }
