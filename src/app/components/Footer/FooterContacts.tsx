@@ -10,7 +10,7 @@ type FooterContactsProps = {
 export default function FooterContacts({ className }: FooterContactsProps) {
   return (
     <div
-      className={`text-beige text-[0.75] md:text-[1rem] desk:[1.12rem] ${className}`}
+      className={`text-beige text-[0.75rem] md:text-[1rem] desk:[1.12rem] ${className}`}
     >
       <div className="flex gap-[1.2rem] mb-[0.62rem]">
         <PhoneIcon className="w-[1.43rem] h-[1.43rem] hidden md:block" />
