@@ -3,7 +3,7 @@
 import t from "@/app/styles/modules/typography.module.css";
 import { useState } from "react";
 
-export default function servicesAccordion() {
+export default function ServicesAccordion() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOnClick = () => {
