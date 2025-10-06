@@ -1,16 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import t from "@/app/styles/modules/typography.module.css";
 import { Button } from "@/app/components/ui/Button";
+import ProgramPopup from "../../ui/popups/ProgramPopup";
 import bg from "@/app/styles/modules/herobg.module.css";
 export default function Hero() {
+  
+  const [open, setOpen] = useState(false);
+
+  const ProgramPopupHandler = () => {
+    setOpen(true);
+  };
+
   return (
     <section
-      className={`${bg.heroBg} mx-[20px] mb-[150px] pb-[60px] pt-[145px]`}
+      className={`${bg.heroBg} mx-0 desk:mt-[1.25rem] desk:mx-[1.25rem]  mb-[150px] pb-[60px] pt-[145px] relative`}
       aria-labelledby="hero-title"
     >
       <div className="container">
-        <div className="flex items-end mb-[1.87rem]">
+        <div className="desk:flex desk:flex-row desk:items-end desk:mb-[1.87rem] md:flex-col">
           <h1
             id="hero-title"
             className="font-bold text-[70px] leading-[1.2] uppercase text-[#FFFFFF]"
@@ -26,9 +37,14 @@ export default function Hero() {
           className="flex flex-col gap-[1.25rem] mb-[3.12rem]"
           aria-describedby="cta-hint"
         >
-          <Button className="max-w-[28.75rem]" type="button">
+          <Button
+            onClick={ProgramPopupHandler}
+            className="max-w-[28.75rem]"
+            type="button"
+          >
             Получить программу тура
           </Button>
+          <ProgramPopup open={open} onOpenChange={() => setOpen(!open)} />
           <p id="cta-hint" className="font-normal text-[16px] text-[#FFFFFF]">
             Оставьте контакты — мы пришлем подробное описание
           </p>
