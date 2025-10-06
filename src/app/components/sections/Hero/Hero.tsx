@@ -21,15 +21,15 @@ export default function Hero() {
       aria-labelledby="hero-title"
     >
       <div className="container">
-        <div className="desk:flex desk:flex-row desk:items-end desk:mb-[1.87rem] md:flex-col">
+        <div className="flex gap-[0.62rem] desk:flex-row desk:items-end desk:mb-[1.87rem] md:flex-col sm:flex-col">
           <h1
             id="hero-title"
-            className="font-bold text-[70px] leading-[1.2] uppercase text-[#FFFFFF]"
+            className="w-full font-bold desk:text-[70px] md:text-[40px] sm:text-[28px] leading-[1.2] uppercase text-[#FFFFFF]"
           >
-            Сибирь, которую стоит увидеть
+            Сибирь, которую <br /> стоит увидеть
           </h1>
-          <p className="font-medium text-[22px] text-[#FFFFFF]">
-            Отдых и рыбалка на Саяно-Шушенском водохранилище и Саянской реке
+          <p className="font-medium desk:text-[22px] md:text-[18px] sm:text-[12px] text-[#FFFFFF]">
+            Отдых и рыбалка на Саяно-Шушенском <br className="desk:hidden" /> водохранилище и Саянской реке
             Кантегир
           </p>
         </div>
