@@ -22,14 +22,14 @@ export default function Header() {
   const DARK_LOGO = "/icons/logos/logo-dark.svg";
 
   return (
-    <header>
+    <header className="fixed desk:top-[2.5rem] top-[1.25rem] left-0 right-0 z-40 desk:px-[1.25rem]">
       <div className="container">
-        <div className="flex justify-between items-center py-[1.2rem]">
+        <div className="flex justify-between items-center">
           <Link href="/" aria-label="На главную" className="block">
             {mounted && (
-              <>  
+              <>
                 <Image
-                  className="md:hidden"
+                  className="md:hidden w-[4rem] h-[4rem]"
                   src={isOpen ? DARK_LOGO : LIGHT_LOGO}
                   alt="Логотип Амикан (мобильный)"
                   width={64}
@@ -37,14 +37,14 @@ export default function Header() {
                   priority
                 />
                 <Image
-                  className="hidden md:block desk:hidden"
+                  className="hidden md:block desk:hidden w-[4rem] h-[4rem]"
                   src={LIGHT_LOGO}
                   alt="Логотип Амикан (планшет)"
                   width={64}
                   height={64}
                 />
                 <Image
-                  className="hidden desk:block"
+                  className="hidden desk:block w-[4rem] h-[4rem]"
                   src={isOpen ? DARK_LOGO : LIGHT_LOGO}
                   alt="Логотип Амикан (десктоп)"
                   width={64}
