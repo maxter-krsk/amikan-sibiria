@@ -1,23 +1,23 @@
 "use client";
 
-import { Checkbox } from "@/components/ui/checkbox";
-import { Button } from "@/app/components/ui/Button";
-import PopupClose from "./PopupClose";
-import t from "@/app/styles/modules/typography.module.css";
 import Link from "next/link";
+import t from "@/app/styles/modules/typography.module.css";
+import PopupClose from "./PopupClose";
 import PopupBase from "./PopupBase";
+import { Button } from "@/app/components/ui/Button";
+import { Checkbox } from "@/components/ui/checkbox";
 
 type Props = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 };
 
-export default function ProgramPopup({ open, onOpenChange }: Props) {
+export default function PopupPrice({ open, onOpenChange }: Props) {
   return (
     <PopupBase
       open={open}
       onOpenChange={onOpenChange}
-      title="Получить программу тура"
+      title="Уточнить стоимость тура"
       closeIt={<PopupClose />}
     >
       <form>
