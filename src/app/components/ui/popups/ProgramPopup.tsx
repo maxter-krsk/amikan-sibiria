@@ -6,6 +6,7 @@ import PopupClose from "./PopupClose";
 import t from "@/app/styles/modules/typography.module.css";
 import Link from "next/link";
 import PopupBase from "./PopupBase";
+import { sendContact } from "@/app/actions/sendContact";
 
 type Props = {
   open: boolean;
@@ -20,7 +21,17 @@ export default function ProgramPopup({ open, onOpenChange }: Props) {
       title="Получить программу тура"
       closeIt={<PopupClose />}
     >
-      <form>
+      <form
+        action={async (fd) => {
+          fd.set("source", "Попап: Получить программу");
+          const res = await sendContact(fd);
+          if (res.ok) {
+            onOpenChange(false);
+          } else {
+            alert(res.error ?? "Заявка не отправилась. Повторите попытку.");
+          }
+        }}
+      >
         <input
           className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[1.12rem] mb-[0.62rem] focus:border-sand focus:outline-none"
           type="text"
@@ -38,6 +49,7 @@ export default function ProgramPopup({ open, onOpenChange }: Props) {
           minLength={11}
           maxLength={11}
         />
+        <input type="hidden" name="Источник" value="program" />
         <div className="flex gap-[0.62rem] items-center mb-[1.25rem]">
           <Checkbox
             className="h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] data-[state=checked]:bg-transparent data-[state=checked]:text-beige data-[state=checked]:border-beige"
