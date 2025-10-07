@@ -37,10 +37,17 @@ export default function Hero() {
         >
           <Button
             onClick={ProgramPopupHandler}
-            className="desk:w-[28.68rem] md:w-[21.31rem] w-[18.12rem] pr-[1.87rem] md:text-[0.87rem]"
+            className="relative flex items-start desk:w-[28.68rem] md:w-[21.31rem] w-[18.12rem] pr-[1.87rem] md:text-[0.87rem]"
             type="button"
           >
             Получить программу тура
+            <Image
+              src="/icons/ui/arrows/arrow-main.svg"
+              alt="Стрелка для получения программы тура"
+              width={41}
+              height={8}
+              className="hidden md:block absolute desk:right-[2.19rem] md:right-[1.87rem] top-1/2 -translate-y-1/2"
+            />
           </Button>
           <ProgramPopup open={open} onOpenChange={() => setOpen(!open)} />
           <p
