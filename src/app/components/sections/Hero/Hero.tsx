@@ -8,7 +8,6 @@ import { Button } from "@/app/components/ui/Button";
 import ProgramPopup from "../../ui/popups/ProgramPopup";
 import bg from "@/app/styles/modules/herobg.module.css";
 export default function Hero() {
-  
   const [open, setOpen] = useState(false);
 
   const ProgramPopupHandler = () => {
@@ -21,32 +20,28 @@ export default function Hero() {
       aria-labelledby="hero-title"
     >
       <div className="container">
-        <div className="flex gap-[0.62rem] desk:flex-row desk:items-end desk:mb-[1.87rem] md:flex-col sm:flex-col">
-          <h1
-            id="hero-title"
-            className="w-full font-bold desk:text-[70px] md:text-[40px] sm:text-[28px] leading-[1.2] uppercase text-[#FFFFFF]"
-          >
-            Сибирь, которую <br /> стоит увидеть
+        <div className="flex gap-[0.62rem] desk:flex-row desk:items-end mb-[1.25rem] desk:mb-[1.87rem] md:flex-col flex-col">
+          <h1 className="font-bold desk:text-[70px] md:text-[40px] text-[28px] text-center md:text-left leading-[1.2] uppercase text-[#FFFFFF]">
+            Сибирь, которую<br/>стоит увидеть
           </h1>
-          <p className="font-medium desk:text-[22px] md:text-[18px] sm:text-[12px] text-[#FFFFFF]">
-            Отдых и рыбалка на Саяно-Шушенском <br className="desk:hidden" /> водохранилище и Саянской реке
-            Кантегир
+          <p className="font-medium desk:text-[22px] md:text-[18px] text-[12px] text-center md:text-left text-[#FFFFFF]">
+            Отдых и рыбалка на Саяно-Шушенском<br/>водохранилище и Саянской реке Кантегир
           </p>
         </div>
         <div
-          className="flex flex-col gap-[1.25rem] mb-[3.12rem]"
+          className="flex flex-col gap-[0.62rem] md:gap-[1.25rem] mb-[3.12rem] items-center md:items-start"
           aria-describedby="cta-hint"
         >
           <Button
             onClick={ProgramPopupHandler}
-            className="max-w-[28.75rem]"
+            className="desk:w-[28.68rem] md:w-[21.31rem] w-[18.12rem] pr-[1.87rem] md:text-[0.87rem]"
             type="button"
           >
             Получить программу тура
           </Button>
           <ProgramPopup open={open} onOpenChange={() => setOpen(!open)} />
-          <p id="cta-hint" className="font-normal text-[16px] text-[#FFFFFF]">
-            Оставьте контакты — мы пришлем подробное описание
+          <p id="cta-hint" className="font-normal text-[0.75rem] md:text-[0.87rem] desk:text[1rem] text-center md:text-left text-[#FFFFFF]">
+            Оставьте контакты — мы пришлем<br className="md:hidden"/>подробное описание
           </p>
         </div>
         <ul className="flex gap-[1.25rem]">
