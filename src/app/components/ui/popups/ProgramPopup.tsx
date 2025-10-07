@@ -28,7 +28,9 @@ export default function ProgramPopup({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="bg-darkGreen text-beige border-none rounded-[1.25rem] desk:rounded-[3.12rem] p-[0.62rem] md:p-[1.87rem] max-w-[18.75rem] md:max-w-[38.75rem] desk:max-w-[64.37rem] gap-[1.25rem] md:gap-[1.87rem] desk:gap-[2.5rem]"
+        className="
+    bg-darkGreen text-beige border-none rounded-[1.25rem] desk:rounded-[3.12rem] p-[0.62rem] md:p-[1.87rem] max-w-[calc(100vw-0.62rem*2)] md:max-w-[38.75rem] desk:max-w-[64.37rem] gap-[1.25rem] md:gap-[1.87rem] desk:gap-[2.5rem]
+  "
       >
         <DialogHeader>
           <div className="flex flex-col-reverse md:flex md:flex-row justify-between">
