@@ -17,11 +17,11 @@ export async function sendContact(formData: FormData) {
     const to   = process.env.RESEND_TO   || "nigazzz2000@gmail.com";
 
     const { error } = await resend.emails.send({
-      from: `Amikan Website <${fromEmail}>`,
+      from: `Amikan-Siberia <${fromEmail}>`,
       to: [to],
-      subject: `Новая заявка`,
+      subject: `Заявка с сайта`,
       html: `
-        <h2>Новая заявка</h2>
+        <h2>Новая заявка с сайта Amikan-Siberia</h2>
         <p><b>Имя:</b> ${name}</p>
         <p><b>Телефон:</b> ${phone}</p>
       `,

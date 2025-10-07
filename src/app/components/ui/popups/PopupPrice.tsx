@@ -6,6 +6,7 @@ import PopupClose from "./PopupClose";
 import PopupBase from "./PopupBase";
 import { Button } from "@/app/components/ui/Button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { sendContact } from "@/app/actions/sendContact";
 
 type Props = {
   open: boolean;
@@ -20,7 +21,17 @@ export default function PopupPrice({ open, onOpenChange }: Props) {
       title="Уточнить стоимость тура"
       closeIt={<PopupClose />}
     >
-      <form>
+      <form
+        action={async (fd) => {
+          fd.set("source", "Попап: Уточнить стоимость тура");
+          const res = await sendContact(fd);
+          if (res.ok) {
+            onOpenChange(false);
+          } else {
+            alert(res.error ?? "Заявка не отправилась. Повторите попытку.");
+          }
+        }}
+      >
         <input
           className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[1.12rem] mb-[0.62rem] focus:border-sand focus:outline-none"
           type="text"
