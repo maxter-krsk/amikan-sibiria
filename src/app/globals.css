@@ -36,7 +36,7 @@
 
 .phone-field-container {
   --react-international-phone-country-selector-arrow-color: var(--color-beige);
-  --react-international-phone-country-selector-arrow-size: 4px;
+  --react-international-phone-country-selector-arrow-size: 0.25rem;
 }
 
 .phone-field-container .react-international-phone-country-selector-button[aria-expanded="true"] .react-international-phone-country-selector-button__dropdown-arrow {
@@ -58,9 +58,9 @@
   background: #95BAA8;
   border: none;
   box-shadow: none;
-  width: 42px;
-  height: 24px;
-  border-radius: 100px !important;
+  width: 2.62rem;
+  height: 1.5rem;
+  border-radius: 6.25rem !important;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -70,9 +70,9 @@
 }
 
 .phone-field-container .react-international-phone-country-selector-button__flag-emoji {
-  width: 22px;
-  height: 50px;
-  border-radius: 50px;
+  width: 1.37rem;
+  height: 3.12rem;
+  border-radius: 3.12rem;
   object-fit: contain;
 }
 
