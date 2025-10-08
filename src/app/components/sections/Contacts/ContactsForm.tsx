@@ -18,7 +18,7 @@ export default function ContactsForm() {
         minLength={2}
         required
       />
-      <PhoneField name="Телефон" />
+      <PhoneField inputClassName="!border-darkGreen !text-darkGreen" name="Телефон" />
       <div className="flex gap-[0.62rem] items-center">
         <Checkbox
           className="h-[1rem] w-[1rem] border border-darkGreen rounded-[0.2rem] data-[state=checked]:bg-transparent
