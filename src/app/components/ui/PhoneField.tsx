@@ -37,7 +37,7 @@ export function PhoneField({ name = "Телефон" }: { name?: string }) {
           "!py-[0.93rem] md:!py-[1.25rem]",
           "!pr-[1.87rem] md:!pr-[2.18rem]",
           "!pl-[5rem] md:!pl-[5.3rem]",
-          "!focus:border-sand !focus:bg-[#1E1912]",
+          "focus:!border-sand",
         ].join(" ")}
         countrySelectorStyleProps={{
           buttonClassName: "phone-flag-button border-0 shadow-none",
