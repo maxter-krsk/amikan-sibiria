@@ -4,10 +4,10 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+
 const NAME_RE = /^(?=.{2,40}$)\p{L}+(?:[ \-'\u2019]\p{L}+)*$/u;
 
 function normalizeName(raw: string) {
-
   return raw
     .normalize("NFC")
     .trim()
@@ -30,11 +30,22 @@ function escapeHtml(s: string) {
     .replace(/'/g, "&#39;");
 }
 
-export async function sendContact(formData: FormData) {
-  try {
+function getErrorMessage(e: unknown): string {
+  if (e instanceof Error) return e.message;
+  if (typeof e === "string") return e;
+  if (typeof e === "object" && e && "message" in e) {
+    const msg = (e as { message?: unknown }).message;
+    if (typeof msg === "string") return msg;
+  }
+  return "Ошибка отправки";
+}
 
-    let nameRaw = String(formData.get("Имя") ?? "");
-    let phoneRaw = String(formData.get("Телефон") ?? "");
+type SendContactResult = { ok: true } | { ok: false; error: string };
+
+export async function sendContact(formData: FormData): Promise<SendContactResult> {
+  try {
+    const nameRaw = String(formData.get("Имя") ?? "");
+    const phoneRaw = String(formData.get("Телефон") ?? "");
 
     const name = normalizeName(nameRaw);
     const phoneE164 = normalizePhone(phoneRaw);
@@ -83,7 +94,7 @@ export async function sendContact(formData: FormData) {
 
     if (error) throw error;
     return { ok: true };
-  } catch (e: any) {
-    return { ok: false, error: e?.message ?? "Ошибка отправки" };
+  } catch (e: unknown) {
+    return { ok: false, error: getErrorMessage(e) };
   }
 }
