@@ -32,6 +32,77 @@
   margin: 0 auto;
 }
 
+/* Стили для инпута номера телефона */
+
+.phone-field-container {
+  --react-international-phone-country-selector-arrow-color: var(--color-beige);
+  --react-international-phone-country-selector-arrow-size: 4px;
+}
+
+.phone-field-container .react-international-phone-country-selector-button[aria-expanded="true"] .react-international-phone-country-selector-button__dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.phone-field-container {
+  position: relative;
+}
+
+.phone-field-container .react-international-phone-country-selector {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.phone-field-container .react-international-phone-country-selector-button {
+  background: #95BAA8;
+  border: none;
+  box-shadow: none;
+  width: 42px;
+  height: 24px;
+  border-radius: 100px !important;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  overflow: visible;
+  padding: 0;
+  cursor: pointer;
+}
+
+.phone-field-container .react-international-phone-country-selector-button__flag-emoji {
+  width: 22px;
+  height: 50px;
+  border-radius: 50px;
+  object-fit: contain;
+}
+
+.phone-field-container .react-international-phone-country-selector-dropdown {
+  z-index: 50;
+}
+
+.phone-field-container .react-international-phone-country-selector-button {
+  transition: background-color .15s ease;
+}
+
+.phone-field-container .react-international-phone-country-selector-button:hover,
+.phone-field-container .react-international-phone-country-selector-button:focus-visible,
+.phone-field-container .react-international-phone-country-selector-button[aria-expanded="true"] {
+  background-color: #7fb19a;
+}
+
+@media (min-width: 768px) {
+  .phone-field-container .react-international-phone-country-selector {
+    left: 2.18rem;
+  }
+}
+
+@media(max-width: 768px) {
+  .phone-field-container .react-international-phone-country-selector {
+    left: 1.87rem;
+  }
+}
+
+
 @media (min-width: 1920px) {
   html {
     font-size: calc(100vw / 120);
@@ -251,6 +322,7 @@
     @apply border-border outline-ring/50;
 
   }
+
   body {
     @apply bg-background text-foreground;
 
