@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import t from "@/app/styles/modules/typography.module.css";
 import { Button } from "@/app/components/ui/Button";
@@ -8,6 +10,15 @@ import { sendContact } from "@/app/actions/sendContact";
 export default function ContactsForm() {
   return (
     <form
+      action={async (fd) => {
+        fd.set("source", "Форма из блока Контакты");
+        const res = await sendContact(fd);
+        if (res.ok) {
+          alert("Заявка отправлена");
+        } else {
+          alert(res.error ?? "Заявка не отправилась. Повторите попытку.");
+        }
+      }}
       className={`${t["body-lg"]} flex flex-col gap-4 text-darkGreen w-full`}
     >
       <input
@@ -15,10 +26,16 @@ export default function ContactsForm() {
         type="text"
         name="Имя"
         placeholder="Имя"
-        minLength={2}
         required
+        minLength={2}
+        maxLength={40}
+        pattern="^(?=.{2,40}$)[A-Za-zÀ-ÖØ-öø-ÿА-Яа-яЁё]+(?:[ '\-’][A-Za-zÀ-ÖØ-öø-ÿА-Яа-яЁё]+)*$"
+        title="2–40 символов, только буквы, пробелы, дефис и апостроф"
       />
-      <PhoneField inputClassName="!border-darkGreen !text-darkGreen" name="Телефон" />
+      <PhoneField
+        inputClassName="!border-darkGreen !text-darkGreen"
+        name="Телефон"
+      />
       <div className="flex gap-[0.62rem] items-center">
         <Checkbox
           className="h-[1rem] w-[1rem] border border-darkGreen rounded-[0.2rem] data-[state=checked]:bg-transparent
