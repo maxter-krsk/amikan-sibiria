@@ -1,10 +1,5 @@
 "use server";
 
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-
 const NAME_RE = /^(?=.{2,40}$)\p{L}+(?:[ \-'\u2019]\p{L}+)*$/u;
 
 function normalizeName(raw: string) {
@@ -14,13 +9,11 @@ function normalizeName(raw: string) {
     .replace(/\s+/g, " ")
     .replace(/^[\s\-'\u2019]+|[\s\-'\u2019]+$/g, "");
 }
-
 function normalizePhone(raw: string) {
   const digits = String(raw).replace(/\D+/g, "");
   if (digits.length < 10 || digits.length > 15) return null;
   return `+${digits}`;
 }
-
 function escapeHtml(s: string) {
   return s
     .replace(/&/g, "&amp;")
@@ -29,20 +22,31 @@ function escapeHtml(s: string) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 }
-
-function getErrorMessage(e: unknown): string {
+function getErrorMessage(e: unknown) {
   if (e instanceof Error) return e.message;
   if (typeof e === "string") return e;
   if (typeof e === "object" && e && "message" in e) {
-    const msg = (e as { message?: unknown }).message;
-    if (typeof msg === "string") return msg;
+    const m = (e as { message?: unknown }).message;
+    if (typeof m === "string") return m;
   }
   return "Ошибка отправки";
 }
 
 type SendContactResult = { ok: true } | { ok: false; error: string };
 
-export async function sendContact(formData: FormData): Promise<SendContactResult> {
+export async function sendContact(
+  formData: FormData
+): Promise<SendContactResult> {
+  "use server";
+
+  const { Resend } = await import("resend");
+
+  const key = process.env.RESEND_API_KEY;
+  if (!key) {
+    return { ok: false, error: "RESEND_API_KEY не задан" };
+  }
+  const resend = new Resend(key);
+
   try {
     const nameRaw = String(formData.get("Имя") ?? "");
     const phoneRaw = String(formData.get("Телефон") ?? "");
@@ -50,12 +54,13 @@ export async function sendContact(formData: FormData): Promise<SendContactResult
     const name = normalizeName(nameRaw);
     const phoneE164 = normalizePhone(phoneRaw);
 
-    if (!NAME_RE.test(name)) {
-      return { ok: false, error: "Введите корректное имя (2–40 символов, только буквы)." };
-    }
-    if (!phoneE164) {
+    if (!NAME_RE.test(name))
+      return {
+        ok: false,
+        error: "Введите корректное имя (2–40 символов, только буквы).",
+      };
+    if (!phoneE164)
       return { ok: false, error: "Введите корректный номер телефона." };
-    }
 
     const source =
       String(
