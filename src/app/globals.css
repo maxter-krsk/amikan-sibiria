@@ -32,6 +32,17 @@
   margin: 0 auto;
 }
 
+/* Стили для инпута номера телефона */
+
+.phone-field-container {
+  --react-international-phone-country-selector-arrow-color: var(--color-beige);
+  --react-international-phone-country-selector-arrow-size: 4px;
+}
+
+.phone-field-container .react-international-phone-country-selector-button[aria-expanded="true"] .react-international-phone-country-selector-button__dropdown-arrow {
+  transform: rotate(180deg);
+}
+
 .phone-field-container {
   position: relative;
 }
@@ -65,12 +76,18 @@
   object-fit: contain;
 }
 
-.phone-field-container .react-international-phone-country-selector-button__dropdown-arrow {
-  display: block;
-}
-
 .phone-field-container .react-international-phone-country-selector-dropdown {
   z-index: 50;
+}
+
+.phone-field-container .react-international-phone-country-selector-button {
+  transition: background-color .15s ease;
+}
+
+.phone-field-container .react-international-phone-country-selector-button:hover,
+.phone-field-container .react-international-phone-country-selector-button:focus-visible,
+.phone-field-container .react-international-phone-country-selector-button[aria-expanded="true"] {
+  background-color: #7fb19a;
 }
 
 @media (min-width: 768px) {
@@ -80,7 +97,7 @@
 }
 
 @media(max-width: 768px) {
-    .phone-field-container .react-international-phone-country-selector {
+  .phone-field-container .react-international-phone-country-selector {
     left: 1.87rem;
   }
 }

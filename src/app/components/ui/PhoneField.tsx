@@ -40,10 +40,8 @@ export function PhoneField({ name = "Телефон" }: { name?: string }) {
           "!focus:border-sand !focus:bg-[#1E1912]",
         ].join(" ")}
         countrySelectorStyleProps={{
-          buttonClassName:
-            "phone-flag-button bg-transparent border-0 shadow-none",
+          buttonClassName: "phone-flag-button border-0 shadow-none",
           flagClassName: "rounded-full",
-          dropdownArrowClassName: "hidden",
         }}
         dialCodePreviewStyleProps={{ className: "hidden" }}
       />
