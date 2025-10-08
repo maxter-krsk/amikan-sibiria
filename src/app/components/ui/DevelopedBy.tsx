@@ -24,6 +24,7 @@ export default function DevelopedBy() {
           animate="rest"
         >
           <motion.svg
+            className={"w-[1rem] h-[1rem]"}
             width="16"
             height="16"
             viewBox="0 0 24 24"
