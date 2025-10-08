@@ -6,6 +6,7 @@ import { Button } from "@/app/components/ui/Button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { PhoneField } from "@/app/components/ui/PhoneField";
 import { sendContact } from "@/app/actions/sendContact";
+import { motion } from "framer-motion";
 
 type FooterFormProps = {
   className?: string;
@@ -56,7 +57,23 @@ export default function FooterForm({ className }: FooterFormProps) {
             </Link>
           </p>
         </div>
-        <Button type="submit">Отправить</Button>
+        <Button
+          type="submit"
+          className="w-full flex items-center gap-4 overflow-hidden text-beige"
+        >
+          Отправить
+          <svg
+            viewBox="0 0 218 8"
+            preserveAspectRatio="none"
+            className="flex-1 min-w-0 block"
+            aria-hidden="true"
+          >
+            <path
+              d="M217.354 4.35355C217.549 4.15829 217.549 3.84171 217.354 3.64645L214.172 0.464466C213.976 0.269204 213.66 0.269204 213.464 0.464466C213.269 0.659728 213.269 0.976311 213.464 1.17157L216.293 4L213.464 6.82843C213.269 7.02369 213.269 7.34027 213.464 7.53553C213.66 7.7308 213.976 7.7308 214.172 7.53553L217.354 4.35355ZM0 4V4.5H217V4V3.5H0V4Z"
+              fill="currentColor"
+            />
+          </svg>
+        </Button>
       </form>
     </div>
   );
