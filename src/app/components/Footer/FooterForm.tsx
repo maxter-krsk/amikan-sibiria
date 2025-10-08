@@ -5,6 +5,7 @@ import t from "@/app/styles/modules/typography.module.css";
 import { Button } from "@/app/components/ui/Button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { PhoneField } from "@/app/components/ui/PhoneField";
+import { sendContact } from "@/app/actions/sendContact";
 
 type FooterFormProps = {
   className?: string;
@@ -19,6 +20,15 @@ export default function FooterForm({ className }: FooterFormProps) {
         Оставьте свои данные, и мы свяжемся с вами
       </p>
       <form
+        action={async (fd) => {
+          fd.set("source", "Форма из подвала сайта");
+          const res = await sendContact(fd);
+          if (res.ok) {
+            alert("Заявка отправлена");
+          } else {
+            alert(res.error ?? "Заявка не отправилась. Повторите попытку.");
+          }
+        }}
         className={`${t["body-lg"]} flex flex-col gap-[0.62rem] text-beige `}
       >
         <input
@@ -28,8 +38,11 @@ export default function FooterForm({ className }: FooterFormProps) {
           placeholder="Ваше имя"
           required
           minLength={2}
+          maxLength={40}
+          pattern="^(?=.{2,40}$)[A-Za-zÀ-ÖØ-öø-ÿА-Яа-яЁё]+(?:[ '\-’][A-Za-zÀ-ÖØ-öø-ÿА-Яа-яЁё]+)*$"
+          title="2–40 символов, только буквы, пробелы, дефис и апостроф"
         />
-        <PhoneField name="Телефон"/>
+        <PhoneField name="Телефон" />
         <div className="flex gap-[0.62rem] items-center my-[0.62rem]">
           <Checkbox
             className="h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] data-[state=checked]:bg-transparent
