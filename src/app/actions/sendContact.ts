@@ -4,7 +4,7 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Имя: 2–40 символов, только буквы (любой алфавит) + пробел/дефис/апостроф между частями
+
 const NAME_RE = /^(?=.{2,40}$)\p{L}+(?:[ \-'\u2019]\p{L}+)*$/u;
 
 function normalizeName(raw: string) {
