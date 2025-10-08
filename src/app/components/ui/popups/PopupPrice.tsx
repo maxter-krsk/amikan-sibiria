@@ -7,6 +7,7 @@ import PopupBase from "./PopupBase";
 import { Button } from "@/app/components/ui/Button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { sendContact } from "@/app/actions/sendContact";
+import { PhoneField } from "@/app/components/ui/PhoneField";
 
 type Props = {
   open: boolean;
@@ -40,15 +41,7 @@ export default function PopupPrice({ open, onOpenChange }: Props) {
           required
           minLength={2}
         />
-        <input
-          className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[1.12rem] mb-[1.25rem] focus:border-sand focus:outline-none"
-          type="tel"
-          name="Телефон"
-          placeholder="+7 (XXX) XXX-XX-XX"
-          required
-          minLength={11}
-          maxLength={11}
-        />
+        <PhoneField name="Телефон" />
         <div className="flex gap-[0.62rem] items-center mb-[1.25rem]">
           <Checkbox
             className="h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] data-[state=checked]:bg-transparent data-[state=checked]:text-beige data-[state=checked]:border-beige"
