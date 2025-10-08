@@ -46,7 +46,7 @@ export default function Hero() {
               alt="Стрелка для получения программы тура"
               width={41}
               height={8}
-              className="hidden md:block absolute desk:right-[2.19rem] md:right-[1.87rem] top-1/2 -translate-y-1/2"
+              className="w-[2.56rem] h-[0.5rem] hidden md:block absolute desk:right-[2.19rem] md:right-[1.87rem] top-1/2 -translate-y-1/2"
             />
           </Button>
           <ProgramPopup open={open} onOpenChange={() => setOpen(!open)} />
@@ -82,26 +82,40 @@ export default function Hero() {
             </div>
           </li>
 
-          <li className="w-[18.75rem] md:w-[22.12rem] desk:w-[44.38rem] p-[0.93rem] md:p-[1.25rem] bg-beige rounded-[0.62rem] md:rounded-[1.25rem] desk:rounded-[1.87rem]">
+          <li className="relative w-[18.75rem] md:w-[22.13rem] desk:w-[44.4rem] p-[0.93rem] md:p-[1.25rem] bg-[url('/icons/ui/figures/card-mobile.svg')] md:bg-[url('/icons/ui/figures/card-tablet.svg')] desk:bg-[url('/icons/ui/figures/card-desk.svg')] bg-no-repeat bg-center bg-cover bg-position-0 md:bg-position-[0,100%] rounded-[0.62rem] md:rounded-[1.25rem] desk:rounded-[1.87rem]">
             <div className="flex gap-[1.25rem] desk:flex-row-reverse h-full">
               <Image
                 className="w-[19.06rem] h-[12.25rem] object-cover rounded-[1.25rem] hidden desk:block shrink-0"
                 src="/images/hero/hero-man.jpg"
-                alt="Панорамный вид на СШГЭС"
+                alt="Мужчина с уловом"
                 width={305}
                 height={196}
               />
-              <div className="flex flex-col justify-between text-darkGreen">
+              <div className="min-h-[5.94rem] flex flex-col md:gap-[4.12rem] desk:gap-[7rem] text-darkGreen">
                 <p className="font-semibold text-[0.75rem] md:text-[1rem] leading-[1.25] text-center md:text-start [text-wrap:balance]">
                   Приезжайте семьей, в компании друзей или коллег — будет
                   интересно и уютно
                 </p>
-                <p className="hidden md:block uppercase font-semibold md:text-[1.12rem] desk:text-[1.25rem]">
+                <p className="hidden md:block uppercase font-semibold md:text-[1.12rem] desk:text-[1.25rem] md:ml-[3.94rem] desk:ml-[4.56rem]">
                   <Link href="/" aria-label="Узнать больше о туре">
                     Узнать больше
                   </Link>
                 </p>
               </div>
+            </div>
+            <div
+              aria-hidden="true"
+              className="absolute left-[7.81rem] bottom-0 md:left-0 md:bottom-0 w-[3.12rem] h-[3.12rem] md:w-[3.7rem] md:h-[3.7rem] rounded-full bg-sand flex items-center justify-center"
+            >
+              <Link href="/" aria-label="Перейте к информации о туре">
+                <Image
+                  src="/icons/ui/arrows/arrow-main.svg"
+                  alt="Стрелка для перехода к информации о туре"
+                  width={30}
+                  height={30}
+                  className="w-[1.88rem] h-[1.88rem] origin-center rotate-90 md:rotate-[125deg]"
+                />
+              </Link>
             </div>
           </li>
         </ul>
