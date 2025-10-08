@@ -7,6 +7,7 @@ import t from "@/app/styles/modules/typography.module.css";
 import Link from "next/link";
 import PopupBase from "./PopupBase";
 import { sendContact } from "@/app/actions/sendContact";
+import { PhoneField } from "@/app/components/ui/PhoneField";
 
 type Props = {
   open: boolean;
@@ -33,22 +34,14 @@ export default function ProgramPopup({ open, onOpenChange }: Props) {
         }}
       >
         <input
-          className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[1.12rem] mb-[0.62rem] focus:border-sand focus:outline-none"
+          className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[0.75rem] md:text-[1rem] desk:text-[1.12rem] mb-[0.62rem] focus:border-sand focus:outline-none"
           type="text"
           name="Имя"
           placeholder="Имя"
           required
           minLength={2}
         />
-        <input
-          className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[1.12rem] mb-[1.25rem] focus:border-sand focus:outline-none"
-          type="tel"
-          name="Телефон"
-          placeholder="+7 (XXX) XXX-XX-XX"
-          required
-          minLength={11}
-          maxLength={11}
-        />
+        <PhoneField name="Телефон" />
         <input type="hidden" name="Источник" value="program" />
         <div className="flex gap-[0.62rem] items-center mb-[1.25rem]">
           <Checkbox
