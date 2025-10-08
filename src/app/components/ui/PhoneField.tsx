@@ -8,7 +8,13 @@ import {
 } from "react-international-phone";
 import "react-international-phone/style.css";
 
-export function PhoneField({ name = "Телефон" }: { name?: string }) {
+type PhoneFieldProps = {
+  name?: string;
+  inputClassName?: string;
+  containerClassName?: string;
+};
+
+export function PhoneField({ name = "Телефон", inputClassName = "", containerClassName = "",}: PhoneFieldProps) {
   const [value, setValue] = useState("");
 
   const CIS_COUNTRIES = ["ru", "kz", "by", "uz", "kg", "am", "az", "tj", "tm"];
@@ -19,8 +25,8 @@ export function PhoneField({ name = "Телефон" }: { name?: string }) {
 
   const customFlags = [{ iso2: "ru", src: "/icons/ui/flags/ru-flag.svg" }];
 
-  return (
-    <div className="relative mb-[1.25rem]">
+ return (
+    <div className={`relative mb-[1.25rem] ${containerClassName}`}>
       <PhoneInput
         value={value}
         onChange={setValue}
@@ -38,6 +44,7 @@ export function PhoneField({ name = "Телефон" }: { name?: string }) {
           "!pr-[1.87rem] md:!pr-[2.18rem]",
           "!pl-[5rem] md:!pl-[5.3rem]",
           "focus:!border-sand",
+          inputClassName,
         ].join(" ")}
         countrySelectorStyleProps={{
           buttonClassName: "phone-flag-button border-0 shadow-none",
