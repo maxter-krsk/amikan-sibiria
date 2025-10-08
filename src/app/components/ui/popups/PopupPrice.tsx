@@ -40,6 +40,9 @@ export default function PopupPrice({ open, onOpenChange }: Props) {
           placeholder="Имя"
           required
           minLength={2}
+          maxLength={40}
+          pattern="^(?=.{2,40}$)[A-Za-zÀ-ÖØ-öø-ÿА-Яа-яЁё]+(?:[ '\-’][A-Za-zÀ-ÖØ-öø-ÿА-Яа-яЁё]+)*$"
+          title="2–40 символов, только буквы, пробелы, дефис и апостроф"
         />
         <PhoneField name="Телефон" />
         <div className="flex gap-[0.62rem] items-center mb-[1.25rem]">
