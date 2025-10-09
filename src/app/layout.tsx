@@ -5,6 +5,8 @@ import "./globals.css";
 import Footer from "@/app/components/Footer/Footer"
 import Header from "@/app/components/Header/Header"
 
+import ScrollTop from "./components/ui/ScrollTop";
+
 
 // Мета-данные
 
@@ -26,6 +28,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ScrollTop />
       </body>
     </html>
   );
