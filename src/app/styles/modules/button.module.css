@@ -3,5 +3,5 @@
 /* Кнопка */
 
 .btn {
-	@apply text-[0.87rem] desk:text-[1.25rem] bg-sand text-white text-left font-semibold rounded-[3.12rem] py-[0.93rem] pl-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] uppercase
+	@apply text-[0.87rem] desk:text-[1.25rem] bg-sand text-white text-left font-semibold rounded-[3.12rem] py-[0.93rem] md:py-[1.25rem] px-[1.87rem] md:px-[2.18rem] uppercase
 }
