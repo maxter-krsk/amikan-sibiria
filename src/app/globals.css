@@ -97,6 +97,11 @@
 }
 
 @media(max-width: 768px) {
+
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
   .phone-field-container .react-international-phone-country-selector {
     left: 1.87rem;
   }
