@@ -91,8 +91,8 @@ export default function Tour() {
                   className={`
                   ${
                     isEven
-                      ? "ml-[0.3rem] md:relative md:left-[1.68rem] desk:left-0"
-                      : "ml-[0.3rem] md:relative md:right-[1.68rem] desk:right-0"
+                      ? "ml-[0.8rem] md:relative md:left-[1.68rem] desk:left-0"
+                      : "ml-[0.8rem] md:relative md:right-[1.68rem] desk:right-0"
                   }
                   `}
                 >
@@ -108,19 +108,19 @@ export default function Tour() {
                 className={` flex flex-col gap-[0.62rem] md:gap-[1.87rem]
                 ${
                   isEven
-                    ? "ml-[1.86rem] md:ml-0 desk:mr-[3.12rem]"
-                    : "ml-[1.86rem] md:ml-0 desk:ml-[3.12rem]"
+                    ? "ml-[2.43rem] md:ml-0 desk:mr-[3.12rem]"
+                    : "ml-[2.43rem] md:ml-0 desk:ml-[3.12rem]"
                 }
                 `}
               >
-                <p className="backdrop-blur-3xl text-[1.12rem] md:text-[1.5rem] desk:text-[1.87rem] font-medium text-darkGreen">
+                <p className="desk:backdrop-blur-3xl text-[1.12rem] md:text-[1.5rem] desk:text-[1.87rem] font-medium text-darkGreen">
                   {touritem.title}
                 </p>
                 <div className="flex flex-col gap-[0.93rem] md:gap-[1.25rem] desk:gap-[1.87rem] text-darkGreen font-normal text-[0.62rem] md:text-[0.87rem] desk:text-[1.12rem]">
-                  <p className="backdrop-blur-3xl">{touritem.activities[0]}</p>
-                  <p className="backdrop-blur-3xl">{touritem.activities[1]}</p>
-                  <p className="backdrop-blur-3xl">{touritem.activities[2]}</p>
-                  <p className="backdrop-blur-3xl">{touritem.activities[3]}</p>
+                  <p className="desk:backdrop-blur-3xl">{touritem.activities[0]}</p>
+                  <p className="desk:backdrop-blur-3xl">{touritem.activities[1]}</p>
+                  <p className="desk:backdrop-blur-3xl">{touritem.activities[2]}</p>
+                  <p className="desk:backdrop-blur-3xl">{touritem.activities[3]}</p>
                 </div>
               </div>
             </div>
