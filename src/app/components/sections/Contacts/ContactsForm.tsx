@@ -22,7 +22,7 @@ export default function ContactsForm() {
       className={`${t["body-lg"]} flex flex-col gap-4 text-darkGreen w-full`}
     >
       <input
-        className="bg-transparent md:py-[1.25rem] md:pl-[2.18rem] border border-darkGreen focus:border-sand focus:outline-none rounded-[3.12rem] py-[0.93rem] pl-[1.87rem]"
+        className="bg-transparent text-12 md:text-16 lg:text-18 md:py-20 md:pl-35 border border-darkGreen focus:border-sand transition-colors duration-200 focus:outline-none rounded-[3.12rem] py-15 pl-30"
         type="text"
         name="Имя"
         placeholder="Имя"
@@ -36,7 +36,7 @@ export default function ContactsForm() {
         inputClassName="!border-darkGreen !text-darkGreen"
         name="Телефон"
       />
-      <div className="flex gap-[0.62rem] items-center">
+      <div className="flex gap-10 items-center">
         <Checkbox
           className="h-[1rem] w-[1rem] border border-darkGreen rounded-[0.2rem] data-[state=checked]:bg-transparent
           data-[state=checked]:text-darkGreen data-[state=checked]:border-darkGreen"
