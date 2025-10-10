@@ -7,35 +7,35 @@ import ContactsForm from "./ContactsForm";
 
 export default function Contacts() {
   return (
-    <section className="my-[6.52rem] md:my-[7.5rem] desk:my-[9.37rem]">
+    <section className="mb-100 md:mb-120 desk:mb-150">
       <div className="container">
-        <div className="flex flex-col items-end md:items-center md:flex-row md:gap-[2.5rem] mb-[3.12rem]">
+        <div className="flex flex-col items-end md:items-center md:flex-row md:gap-40 mb-50">
           <h1 className={`${t["heading"]} uppercase font-bold text-darkGreen`}>
             Контакты
           </h1>
-          <p className="text-right md:text-left text-[0.75rem] md:text-[0.87rem] desk:text-[1.12rem]">
+          <p className="text-right md:text-left text-12 md:text-14 lg:text-18">
             Оставьте ваши контактные данные, наш менеджер
             <br />
             свяжется с вами и проконсультирует по всем вопросам
           </p>
         </div>
-        <div className="flex flex-col-reverse gap-[2.18rem] md:flex md:flex-row md:gap-[12.5rem] md:items-end items-stretch">
-          <div className="flex flex-col gap-[1.25rem]">
-            <div className="flex flex-col gap-[1.25rem]">
+        <div className="flex flex-col-reverse gap-35 md:flex md:flex-row md:gap-200 md:items-end items-stretch">
+          <div className="flex flex-col gap-20">
+            <div className="flex flex-col gap-20">
               <Link
-                className="inline-flex gap-[1.25rem] items-center text-[1rem] desk:text-[1.12rem]"
+                className="inline-flex gap-20 items-center text-16 lg:text-18"
                 href="tel:+79080233438"
               >
-                <span className="bg-sand rounded-full p-[0.62rem] flex items-center justify-center">
+                <span className="bg-sand rounded-full p-10 flex items-center justify-center">
                   <PhoneIcon className="w-[1.43rem] h-[1.43rem]" />
                 </span>
                 +7 (908) 023-34-38
               </Link>
               <Link
-                className="inline-flex gap-[1.25rem] items-center text-[1rem] desk:text-[1.12rem]"
+                className="inline-flex gap-20 items-center text-16 lg:text-18"
                 href="mailto:amikantravel@mail.ru"
               >
-                <span className="bg-sand rounded-full p-[0.62rem] flex items-center justify-center">
+                <span className="bg-sand rounded-full p-10 flex items-center justify-center">
                   <EmailIcon className="w-[1.43rem] h-[1.43rem]" />
                 </span>
                 amikantravel@mail.ru
