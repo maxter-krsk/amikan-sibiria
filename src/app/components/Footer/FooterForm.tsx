@@ -6,7 +6,6 @@ import { Button } from "@/app/components/ui/Button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { PhoneField } from "@/app/components/ui/PhoneField";
 import { sendContact } from "@/app/actions/sendContact";
-import { motion } from "framer-motion";
 
 type FooterFormProps = {
   className?: string;
@@ -16,7 +15,7 @@ export default function FooterForm({ className }: FooterFormProps) {
   return (
     <div className={`${className}`}>
       <p
-        className={`${t["body-lg"]} text-beige hidden lg:block mb-[1.25rem] font-medium`}
+        className={`${t["body-lg"]} text-beige hidden lg:block mb-20 font-medium`}
       >
         Оставьте свои данные, и мы свяжемся с вами
       </p>
@@ -30,10 +29,10 @@ export default function FooterForm({ className }: FooterFormProps) {
             alert(res.error ?? "Заявка не отправилась. Повторите попытку.");
           }
         }}
-        className={`${t["body-lg"]} flex flex-col gap-[0.62rem] text-beige `}
+        className={`${t["body-lg"]} flex flex-col gap-10 text-beige `}
       >
         <input
-          className="bg-transparent focus:border-sand focus:outline-none md:py-[1.25rem] md:pl-[2.18rem] border border-beige rounded-[3.12rem] py-[0.93rem] pl-[1.87rem] text-[0.75rem] md:text-[1rem] desk:text-[1.12rem]"
+          className="bg-transparent focus:border-sand focus:outline-none md:py-20 md:pl-35 border border-beige rounded-[3.12rem] py-15 pl-30 text-12 md:text-16 desk:text-18"
           type="text"
           name="Имя"
           placeholder="Ваше имя"
@@ -44,7 +43,7 @@ export default function FooterForm({ className }: FooterFormProps) {
           title="2–40 символов, только буквы, пробелы, дефис и апостроф"
         />
         <PhoneField name="Телефон" />
-        <div className="flex gap-[0.62rem] items-center my-[0.62rem]">
+        <div className="flex gap-10 items-center my-10">
           <Checkbox
             className="h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] data-[state=checked]:bg-transparent
     data-[state=checked]:text-beige data-[state=checked]:border-beige"
@@ -59,7 +58,7 @@ export default function FooterForm({ className }: FooterFormProps) {
         </div>
         <Button
           type="submit"
-          className="w-full flex items-center gap-4 overflow-hidden text-beige"
+          className="w-full flex items-center gap-20 md:gap-10 desk:gap-20 overflow-hidden text-beige"
         >
           Отправить
           <svg

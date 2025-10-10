@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function DevelopedBy() {
   return (
     <motion.div
-      className="text-center col-span-2 md:text-start md:col-start-3 md:row-start-3 lg:text-center lg:col-start-3 lg:row-start-4"
+      className="text-center col-span-2 md:text-start md:col-start-3 md:row-start-3 lg:text-center lg:col-start-3 lg:row-start-4 desk:mt-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.3 }}
