@@ -3,10 +3,10 @@ import FaqList from "./FaqList";
 
 export default function Faq() {
   return (
-    <section>
+    <section className="mb-100 md:mb-120 desk:mb-150">
       <div className="container">
         <h1
-          className={`${t.heading} font-bold text-darkGreen flex justify-end md:justify-start mb-[1.8rem] md:mb-[3.12rem]`}
+          className={`${t.heading} font-bold text-darkGreen flex justify-end md:justify-start mb-30 md:mb-50`}
         >
           FAQ
         </h1>
