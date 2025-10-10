@@ -54,7 +54,7 @@ export default function Tour() {
   ];
 
   return (
-    <section className="relative py-10 bg-no-repeat bg-cover [background-position:-270px_70px] md:bg-[url('/icons/ui/background-line.svg')] bg-none">
+    <section className="relative pb-100 md:pb-120 desk:pb-150 bg-no-repeat bg-cover [background-position:-270px_70px] md:bg-[url('/icons/ui/background-line.svg')] bg-none">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-y-0 left-5 md:left-1/2 md:-translate-x-1/2 w-[3rem] md:w-[8.37rem] desk:w-[16.18rem] bg-darkGreen z-0"
@@ -105,7 +105,7 @@ export default function Tour() {
                 </div>
               </div>
               <div
-                className={` flex flex-col gap-10 md:gap-30
+                className={` flex flex-col gap-10 mb-10 md-mb-0 md:gap-30
                 ${
                   isEven
                     ? "ml-[2.43rem] md:ml-0 desk:mr-50"
@@ -116,14 +116,14 @@ export default function Tour() {
                 <p className="desk:backdrop-blur-3xl text-18 md:text-24 desk:text-30 font-medium text-darkGreen">
                   {touritem.title}
                 </p>
-                <div className="flex flex-col gap-15 md:gap-20 desk:gap-30 text-darkGreen font-normal text-10 md:text-14 desk:text-18">
-                  <p className="desk:backdrop-blur-3xl">
+                <div className="text-darkGreen font-normal text-10 md:text-14 desk:text-18">
+                  <p className="desk:backdrop-blur-3xl mb-10">
                     {touritem.activities[0]}
                   </p>
-                  <p className="desk:backdrop-blur-3xl">
+                  <p className="desk:backdrop-blur-3xl mb-10">
                     {touritem.activities[1]}
                   </p>
-                  <p className="desk:backdrop-blur-3xl">
+                  <p className="desk:backdrop-blur-3xl mb-10">
                     {touritem.activities[2]}
                   </p>
                   <p className="desk:backdrop-blur-3xl">
