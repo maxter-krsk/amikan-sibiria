@@ -57,11 +57,11 @@ export default function Tour() {
     <section className="relative py-10 bg-no-repeat bg-cover [background-position:-270px_70px] md:bg-[url('/icons/ui/background-line.svg')] bg-none">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-5 md:left-1/2 md:-translate-x-1/2 w-[48px] md:w-[8.37rem] desk:w-[16.18rem] bg-darkGreen z-0"
+        className="pointer-events-none absolute inset-y-0 left-5 md:left-1/2 md:-translate-x-1/2 w-[3rem] md:w-[8.37rem] desk:w-[16.18rem] bg-darkGreen z-0"
       />
       <div className="container relative z-10">
         <h1
-          className={`${t.heading} mb-[1.87rem] md:mb-0 text-right md:text-left font-bold uppercase text-darkGreen`}
+          className={`${t.heading} mb-30 md:mb-0 text-right md:text-left font-bold uppercase text-darkGreen`}
         >
           Программа
           <br />
@@ -91,36 +91,44 @@ export default function Tour() {
                   className={`
                   ${
                     isEven
-                      ? "ml-[0.8rem] md:relative md:left-[1.68rem] desk:left-0"
-                      : "ml-[0.8rem] md:relative md:right-[1.68rem] desk:right-0"
+                      ? "md:relative md:left-[1.68rem] desk:left-0"
+                      : "md:relative md:right-[1.68rem] desk:right-0"
                   }
                   `}
                 >
-                  <p className="text-[2.5rem] md:text-[3.75rem] desk:text-[6.25rem] leading-none">
+                  <p className="text-40 md:text-60 desk:text-100 leading-none">
                     {touritem.dayNumber}
                   </p>
-                  <p className="text-[0.62rem] font-semibold md:text-[1.87rem] desk:text-[2.5rem]">
+                  <p className="text-10 font-semibold md:text-30 desk:text-40">
                     {touritem.dayLabel}
                   </p>
                 </div>
               </div>
               <div
-                className={` flex flex-col gap-[0.62rem] md:gap-[1.87rem]
+                className={` flex flex-col gap-10 md:gap-30
                 ${
                   isEven
-                    ? "ml-[2.43rem] md:ml-0 desk:mr-[3.12rem]"
-                    : "ml-[2.43rem] md:ml-0 desk:ml-[3.12rem]"
+                    ? "ml-[2.43rem] md:ml-0 desk:mr-50"
+                    : "ml-[2.43rem] md:ml-0 desk:ml-50"
                 }
                 `}
               >
-                <p className="desk:backdrop-blur-3xl text-[1.12rem] md:text-[1.5rem] desk:text-[1.87rem] font-medium text-darkGreen">
+                <p className="desk:backdrop-blur-3xl text-18 md:text-24 desk:text-30 font-medium text-darkGreen">
                   {touritem.title}
                 </p>
-                <div className="flex flex-col gap-[0.93rem] md:gap-[1.25rem] desk:gap-[1.87rem] text-darkGreen font-normal text-[0.62rem] md:text-[0.87rem] desk:text-[1.12rem]">
-                  <p className="desk:backdrop-blur-3xl">{touritem.activities[0]}</p>
-                  <p className="desk:backdrop-blur-3xl">{touritem.activities[1]}</p>
-                  <p className="desk:backdrop-blur-3xl">{touritem.activities[2]}</p>
-                  <p className="desk:backdrop-blur-3xl">{touritem.activities[3]}</p>
+                <div className="flex flex-col gap-15 md:gap-20 desk:gap-30 text-darkGreen font-normal text-10 md:text-14 desk:text-18">
+                  <p className="desk:backdrop-blur-3xl">
+                    {touritem.activities[0]}
+                  </p>
+                  <p className="desk:backdrop-blur-3xl">
+                    {touritem.activities[1]}
+                  </p>
+                  <p className="desk:backdrop-blur-3xl">
+                    {touritem.activities[2]}
+                  </p>
+                  <p className="desk:backdrop-blur-3xl">
+                    {touritem.activities[3]}
+                  </p>
                 </div>
               </div>
             </div>
