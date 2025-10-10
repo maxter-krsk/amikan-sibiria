@@ -30,7 +30,7 @@ export default function Gallery() {
   ];
 
   return (
-    <section className="my-[9.37rem]">
+    <section className="mb-100 md:mb-120 desk:mb-150">
       <Carousel
         opts={{
           align: "center",
@@ -45,7 +45,7 @@ export default function Gallery() {
       >
         <CarouselContent>
           {images.map((item, i) => (
-            <CarouselItem key={i} className="basis-1/5.5 pl-[1.25rem]">
+            <CarouselItem key={i} className="basis-1/5.5 pl-20">
               <Image
                 src={`/images/gallery/${item}`}
                 width={325}
