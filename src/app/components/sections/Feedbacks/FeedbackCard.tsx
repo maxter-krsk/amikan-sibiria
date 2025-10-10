@@ -79,14 +79,14 @@ export default function FeedbackCard() {
         }}
         className="w-full"
       >
-        <CarouselContent>
+        <CarouselContent className="px-10 md:px-0">
           {card.map((carditem, i) => (
             <CarouselItem
               key={i}
-              className="basis-full md:basis-1/2 desk:basis-1/3.5 pl-[1.25rem] select-none"
+              className="basis-full md:basis-1/2 desk:basis-1/3.5 select-none"
             >
-              <div className="bg-lightGreen  text-beige rounded-[1.25rem] desk:rounded-[1.87rem] p-[0.93rem] desk:p-[1.87rem] h-full">
-                <div className="flex gap-[0.62rem] desk:gap-[1.25rem] mb-[1.25rem]">
+              <div className="bg-lightGreen  text-beige rounded-[1.25rem] desk:rounded-[1.87rem] p-15 desk:p-30 h-full">
+                <div className="flex gap-10 lg:gap-20 mb-20">
                   <Image
                     src={`${carditem.image}`}
                     width={92}
@@ -95,19 +95,19 @@ export default function FeedbackCard() {
                     className="rounded-full w-[4.12rem] h-[4.12rem] desk:w-[5.75rem] desk:h-[5.75rem]"
                   />
                   <div>
-                    <p className="text-[1rem] desk:text-[1.25rem]">
+                    <p className="text-16 lg:text-20">
                       <span className="font-semibold">{`${carditem.name}`}</span>
                       {", "}
                       {`${carditem.yearsOld}`}
                     </p>
-                    <span className="text-[0.87rem] desk:text-[1.25rem]">{`${carditem.city}`}</span>
+                    <span className="text-14 lg:text-20">{`${carditem.city}`}</span>
                   </div>
                 </div>
-                <div className="flex gap-[0.62rem] items-start">
-                  <span className="text-[1.87rem] desk:text-[2.5rem] font-semibold">
+                <div className="flex gap-10 items-start">
+                  <span className="text-30 lg:text-40 font-semibold">
                     {"“"}
                   </span>
-                  <p className="mt-[0.55rem] text-[0.75rem] desk:text-[1.12rem]">{`${carditem.caption}`}</p>
+                  <p className="mt-[0.55rem] text-12 lg:text-18">{`${carditem.caption}`}</p>
                 </div>
               </div>
             </CarouselItem>
@@ -115,7 +115,7 @@ export default function FeedbackCard() {
         </CarouselContent>
       </Carousel>
 
-      <div className="flex justify-center mt-4 gap-[0.31rem] md:gap-[0.62rem]">
+      <div className="flex justify-center mt-20 md:mt-30 desk:mt-50 gap-5 md:gap-10">
         {card.map((_, i) => (
           <button
             key={i}
