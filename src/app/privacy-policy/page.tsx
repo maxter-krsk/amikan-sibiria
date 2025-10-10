@@ -2,18 +2,18 @@ import Link from "next/link";
 
 export default function Policy() {
   return (
-    <section className="mb-100 md:mb-120 desk:mb-15">
-      <div className="container">
-        <h1 className="uppercase text-20 md:text-30 desk:text-70 font-bold text-darkGreen text-left mt-150 text-balance mb-30 md:mb-50">
+    <section className="mb-100 md:mb-120 desk:mb-15 relative text-18 text-darkGreen">
+      <div className="container max-w-4xl mx-auto px-4 relative z-10">
+        <h1 className="uppercase text-20 md:text-30 desk:text-70 font-bold text-darkGreen text-left mt-150 text-balance mb-30 md:mb-50 relative">
           Политика конфиденциальности
         </h1>
-        <p>
+        <p className="font-semibold mb-20">
           г. Красноярск
           <br />
           "01" сентября 2025 г.
         </p>
-        <p>
-          ащита Вашей Персональной информации и Вашей конфиденциальности
+        <p className="mb-20">
+          Защита Вашей Персональной информации и Вашей конфиденциальности
           чрезвычайно. Поэтому при использовании Вами Сайта мы защищаем и
           обрабатываем Вашу Персональную информацию в строгом соответствии с
           применимым законодательством. Настоящая Политика конфиденциальности
@@ -22,20 +22,22 @@ export default function Policy() {
           <Link href="/policy-privacy">https://domain/policy-privacy</Link>{" "}
           (далее - Сайт).
         </p>
-        <p>
+        <p className="mb-20">
           Сервисы Сайта - интерактивные (диалоговые) программные компоненты на
           страницах Сайта, используемые для интеграции с информационными
           системами и предоставляющие пользователям Сайта определенные
           возможности по доступу к информации на Сайте (далее - Сервисы, Сервисы
           Сайта).
         </p>
-        <p>
+        <p className="mb-50">
           Использование сервисов Сайта означает безоговорочное согласие
           Пользователя с настоящей Политикой и указанными в ней условиями
           обработки его персональной информации; в случае несогласия с этими
           условиями Пользователь должен воздержаться от использования сервисов.
         </p>
-        <h2 className="uppercase">1. ОБЩИЕ ПОЛОЖЕНИЯ</h2>
+        <h2 className="uppercase text-center text-40 font-semibold mb-20">
+          1. ОБЩИЕ ПОЛОЖЕНИЯ
+        </h2>
         <p>
           1.1. В рамках настоящей Политики под персональной информацией
           Пользователя понимаются:
@@ -66,7 +68,7 @@ export default function Policy() {
             <Link href="/">https://domain.ru</Link>.
           </li>
         </ul>
-        <h2 className="uppercase">
+        <h2 className="uppercase text-center text-40 font-semibold mb-20">
           2. ЦЕЛИ ОБРАБОТКИ ПЕРСОНАЛЬНОЙ ИНФОРМАЦИИ ПОЛЬЗОВАТЕЛЕЙ
         </h2>
         <p>
@@ -120,7 +122,7 @@ export default function Policy() {
         <p>
           2.2.7. Осуществления рекламной деятельности с согласия Пользователя.
         </p>
-        <h2 className="uppercase">
+        <h2 className="uppercase text-center text-40 font-semibold mb-20">
           3. УСЛОВИЯ ОБРАБОТКИ ПЕРСОНАЛЬНОЙ ИНФОРМАЦИИ ПОЛЬЗОВАТЕЛЕЙ И ЕЕ
           ПЕРЕДАЧИ ТРЕТЬИМ ЛИЦАМ
         </h2>
@@ -188,7 +190,9 @@ export default function Policy() {
           последствий, вызванных утратой или разглашением персональных данных
           Пользователя.
         </p>
-        <h2 className="uppercase">4. ОБЯЗАТЕЛЬСТВА СТОРОН</h2>
+        <h2 className="uppercase text-center text-40 font-semibold mb-20">
+          4. ОБЯЗАТЕЛЬСТВА СТОРОН
+        </h2>
         <p>4.1. Пользователь обязан:</p>
         <ul>
           <li>
@@ -237,7 +241,9 @@ export default function Policy() {
             неправомерных действий.
           </li>
         </ul>
-        <h2 className="uppercase">5. ОТВЕТСТВЕННОСТЬ СТОРОН</h2>
+        <h2 className="uppercase text-center text-40 font-semibold mb-20">
+          5. ОТВЕТСТВЕННОСТЬ СТОРОН
+        </h2>
         <p>
           5.1. ИП Березов Е.В., не исполнивший свои обязательства, несет
           ответственность за убытки, понесенные Пользователем в связи с
@@ -259,7 +265,9 @@ export default function Policy() {
           </li>
           <li>5.2.3. Была разглашена с согласия Пользователя.</li>
         </ul>
-        <h2>6. РАЗРЕШЕНИЕ СПОРОВ</h2>
+        <h2 className="uppercase text-center text-40 font-semibold mb-20">
+          6. РАЗРЕШЕНИЕ СПОРОВ
+        </h2>
         <p>
           6.1. До обращения в суд с иском по спорам, возникающим из отношений
           между Пользователем Сайта и ИП Березовым Е.В., обязательным является
@@ -281,7 +289,9 @@ export default function Policy() {
           Пользователем и ИП Березовым Е.В. применяется действующее
           законодательство Российской Федерации.
         </p>
-        <h2>7. ДОПОЛНИТЕЛЬНЫЕ УСЛОВИЯ</h2>
+        <h2 className="uppercase text-center text-40 font-semibold mb-20">
+          7. ДОПОЛНИТЕЛЬНЫЕ УСЛОВИЯ
+        </h2>
         <p>
           7.1. ИП Березов Е.В. вправе вносить изменения в настоящую Политику
           конфиденциальности без согласия Пользователя.
