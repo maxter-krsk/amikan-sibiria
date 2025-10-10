@@ -10,18 +10,18 @@ type FooterContactsProps = {
 export default function FooterContacts({ className }: FooterContactsProps) {
   return (
     <div
-      className={`text-beige text-[0.75rem] md:text-[1rem] desk:[1.12rem] ${className}`}
+      className={`text-beige text-12 md:text-16 desk:text-18 ${className}`}
     >
-      <div className="flex gap-[1.2rem] mb-[0.62rem]">
+      <div className="flex gap-20 mb-10">
         <PhoneIcon className="w-[1.43rem] h-[1.43rem] hidden md:block" />
         <Link
-          className="text-[0.75rem] md:text-[1rem] desk:text-[1.12rem]"
+          className="text-12 md:text-16 desk:text-18"
           href="tel:+79080233438"
         >
           +7 (908) 023-34-38
         </Link>
       </div>
-      <div className="flex gap-[1.2rem]">
+      <div className="flex gap-20">
         <EmailIcon className="w-[1.43rem] h-[1.43rem] hidden md:block" />
         <Link
           className="block text-[0.75rem] md:text-[1rem] desk:text-[1.12rem]"
@@ -30,7 +30,7 @@ export default function FooterContacts({ className }: FooterContactsProps) {
           amikantravel@mail.ru
         </Link>
       </div>
-      <ul className="inline-grid grid-rows-2 grid-cols-2 gap-[0.62rem] md:flex md:gap-[1.25rem] md:py-[1.25rem] py-[0.93rem]">
+      <ul className="inline-grid grid-rows-2 grid-cols-2 gap-10 md:flex md:gap-20 md:py-20 py-15">
         <li>
           <IconLink
             href="#"
