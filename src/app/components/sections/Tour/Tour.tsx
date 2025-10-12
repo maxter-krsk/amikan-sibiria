@@ -61,7 +61,7 @@ export default function Tour() {
       />
       <div className="container relative z-10">
         <h1
-          className={`${t.heading} mb-30 md:mb-0 text-right md:text-left font-bold uppercase text-darkGreen`}
+          className={`${t.heading} pt-100 md:pt-120 desk:pt-150 mb-30 md:mb-0 text-right md:text-left font-bold uppercase text-darkGreen`}
         >
           Программа
           <br />
