@@ -52,7 +52,7 @@ export default function FeaturesCards() {
 
   return (
     <section className="bg-darkGreen py-[3.12rem]">
-      <div className="hidden md:block mx-auto container">
+      <div className="h-full hidden md:block mx-auto container">
         <div className="md:grid md:grid-cols-3 desk:grid-cols-4 gap-[1.25rem] auto-rows-[21.56rem]">
           {featuresCard.map((item) => {
             const visibilityClasses =
