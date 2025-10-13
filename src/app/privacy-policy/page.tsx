@@ -7,11 +7,11 @@ export default function Policy() {
         <h1 className="uppercase text-20 md:text-30 desk:text-70 font-bold text-darkGreen text-left mt-150 text-balance mb-30 md:mb-50 relative">
           Политика конфиденциальности
         </h1>
-        <ScrollArea className="h-[80vh] rounded-xl border border-gray-200 shadow-sm bg-darkGreen px-6 py-4">
-          <p className="font-semibold my-20">
+        <ScrollArea className="h-[80vh] rounded-xl border border-gray-200 p-10 md:p-40 shadow-sm bg-darkGreen">
+          <p className="font-semibold mb-20">
             г. Красноярск
             <br />
-            "01" сентября 2025 г.
+            &quot;01&quot; сентября 2025 г.
           </p>
           <p className="mb-20">
             Защита Вашей Персональной информации и Вашей конфиденциальности
@@ -310,7 +310,7 @@ export default function Policy() {
             размещения на Сайте, если иное не предусмотрено новой редакцией
             Политики конфиденциальности.
           </p>
-          <p className="mb-20">
+          <p>
             7.3. Все предложения или вопросы по настоящей Политике
             конфиденциальности следует сообщать ИП Березову Е.В. по эл. адресу:
             <Link href="mailto:amikantravel@mail.ru">amikantravel@mail.ru</Link>
