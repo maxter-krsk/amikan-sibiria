@@ -94,7 +94,6 @@
   position: absolute;
   top: 45%;
   transform: translateY(-50%);
-  z-index: 3;
 }
 
 .phone-field-container .react-international-phone-country-selector-button {
