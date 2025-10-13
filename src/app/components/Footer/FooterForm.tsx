@@ -32,7 +32,7 @@ export default function FooterForm({ className }: FooterFormProps) {
         className={`${t["body-lg"]} flex flex-col gap-10 text-beige `}
       >
         <input
-          className="bg-transparent focus:border-sand focus:outline-none md:py-20 md:pl-35 border border-beige rounded-[3.12rem] py-15 pl-30 text-12 md:text-16 desk:text-18"
+          className="bg-transparent focus:border-sand focus:outline-none transition-colors duration-200 md:py-20 md:pl-35 border border-beige rounded-[3.12rem] py-15 pl-30 text-12 md:text-16 desk:text-18"
           type="text"
           name="Имя"
           placeholder="Ваше имя"
