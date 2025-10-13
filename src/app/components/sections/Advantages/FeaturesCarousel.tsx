@@ -72,7 +72,7 @@ export default function FeaturesCarousel({ className }: Props) {
         <CarouselContent>
           {card.map((carditem, i) => (
             <CarouselItem key={i} className="basis-full">
-              <div className="bg-beige text-darkGreen rounded-[0.62rem] py-[2.75rem] px-[1.50rem]">
+              <div className="h-full bg-beige text-darkGreen rounded-[0.62rem] py-[2.75rem] px-[1.50rem]">
                 <div className="flex flex-col gap-[1.25rem] items-center text-center">
                   <Image
                     src={`${carditem.icon}`}
