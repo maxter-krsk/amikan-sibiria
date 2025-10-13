@@ -59,7 +59,7 @@ export default function Tour() {
         aria-hidden
         className="pointer-events-none absolute inset-y-0 left-12 md:left-1/2 md:-translate-x-1/2 w-[3rem] md:w-[8.37rem] desk:w-[16.18rem] bg-darkGreen z-0"
       />
-      <div className="container relative z-10">
+      <div className="container relative">
         <h1
           className={`${t.heading} pt-100 md:pt-120 desk:pt-150 mb-30 md:mb-0 text-right md:text-left font-bold uppercase text-darkGreen`}
         >
@@ -91,8 +91,8 @@ export default function Tour() {
                   className={`
                   ${
                     isEven
-                      ? "relative left-[0.31rem] md:left-[1.68rem] desk:left-0"
-                      : "relative left-[0.31rem] md:right-[1.68rem] desk:right-0"
+                      ? "left-[0.31rem] relative md:left-[1.68rem] desk:left-0"
+                      : "left-[0.31rem] md:left-auto relative md:right-[1.68rem] desk:right-0"
                   }
                   `}
                 >
