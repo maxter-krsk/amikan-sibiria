@@ -47,8 +47,15 @@ export default function MainFeatures() {
         </h1>
         <div className="md:grid md:grid-cols-2 md:grid-rows-3 md:gap-[1.25rem] desk:grid-cols-3 desk:grid-rows-2">
           {mainFeaturesCard.map((card) => (
-            <div key={card.title} className="flex flex-col gap-[1.25rem] mb-[0.62rem] md:m-0 p-[1.25rem] rounded-[0.62rem] bg-lightGreen">
-              <h2 className="uppercase text-center text-[1rem] text-beige font-semibold">{card.title}</h2>
+            <div
+              key={card.title}
+              className="flex flex-col gap-[1.25rem] mb-[0.62rem] md:m-0 p-[1.25rem] rounded-[0.62rem] bg-lightGreen"
+            >
+              <div className="min-h-[3.2rem] md:min-h-[3.6rem] desk:min-h-[4.8rem] flex items-center justify-center">
+                <h2 className="uppercase text-center text-[1rem] md:text-[1.125rem] desk:text-[1.5rem] leading-tight text-beige font-semibold line-clamp-2">
+                  {card.title}
+                </h2>
+              </div>
               <Image
                 src={card.image}
                 alt={card.title}
@@ -56,7 +63,9 @@ export default function MainFeatures() {
                 height={287}
                 className="w-[16.25rem] h-[17.94rem] block w-full h-auto object-cover rounded-[0.62rem]"
               />
-              <p className="text-center text-[0.75rem] md:text-[0.87rem] desk:text-[1rem] text-beige">{card.description}</p>
+              <p className="text-center text-[0.75rem] md:text-[0.87rem] desk:text-[1rem] text-beige">
+                {card.description}
+              </p>
             </div>
           ))}
         </div>
