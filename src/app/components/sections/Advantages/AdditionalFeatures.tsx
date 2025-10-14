@@ -53,7 +53,7 @@ export default function FeaturesCards() {
   return (
     <section className="bg-darkGreen py-[3.12rem]">
       <div className="h-full hidden md:block mx-auto container">
-        <div className="md:grid md:grid-cols-3 desk:grid-cols-4 gap-[1.25rem] auto-rows-[21.56rem]">
+        <div className="md:grid md:grid-cols-3 desk:grid-cols-4 gap-[1.25rem] auto-rows-auto">
           {featuresCard.map((item) => {
             const visibilityClasses =
               item.id === 3 || item.id === 6 ? "md:hidden desk:block" : "";
@@ -83,7 +83,7 @@ export default function FeaturesCards() {
               <div
                 key={item.id}
                 data-id={item.id}
-                className={`md:rounded-3xl bg-beige md:px-[1.25rem] desk:px-[1.88rem] flex flex-col justify-center items-center gap-[1.25rem] text-center ${visibilityClasses} ${positionClasses}`}
+                className={`min-h-[21.56rem] overflow-hidden md:rounded-3xl bg-beige md:px-[1.25rem] desk:px-[1.88rem] md:py-[1.5rem] desk:py-[2rem] flex flex-col justify-center items-center gap-[1.25rem] text-center ${visibilityClasses} ${positionClasses}`}
               >
                 <Image
                   className="md:w-[3.50rem] md:h-[3.50rem] desk:w-[4.88rem] desk:h-[4.88rem]"
