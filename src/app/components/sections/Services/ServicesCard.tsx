@@ -30,7 +30,7 @@ export default function ServicesCard() {
       <div className="flex flex-col md:flex-row gap-20">
         {servicesCard.slice(0, 2).map((card) => (
           <div key={card.title} className="flex-1">
-            <div className="relative overflow-hidden md:rounded-[1.25rem] desk:rounded-[1.87rem] aspect-[3/2] md:aspect-[16/9]">
+            <div className="relative overflow-hidden rounded-[0.625rem] md:rounded-[1.87rem] aspect-[3/2] md:aspect-[16/9]">
               <Image
                 src={card.image}
                 alt={card.title}
