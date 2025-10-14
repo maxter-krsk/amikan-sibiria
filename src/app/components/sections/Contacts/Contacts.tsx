@@ -9,7 +9,7 @@ export default function Contacts() {
   return (
     <section className="mb-100 md:mb-120 desk:mb-150">
       <div className="container">
-        <div className="flex flex-col items-end md:items-center md:flex-row md:gap-40 mb-50">
+        <div className="flex flex-col items-end md:items-center md:flex-row gap-20 md:gap-40 mb-20 md:mb-40 desk:mb-50">
           <h1 className={`${t["heading"]} uppercase font-bold text-darkGreen`}>
             Контакты
           </h1>
@@ -19,9 +19,9 @@ export default function Contacts() {
             свяжется с вами и проконсультирует по всем вопросам
           </p>
         </div>
-        <div className="flex flex-col-reverse gap-35 md:flex md:flex-row md:gap-200 md:items-end items-stretch">
+        <div className="flex flex-col-reverse gap-35 md:flex md:flex-row md:gap-150 desk:gap-200 md:items-end items-stretch">
           <div className="flex flex-col gap-20">
-            <div className="flex flex-col gap-20">
+            <div className="flex flex-col gap-5 md:gap-20">
               <Link
                 className="inline-flex gap-20 items-center text-16 lg:text-18"
                 href="tel:+79080233438"
