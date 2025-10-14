@@ -50,7 +50,7 @@ export default function ScrollTop() {
             mass: 0.5,
           }}
           onClick={scrollToTop}
-          className="cursor-pointer flex items-center justify-center fixed bottom-6 right-6 rounded-full w-[2.68rem] h-[2.68rem]
+          className="cursor-pointer flex items-center justify-center fixed bottom-3 right-3 rounded-full w-[2.68rem] h-[2.68rem]
                        hover:bg-[#142B23] hover:text-[#95BAA8]
                      z-50"
           aria-label="Прокрутить вверх"
