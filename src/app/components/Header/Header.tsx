@@ -2,16 +2,31 @@
 import Link from "next/link";
 import Image from "next/image";
 import BurgerMenu from "./Burger";
-import t from "@/app/styles/modules/typography.module.css";
-import { useState } from "react";
-import { useEffect } from "react";
+import { Button } from "@/app/components/ui/Button";
+import clsx from "clsx";
+import { useState, useEffect } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const scrolledActive = isScrolled && !isOpen;
 
   useEffect(() => {
     setMounted(true);
+
+    const handleScroll = () => {
+      const next = window.scrollY > 70;
+      setIsScrolled((prev) => (prev !== next ? next : prev));
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll, false);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -22,7 +37,18 @@ export default function Header() {
   const DARK_LOGO = "/icons/logos/logo-dark.svg";
 
   return (
-    <header className="fixed desk:top-[2.5rem] top-[1.25rem] left-0 right-0 z-40 desk:px-[1.25rem]">
+    <header
+      className={clsx(
+        "fixed left-0 right-0 z-40 desk:px-20 transition-[background-color,box-shadow,backdrop-filter,padding]",
+        "duration-300 ease-out will-change-[background-color,box-shadow,backdrop-filter,padding]",
+        {
+          "py-10 md:py-20 bg-darkGreen/70 backdrop-blur-xl shadow-md":
+            scrolledActive,
+          "py-10 md:py-20 desk:py-40 bg-transparent shadow-none":
+            !scrolledActive,
+        }
+      )}
+    >
       <div className="container">
         <div className="flex justify-between items-center">
           <Link href="/" aria-label="На главную" className="block">
@@ -53,8 +79,8 @@ export default function Header() {
               </>
             )}
           </Link>
-          <nav className="hidden desk:block px-[2.188rem] py-[1.25rem] bg-beige rounded-[6.25rem]">
-            <ul className={`${t["body-lg"]} flex gap-[1.2rem] text-darkGreen`}>
+          <nav className="hidden desk:block px-35 py-20 bg-beige rounded-[6.25rem]">
+            <ul className="flex text-18 gap-20 text-darkGreen">
               <li>
                 <Link href="/">О туре</Link>
               </li>
@@ -78,13 +104,17 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-          <div className="flex items-center gap-[1.2rem]">
-            <Link
-              href="/"
-              className={`${t.subtitle} hidden uppercase font-semibold text-beige bg-sand rounded-[3.125rem] desk:block desk:px-[2.188rem] desk:py-[1.25rem] md:px-[1.875rem] md:py-[1.031rem] py-[0.938rem]`}
+          <div className="flex items-center gap-20">
+            <div
+              className={clsx(
+                "flex justify-between items-center transition-opacity",
+                isOpen && "opacity-0 pointer-events-none"
+              )}
             >
-              Оставить заявку
-            </Link>
+              <Button href="/" className="hidden sm:block">
+                Оставить заявку
+              </Button>
+            </div>
             <BurgerMenu isOpen={isOpen} toggleMenu={toggleMenu} />
           </div>
         </div>

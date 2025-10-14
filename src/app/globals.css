@@ -83,6 +83,11 @@
   margin: 0 auto;
 }
 
+html body[data-scroll-locked] {
+  overflow: visible !important;
+  margin-right: 0 !important;
+}
+
 /* Стили для инпута номера телефона */
 
 .phone-field-container {

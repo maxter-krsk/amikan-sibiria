@@ -85,7 +85,7 @@ export default function FeedbackCard() {
               key={i}
               className="basis-full md:basis-1/2 desk:basis-1/3.5 select-none"
             >
-              <div className="bg-lightGreen  text-beige rounded-[1.25rem] desk:rounded-[1.87rem] p-15 desk:p-30 h-full">
+              <div className="bg-lightGreen text-beige rounded-[0.625rem] md:rounded-[1.25rem] desk:rounded-[1.87rem] p-15 desk:p-30 h-full">
                 <div className="flex gap-10 lg:gap-20 mb-20">
                   <Image
                     src={`${carditem.image}`}
