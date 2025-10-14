@@ -15,11 +15,11 @@ export default function Hero() {
 
   return (
     <section
-      className={`${bg.heroBg} mx-0 desk:mt-[1.25rem] desk:mx-[1.25rem] mb-[9.38rem] pb-[3.75rem] pt-[9.06rem] relative`}
+      className={`${bg.heroBg} mx-0 desk:mt-[1.25rem] desk:mx-[1.25rem] mb-[6.25rem] md:mb-[7.5rem] desk:mb-[9.375rem] pb-[1.25rem] md:pb-[3.125rem] desk:pb-[3.75rem] pt-[5rem] md:pt-[7.5rem] desk:pt-[9.063rem] relative`}
       aria-labelledby="hero-title"
     >
       <div className="container">
-        <div className="flex gap-[0.62rem] desk:flex-row desk:items-end mb-[1.25rem] desk:mb-[1.87rem] md:flex-col flex-col">
+        <div className="flex gap-[0.625rem] desk:gap-[2.5rem] desk:flex-row desk:items-end mb-[1.25rem] desk:mb-[1.87rem] md:flex-col flex-col">
           <h1 className="font-bold desk:text-[4.38rem] md:text-[2.5rem] text-[1.75rem] text-center md:text-left leading-[1.2] uppercase text-[#FFFFFF]">
             Сибирь, которую
             <br />
@@ -32,12 +32,12 @@ export default function Hero() {
           </p>
         </div>
         <div
-          className="flex flex-col gap-[0.62rem] md:gap-[1.25rem] mb-[6.87rem] md:mb-[5.62rem] desk:mb-[3.12rem] items-center md:items-start"
+          className="flex flex-col gap-[0.625rem] md:gap-[1.25rem] mb-[2.5rem] md:mb-[5.625rem] desk:mb-[3.125rem] items-center md:items-start"
           aria-describedby="cta-hint"
         >
           <Button
             onClick={ProgramPopupHandler}
-            className="relative flex items-start desk:w-[28.68rem] md:w-[21.31rem] w-[18.12rem] pr-[1.87rem] md:text-[0.87rem]"
+            className="relative flex items-start desk:w-[28.688rem] md:w-[21.313rem] w-[18.125rem] leading-none"
             type="button"
           >
             Получить программу тура
@@ -45,8 +45,8 @@ export default function Hero() {
               src="/icons/ui/arrows/arrow-main.svg"
               alt="Стрелка для получения программы тура"
               width={41}
-              height={8}
-              className="w-[2.56rem] h-[0.5rem] hidden md:block absolute desk:right-[2.19rem] md:right-[1.87rem] top-1/2 -translate-y-1/2"
+              height={1}
+              className="w-[2.563rem] h-[0.5rem] hidden md:block absolute desk:right-[2.19rem] md:right-[1.87rem] top-1/2 -translate-y-1/2"
             />
           </Button>
           <ProgramPopup open={open} onOpenChange={() => setOpen(!open)} />
@@ -59,8 +59,8 @@ export default function Hero() {
             подробное описание
           </p>
         </div>
-        <ul className="flex flex-col items-center md:flex-row md:items-stretch md:flex-nowrap gap-[0.62rem] md:gap-[1.25rem]">
-          <li className="w-[18.75rem] md:w-[22.12rem] desk:w-[44.38rem] p-[0.93rem] md:p-[1.25rem] bg-beige rounded-[0.62rem] md:rounded-[1.25rem] desk:rounded-[1.87rem]">
+        <ul className="flex flex-col items-center md:flex-row md:items-stretch md:flex-nowrap gap-[0.625rem] md:gap-[1.25rem]">
+          <li className="w-[18.75rem] md:w-[22.12rem] desk:w-[44.38rem] p-[0.938rem] md:p-[1.25rem] bg-beige rounded-[0.625rem] md:rounded-[1.25rem] desk:rounded-[1.875rem]">
             <div className="flex gap-[1.25rem]">
               <Image
                 className="w-[19.06rem] h-[12.25rem] object-cover rounded-[1.25rem] hidden desk:block shrink-0"
@@ -69,12 +69,12 @@ export default function Hero() {
                 width={305}
                 height={196}
               />
-              <div className="flex flex-col gap-[0.62rem] md:gap-[2.5rem] desk:justify-between text-darkGreen">
-                <p className="font-semibold text-[0.75rem] md:text-[1rem] leading-[1.25] text-center md:text-start [text-wrap:balance]">
+              <div className="flex flex-col gap-[0.625rem] md:gap-[2.5rem] desk:gap-[3rem] desk:justify-between text-darkGreen">
+                <p className="font-semibold text-[0.75rem] md:text-[1rem] leading-[1.25] text-center md:text-start">
                   Премиальный тур для тех, кто хочет насладиться природой и
                   отдохнуть в комфортных условиях
                 </p>
-                <p className="font-medium text-center md:text-start text-[0.62rem] md:text-[0.87rem] desk:text-[1.12rem] leading-[1.2] whitespace-normal break-words [hyphens:auto]">
+                <p className="font-medium text-center md:text-start text-[0.62rem] md:text-[0.87rem] desk:text-[1.12rem] leading-[1.2]">
                   Панорамные виды, тёплая база, авторская кухня. Заезд на
                   музей-усадьбу В.И. Ленина и экскурсия по окрестностям
                 </p>
@@ -91,8 +91,8 @@ export default function Hero() {
                 width={305}
                 height={196}
               />
-              <div className="min-h-[5.94rem] flex flex-col md:gap-[4.12rem] desk:gap-[7rem] text-darkGreen">
-                <p className="font-semibold text-[0.75rem] md:text-[1rem] leading-[1.25] text-center md:text-start [text-wrap:balance]">
+              <div className="min-h-[5.94rem] flex flex-col md:gap-[4.125rem] desk:gap-[7rem] text-darkGreen">
+                <p className="font-semibold text-[0.75rem] md:text-[1rem] leading-[1.25] text-center md:text-start">
                   Приезжайте семьей, в компании друзей или коллег — будет
                   интересно и уютно
                 </p>
@@ -105,7 +105,7 @@ export default function Hero() {
             </div>
             <div
               aria-hidden="true"
-              className="absolute left-[7.81rem] bottom-0 md:left-0 md:bottom-0 w-[3.12rem] h-[3.12rem] md:w-[3.7rem] md:h-[3.7rem] rounded-full bg-sand flex items-center justify-center"
+              className="absolute left-[7.813rem] bottom-[1px] md:left-[0.063rem] md:bottom-[0.063rem] w-[3.125rem] h-[3.125rem] md:w-[3.625rem] md:h-[3.625rem] rounded-full bg-sand flex items-center justify-center"
             >
               <Link href="/" aria-label="Перейте к информации о туре">
                 <Image
