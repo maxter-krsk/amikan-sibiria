@@ -103,20 +103,25 @@ export default function Hero() {
                 </p>
               </div>
             </div>
-            <div
-              aria-hidden="true"
-              className="absolute left-[7.813rem] bottom-[1px] md:left-[0.063rem] md:bottom-[0.063rem] w-[3.125rem] h-[3.125rem] md:w-[3.625rem] md:h-[3.625rem] rounded-full bg-sand flex items-center justify-center"
+            <Link
+              href="/"
+              aria-label="Перейти к информации о туре"
+              className="absolute left-[7.813rem] bottom-[1px] md:left-[0.063rem] md:bottom-[0.063rem]
+             w-[3.125rem] h-[3.125rem] md:w-[3.625rem] md:h-[3.625rem]
+             rounded-full bg-sand flex items-center justify-center
+             hover:bg-lightGreen transition-colors duration-300 ease-out
+             group transform-gpu"
             >
-              <Link href="/" aria-label="Перейте к информации о туре">
-                <Image
-                  src="/icons/ui/arrows/arrow-main.svg"
-                  alt="Стрелка для перехода к информации о туре"
-                  width={30}
-                  height={30}
-                  className="w-[1.88rem] h-[1.88rem] origin-center rotate-90 md:rotate-[125deg]"
-                />
-              </Link>
-            </div>
+              <Image
+                src="/icons/ui/arrows/arrow-main.svg"
+                alt="Стрелка для перехода к информации о туре"
+                width={30}
+                height={30}
+                className="w-[1.88rem] h-[1.88rem] origin-center rotate-90 md:rotate-[125deg]
+               transition-transform duration-300 ease-out transform-gpu will-change-transform
+               group-hover:rotate-[90deg]"
+              />
+            </Link>
           </li>
         </ul>
       </div>
