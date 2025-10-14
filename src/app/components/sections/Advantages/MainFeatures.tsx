@@ -61,7 +61,7 @@ export default function MainFeatures() {
                 alt={card.title}
                 width={260}
                 height={287}
-                className="w-[16.25rem] h-[17.94rem] block w-full h-auto object-cover rounded-[0.62rem]"
+                className="w-[16.25rem] h-[17.94rem] block w-full h-auto object-cover rounded-[0.62rem] hover:scale-115 transition-transform duration-350 ease-in-out"
               />
               <p className="text-center text-[0.75rem] md:text-[0.87rem] desk:text-[1rem] text-beige">
                 {card.description}
