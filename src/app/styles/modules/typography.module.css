@@ -1,8 +1,8 @@
 @reference "../../globals.css";
 
-/* Заголовок h1 70px desktop, tablet 60px, mobile 28px */
+/* Заголовок h1 70px desktop, tablet 40px, mobile 30px */
 .heading {
-	@apply desk:text-[4.37rem] md:text-[3.75rem] text-[1.75rem];
+	@apply desk:text-70 md:text-40 text-30;
 }
 
 /* Мелкий текст 14px desktop/tablet, 12px mobile */
