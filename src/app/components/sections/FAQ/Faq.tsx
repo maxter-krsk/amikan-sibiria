@@ -11,6 +11,7 @@ export default function Faq() {
           FAQ
         </h1>
         <FaqList
+          isOpened={true}
           name=" Когда лучше отправляться?"
           descr="Тур проводится с конца мая по сентябрь (конкретные даты уточняет менеджер)"
         />

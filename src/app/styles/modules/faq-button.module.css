@@ -1,5 +1,5 @@
 @reference "../../globals.css";
 
 .faqButton {
-	@apply cursor-pointer text-14 md:text-24 desk:text-30 font-bold uppercase text-beige bg-lightGreen p-10 md:pl-30 mb-10 desk:mb-20 rounded-[0.62rem] md:rounded-[1.25rem] desk:rounded-[1.87rem] w-full text-left
+	@apply cursor-pointer text-14 md:text-24 desk:text-30 font-bold uppercase text-beige bg-lightGreen p-10 md:pl-30 mb-10 desk:mb-20 rounded-[0.625rem] md:rounded-[1.25rem] desk:rounded-[1.87rem] w-full text-left
 }
