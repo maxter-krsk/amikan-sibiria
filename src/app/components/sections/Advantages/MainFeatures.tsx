@@ -51,7 +51,7 @@ export default function MainFeatures() {
               key={card.title}
               className="flex flex-col gap-[1.25rem] mb-[0.62rem] md:m-0 p-[1.25rem] rounded-[0.62rem] bg-lightGreen"
             >
-              <div className="min-h-[3.2rem] md:min-h-[3.6rem] desk:min-h-[4.8rem] flex items-center justify-center">
+              <div className="min-h-[1.25rem] md:min-h-[2.75rem] desk:min-h-[3.75rem] flex items-start justify-center">
                 <h2 className="uppercase text-center text-[1rem] md:text-[1.125rem] desk:text-[1.5rem] leading-tight text-beige font-semibold line-clamp-2">
                   {card.title}
                 </h2>
