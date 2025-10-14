@@ -29,7 +29,7 @@ export default function Header() {
             {mounted && (
               <>
                 <Image
-                  className="md:hidden w-[4rem] h-[4rem]"
+                  className="md:hidden desk:w-[4rem] w-[3.125rem] desk:h-[4rem] h-[3.125rem]"
                   src={isOpen ? DARK_LOGO : LIGHT_LOGO}
                   alt="Логотип Амикан (мобильный)"
                   width={64}
@@ -37,14 +37,14 @@ export default function Header() {
                   priority
                 />
                 <Image
-                  className="hidden md:block desk:hidden w-[4rem] h-[4rem]"
+                  className="hidden md:block desk:hidden desk:w-[4rem] w-[3.125rem] desk:h-[4rem] h-[3.125rem]"
                   src={LIGHT_LOGO}
                   alt="Логотип Амикан (планшет)"
                   width={64}
                   height={64}
                 />
                 <Image
-                  className="hidden desk:block w-[4rem] h-[4rem]"
+                  className="hidden desk:block desk:w-[4rem] w-[3.125rem] desk:h-[4rem] h-[3.125rem]"
                   src={isOpen ? DARK_LOGO : LIGHT_LOGO}
                   alt="Логотип Амикан (десктоп)"
                   width={64}
@@ -53,7 +53,7 @@ export default function Header() {
               </>
             )}
           </Link>
-          <nav className="hidden desk:block px-[1.9rem] py-[1.3rem] bg-beige rounded-[6.2rem]">
+          <nav className="hidden desk:block px-[2.188rem] py-[1.25rem] bg-beige rounded-[6.25rem]">
             <ul className={`${t["body-lg"]} flex gap-[1.2rem] text-darkGreen`}>
               <li>
                 <Link href="/">О туре</Link>
@@ -81,7 +81,7 @@ export default function Header() {
           <div className="flex items-center gap-[1.2rem]">
             <Link
               href="/"
-              className={`${t.subtitle} hidden uppercase font-semibold text-beige bg-sand rounded-[6.2rem] desk:block desk:px-[2.18rem] desk:py-[1.3rem] md:px-[1.87rem] md:py-[1.031rem]`}
+              className={`${t.subtitle} hidden uppercase font-semibold text-beige bg-sand rounded-[3.125rem] desk:block desk:px-[2.188rem] desk:py-[1.25rem] md:px-[1.875rem] md:py-[1.031rem] py-[0.938rem]`}
             >
               Оставить заявку
             </Link>

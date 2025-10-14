@@ -65,12 +65,12 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
         aria-controls="mobile-menu"
         aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
       >
-        <div className="relative w-[4rem] h-[4rem] bg-sand rounded-full flex flex-col justify-center items-center gap-[0.35rem]">
+        <div className="relative w-[3.125rem] h-[3.125rem] bg-sand rounded-full flex flex-col justify-center items-center gap-[0.2rem]">
           <motion.span
-            className="w-[2rem] h-[0.15rem] bg-beige rounded-[0.125rem]"
+            className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
             variants={{
               closed: { rotate: 0, y: 0 },
-              open: { rotate: 45, y: 11.9 },
+              open: { rotate: 45, y: 7.25 },
             }}
             initial={false}
             animate={isOpen ? "open" : "closed"}
@@ -78,7 +78,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
           ></motion.span>
 
           <motion.span
-            className="w-[2rem] h-[0.15rem] bg-beige rounded-[0.125rem]"
+            className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
             variants={{
               closed: { opacity: 1 },
               open: { opacity: 0 },
@@ -89,7 +89,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
           />
 
           <motion.span
-            className="w-[2rem] h-[0.15rem] bg-beige rounded-[0.125rem]"
+            className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
             variants={{
               closed: { opacity: 1 },
               open: { opacity: 0 },
@@ -100,10 +100,10 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
           />
 
           <motion.span
-            className="w-[2rem] h-[0.15rem] bg-beige rounded-[0.125rem]"
+            className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
             variants={{
               closed: { rotate: 0, y: 0 },
-              open: { rotate: -45, y: -11.9 },
+              open: { rotate: -45, y: -7.25 },
             }}
             initial={false}
             animate={isOpen ? "open" : "closed"}
@@ -139,7 +139,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                   exit="exit"
                   className="flex flex-col bg-beige fixed z-[60] top-0 right-0 w-full h-full p-[1.25rem] md:w-[50%]"
                 >
-                  <div className="mt-[5.62rem] md:mt-0">
+                  <div className="mt-[5.625rem] md:mt-0">
                     <nav>
                       <ul
                         className={`${t["body-lg"]} flex flex-col gap-[0.625rem] text-darkGreen`}
@@ -190,7 +190,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                       Оставить заявку
                     </Link>
 
-                    <div className="flex justify-center gap-[1.25rem] mt-[2.5rem]">
+                    <div className="flex justify-center gap-[1.25rem] mt-[1.875rem]">
                       <IconLink
                         href={"/"}
                         label={"YouTube"}
