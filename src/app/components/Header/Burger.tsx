@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/app/components/ui/Button";
 import { IconLink } from "@/app/components/ui/socials/IconLink";
 import t from "@/app/styles/modules/typography.module.css";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
@@ -137,12 +138,12 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="flex flex-col bg-beige fixed z-[60] top-0 right-0 w-full h-full p-[1.25rem] md:w-[50%]"
+                  className="flex flex-col bg-beige fixed z-[60] top-0 right-0 w-full h-full p-20 md:w-[50%]"
                 >
-                  <div className="mt-[5.625rem] md:mt-0">
+                  <div className="mt-90 md:mt-0">
                     <nav>
                       <ul
-                        className={`${t["body-lg"]} flex flex-col gap-[0.625rem] text-darkGreen`}
+                        className="flex flex-col gap-10 text-darkGreen text-14"
                       >
                         <li>
                           <Link onClick={toggleMenu} href="/">
@@ -182,15 +183,15 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                       </ul>
                     </nav>
 
-                    <Link
+                    <Button
                       onClick={toggleMenu}
                       href="/"
-                      className={`${t.subtitle} inline-block w-full mt-[1.875rem] text-center uppercase font-semibold text-beige px-[1.9rem] py-[1.3rem] bg-sand rounded-[6.2rem]`}
+                      className="inline-block w-full mt-30 !text-center sm:hidden"
                     >
                       Оставить заявку
-                    </Link>
+                    </Button>
 
-                    <div className="flex justify-center gap-[1.25rem] mt-[1.875rem]">
+                    <div className="flex justify-center sm:justify-start gap-20 mt-30">
                       <IconLink
                         href={"/"}
                         label={"YouTube"}
