@@ -12,21 +12,24 @@ import { useEffect, useState } from "react";
 type BurgerMenuProps = {
   isOpen: boolean;
   toggleMenu: () => void;
+  className?: string;
 };
 
 const panelAnimation = {
-  hidden: { x: "100%", opacity: 0, scale: 0.98 },
+  hidden: { x: "100%", opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] as const },
+    rotate: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.6, 1] as const },
   },
   exit: {
     x: "100%",
     opacity: 0,
-    scale: 0.98,
-    transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] as const },
+    scale: 1,
+    rotate: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.6, 1] as const },
   },
 } as const satisfies Variants;
 
@@ -42,7 +45,7 @@ const overlayAnimation = {
   },
 } as const satisfies Variants;
 
-export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
+export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenuProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -125,7 +128,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
               >
                 <motion.div
                   onClick={toggleMenu}
-                  className="fixed inset-0 z-50 bg-black"
+                  className="fixed inset-0 z-[80] bg-black"
                   variants={overlayAnimation}
                   initial="hidden"
                   animate="visible"
@@ -138,7 +141,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="flex flex-col bg-beige fixed z-[60] top-0 right-0 w-full h-full p-20 md:w-[50%]"
+                  className="flex flex-col bg-beige fixed z-[90] top-0 right-0 w-full h-full p-20 md:w-[50%]"
                 >
                   <div className="mt-90 md:mt-0">
                     <nav>

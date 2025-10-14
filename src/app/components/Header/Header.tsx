@@ -3,16 +3,30 @@ import Link from "next/link";
 import Image from "next/image";
 import BurgerMenu from "./Burger";
 import { Button } from "@/app/components/ui/Button";
-import t from "@/app/styles/modules/typography.module.css";
-import { useState } from "react";
-import { useEffect } from "react";
+import clsx from "clsx";
+import { useState, useEffect } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const scrolledActive = isScrolled && !isOpen;
 
   useEffect(() => {
     setMounted(true);
+
+    const handleScroll = () => {
+      const next = window.scrollY > 70;
+      setIsScrolled((prev) => (prev !== next ? next : prev));
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll, false);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -23,7 +37,18 @@ export default function Header() {
   const DARK_LOGO = "/icons/logos/logo-dark.svg";
 
   return (
-    <header className="fixed desk:top-40 top-20 left-0 right-0 z-40 desk:px-20">
+    <header
+      className={clsx(
+        "fixed left-0 right-0 z-40 desk:px-20 transition-[background-color,box-shadow,backdrop-filter,padding]",
+        "duration-300 ease-out will-change-[background-color,box-shadow,backdrop-filter,padding]",
+        {
+          "py-10 md:py-20 desk:py-40 bg-darkGreen/70 backdrop-blur-xl shadow-md":
+            scrolledActive,
+          "py-10 md:py-20 desk:py-40 bg-transparent shadow-none":
+            !scrolledActive,
+        }
+      )}
+    >
       <div className="container">
         <div className="flex justify-between items-center">
           <Link href="/" aria-label="На главную" className="block">
@@ -80,9 +105,16 @@ export default function Header() {
             </ul>
           </nav>
           <div className="flex items-center gap-20">
-            <Button href="/" className="hidden sm:block relative z-30">
-              Оставить заявку
-            </Button>
+            <div
+              className={clsx(
+                "flex justify-between items-center transition-opacity",
+                isOpen && "opacity-0 pointer-events-none"
+              )}
+            >
+              <Button href="/" className="hidden sm:block">
+                Оставить заявку
+              </Button>
+            </div>
             <BurgerMenu isOpen={isOpen} toggleMenu={toggleMenu} />
           </div>
         </div>
