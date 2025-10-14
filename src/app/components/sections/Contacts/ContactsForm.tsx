@@ -19,7 +19,7 @@ export default function ContactsForm() {
           alert(res.error ?? "Заявка не отправилась. Повторите попытку.");
         }
       }}
-      className={`${t["body-lg"]} flex flex-col gap-4 text-darkGreen w-full`}
+      className={`${t["body-lg"]} flex flex-col gap-10 text-darkGreen w-full`}
     >
       <input
         className="bg-transparent text-12 md:text-16 lg:text-18 md:py-20 md:pl-35 border border-darkGreen focus:border-sand transition-colors duration-200 focus:outline-none rounded-[3.12rem] py-15 pl-30"
@@ -34,6 +34,7 @@ export default function ContactsForm() {
       />
       <PhoneField
         inputClassName="!border-darkGreen !text-darkGreen"
+        containerClassName="!mb-0"
         name="Телефон"
       />
       <div className="flex gap-10 items-center">
