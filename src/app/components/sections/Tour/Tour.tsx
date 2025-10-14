@@ -113,20 +113,20 @@ export default function Tour() {
                 }
                 `}
               >
-                <p className="desk:backdrop-blur-3xl text-18 md:text-24 desk:text-30 font-medium text-darkGreen">
+                <p className="md:backdrop-blur-3xl text-18 md:text-24 desk:text-30 font-medium text-darkGreen">
                   {touritem.title}
                 </p>
                 <div className="text-darkGreen font-normal text-10 md:text-14 desk:text-18">
-                  <p className="desk:backdrop-blur-3xl mb-10">
+                  <p className="md:backdrop-blur-3xl mb-10">
                     {touritem.activities[0]}
                   </p>
-                  <p className="desk:backdrop-blur-3xl mb-10">
+                  <p className="md:backdrop-blur-3xl mb-10">
                     {touritem.activities[1]}
                   </p>
-                  <p className="desk:backdrop-blur-3xl mb-10">
+                  <p className="md:backdrop-blur-3xl mb-10">
                     {touritem.activities[2]}
                   </p>
-                  <p className="desk:backdrop-blur-3xl">
+                  <p className="md:backdrop-blur-3xl">
                     {touritem.activities[3]}
                   </p>
                 </div>
