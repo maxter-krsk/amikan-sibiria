@@ -42,17 +42,17 @@ export default function MainFeatures() {
   return (
     <section>
       <div className="container">
-        <h1 className="mb-[1.87rem] font-bold uppercase text-[1.75rem] md:text-[2.5rem] desk:text-[4.37rem] text-darkGreen text-right md:text-left">
+        <h1 className="mb-30 font-bold uppercase text-28 md:text-40 desk:text-70 text-darkGreen text-right md:text-left">
           Почему стоит поехать?
         </h1>
-        <div className="md:grid md:grid-cols-2 md:grid-rows-3 md:gap-[1.25rem] desk:grid-cols-3 desk:grid-rows-2">
+        <div className="md:grid md:grid-cols-2 md:grid-rows-3 md:gap-20 desk:grid-cols-3 desk:grid-rows-2">
           {mainFeaturesCard.map((card) => (
             <div
               key={card.title}
-              className="flex flex-col gap-[1.25rem] mb-[0.62rem] md:m-0 p-[1.25rem] rounded-[0.62rem] bg-lightGreen"
+              className="flex flex-col gap-20 mb-10 md:m-0 p-20 rounded-10 bg-lightGreen"
             >
               <div className="min-h-[1.25rem] md:min-h-[2.75rem] desk:min-h-[3.75rem] flex items-start justify-center">
-                <h2 className="uppercase text-center text-[1rem] md:text-[1.125rem] desk:text-[1.5rem] leading-tight text-beige font-semibold line-clamp-2">
+                <h2 className="uppercase text-center text-16 md:text-18 desk:text-24 leading-tight text-beige font-semibold line-clamp-2">
                   {card.title}
                 </h2>
               </div>
@@ -61,9 +61,9 @@ export default function MainFeatures() {
                 alt={card.title}
                 width={260}
                 height={287}
-                className="w-[16.25rem] h-[17.94rem] block w-full h-auto object-cover rounded-[0.62rem] hover:scale-115 transition-transform duration-350 ease-in-out"
+                className="w-[16.25rem] h-[17.94rem] block w-full h-auto object-cover rounded-10 hover:scale-115 transition-transform duration-350 ease-in-out"
               />
-              <p className="text-center text-[0.75rem] md:text-[0.87rem] desk:text-[1rem] text-beige">
+              <p className="text-center text-12 md:text-14 desk:text-16 text-beige">
                 {card.description}
               </p>
             </div>
