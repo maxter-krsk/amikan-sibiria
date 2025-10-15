@@ -30,7 +30,7 @@ export default function Gallery() {
   ];
 
   return (
-    <section className="mb-100 md:mb-120 desk:mb-150">
+    <section id="gallery" className="mb-100 md:mb-120 desk:mb-150">
       <Carousel
         opts={{
           align: "center",
