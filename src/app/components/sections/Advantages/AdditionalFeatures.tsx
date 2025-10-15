@@ -51,9 +51,9 @@ export default function FeaturesCards() {
   ];
 
   return (
-    <section id="features" className="bg-darkGreen py-[3.12rem] scroll-mt-100 md:scroll-mt-120 desk:scroll-mt-150">
+    <section id="features" className="bg-darkGreen py-50 scroll-mt-100 md:scroll-mt-120 desk:scroll-mt-150">
       <div className="h-full hidden md:block mx-auto container">
-        <div className="md:grid md:grid-cols-3 desk:grid-cols-4 gap-[1.25rem] auto-rows-auto">
+        <div className="md:grid md:grid-cols-3 desk:grid-cols-4 gap-20 auto-rows-auto">
           {featuresCard.map((item) => {
             const visibilityClasses =
               item.id === 3 || item.id === 6 ? "md:hidden desk:block" : "";
@@ -83,7 +83,7 @@ export default function FeaturesCards() {
               <div
                 key={item.id}
                 data-id={item.id}
-                className={`min-h-[21.56rem] overflow-hidden md:rounded-3xl bg-beige md:px-[1.25rem] desk:px-[1.88rem] md:py-[1.5rem] desk:py-[2rem] flex flex-col justify-center items-center gap-[1.25rem] text-center ${visibilityClasses} ${positionClasses}`}
+                className={`min-h-[21.56rem] overflow-hidden md:rounded-3xl bg-beige md:px-20 desk:px-30 md:py-25 desk:py-[2rem] flex flex-col justify-center items-center gap-20 text-center ${visibilityClasses} ${positionClasses}`}
               >
                 <Image
                   className="md:w-[3.50rem] md:h-[3.50rem] desk:w-[4.88rem] desk:h-[4.88rem]"
@@ -92,10 +92,10 @@ export default function FeaturesCards() {
                   width={78}
                   height={78}
                 />
-                <h2 className="uppercase md:text-[0.88rem] desk:text-[1.12rem] md:font-semibold text-darkGreen">
+                <h2 className="uppercase md:text-14 desk:text-18 md:font-semibold text-darkGreen">
                   {item.title}
                 </h2>
-                <p className="md:text-[0.88rem] desk:text-[1.00rem] md:leading-[1.20] text-darkGreen">
+                <p className="md:text-14 desk:text-16 md:leading-[1.20] text-darkGreen">
                   {item.description}
                 </p>
               </div>
