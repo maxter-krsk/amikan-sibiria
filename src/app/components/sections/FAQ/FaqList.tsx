@@ -27,7 +27,7 @@ export default function FaqList({
       <button className={btn.faqButton} onClick={HandleClick}>
         <div className="flex justify-between items-center">
           {name}
-          <span className="bg-sand rounded-full flex-shrink-0 w-[3.12rem] h-[3.12rem] md:w-[4rem] md:h-[4rem] flex items-center justify-center text-26 md:text-30 font-semibold">
+          <span className={`bg-sand rounded-full flex-shrink-0 w-[3.12rem] h-[3.12rem] md:w-[4rem] md:h-[4rem] flex items-center justify-center text-26 md:text-30 font-semibold transition-transform duration-400 transform-gpu will-change-transform ${isOpen ? "rotate-45" : "rotate-0"}`}>
             +
           </span>
         </div>
