@@ -15,7 +15,7 @@ export default function Services() {
   };
 
   return (
-    <section className="bg-darkGreen md:rounded-[3.12rem] md:mx-20 pb-40 md:pb-50 mb-100 md:mb-120 desk:mb-150">
+    <section id="about" className="bg-darkGreen md:rounded-[3.12rem] md:mx-20 pb-40 md:pb-50 mb-100 md:mb-120 desk:mb-150">
       <div className="container">
         <h1
           className={`${t.heading} uppercase font-bold text-beige text-right md:text-left py-40 md:py-50`}

@@ -40,7 +40,7 @@ export default function MainFeatures() {
     },
   ];
   return (
-    <section>
+    <section id="why-go">
       <div className="container">
         <h1 className="mb-30 font-bold uppercase text-28 md:text-40 desk:text-70 text-darkGreen text-right md:text-left">
           Почему стоит поехать?
