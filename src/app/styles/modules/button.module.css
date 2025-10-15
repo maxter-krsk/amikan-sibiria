@@ -3,5 +3,5 @@
 /* Кнопка */
 
 .btn {
-	@apply bg-sand text-white text-left font-semibold uppercase rounded-50 text-14 px-30 py-15 md:py-16 desk:text-20 desk:py-20 desk:px-35
+	@apply bg-sand text-white text-left font-semibold uppercase rounded-50 text-14 px-30 py-15 md:py-16 desk:text-20 desk:py-20 desk:px-35 hover:bg-lightGreen transition-colors duration-500;
 }
