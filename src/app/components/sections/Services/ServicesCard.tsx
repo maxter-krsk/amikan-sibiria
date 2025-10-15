@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function ServicesCard() {
   const servicesCard = [
@@ -27,7 +28,13 @@ export default function ServicesCard() {
 
   return (
     <div className="space-y-10 md:space-y-20">
-      <div className="flex flex-col md:flex-row gap-10 md:gap-20">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false, amount: 0.2 }}
+        className="flex flex-col md:flex-row gap-10 md:gap-20"
+      >
         {servicesCard.slice(0, 2).map((card) => (
           <div key={card.title} className="flex-1">
             <div className="relative overflow-hidden rounded-[0.625rem] md:rounded-[1.87rem] aspect-[3/2] md:aspect-[16/9]">
@@ -45,9 +52,15 @@ export default function ServicesCard() {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="flex flex-col md:flex-row gap-10 md:gap-20">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false, amount: 0.2 }}
+        className="flex flex-col md:flex-row gap-10 md:gap-20"
+      >
         {servicesCard.slice(2).map((card) => (
           <div key={card.title} className="flex-1">
             <div className="relative overflow-hidden rounded-[0.625rem] md:rounded-[1.87rem] aspect-[3/2] md:aspect-[4/3]">
@@ -64,7 +77,7 @@ export default function ServicesCard() {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
