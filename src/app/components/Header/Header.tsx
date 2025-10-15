@@ -48,9 +48,9 @@ export default function Header() {
     <header
       className={clsx(
         "fixed left-0 right-0 z-40 desk:px-20 transition-[background-color,box-shadow,backdrop-filter,padding]",
-        "duration-300 ease-out will-change-[background-color,box-shadow,backdrop-filter,padding]",
+        "duration-300 ease-out will-change-[background-color,box-shadow,backdrop-filter,padding] rounded-b-3xl",
         {
-          "py-10 md:py-20 bg-darkGreen/70 backdrop-blur-xl shadow-md":
+          "py-10 md:py-20 bg-darkGreen/70 backdrop-blur-xl shadow-md rounded-b-3xl":
             scrolledActive,
           "py-10 md:py-20 desk:py-40 bg-transparent shadow-none":
             !scrolledActive,
