@@ -1,22 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { montserrat } from "./components/ui/fonts"
 import "./globals.css";
-import Header from "@/app/components/Header"
-import Footer from "@/app/components/Footer"
 
-// Шрифты
+import Footer from "@/app/components/Footer/Footer"
+import Header from "@/app/components/Header/Header"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  weight: ["300", "400"],
-  subsets: ["latin"],
-});
+import ScrollTop from "./components/ui/ScrollTop";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  weight: ["300", "400"],
-  subsets: ["latin"],
-});
 
 // Мета-данные
 
@@ -33,11 +23,12 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen overflow-x-hidden antialiased`}
+        className={`${montserrat.className} font-light flex flex-col min-h-screen overflow-x-hidden antialiased bg-beige`}
       >
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ScrollTop />
       </body>
     </html>
   );

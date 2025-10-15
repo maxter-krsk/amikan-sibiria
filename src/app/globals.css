@@ -1,18 +1,77 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #000;
-}
+@import "tw-animate-css";
 
 @theme {
-  --breakpoint-md: 48rem;     /* 768px  */
-  --breakpoint-desk: 92.5rem; /* 1480px */
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+  /* Брейкпоинты */
+
+  --breakpoint-sm: 30rem;
+  /* 480px  */
+  --breakpoint-md: 48rem;
+  /* 768px  */
+  --breakpoint-lg: 64rem;
+  /* 1024px */
+  --breakpoint-desk: 90rem;
+  /* 1440px */
+
+  /* Цвет */
+
+  --color-darkGreen: #142B23;
+  --color-lightGreen: #5E785F;
+  --color-beige: #EFE5D9;
+  --color-sand: #BC9C5F;
+
+  /* Текст */
+
+  --text-10: 0.625rem; /* 10px */
+  --text-12: 0.75rem; /* 12px */
+  --text-14: 0.875rem; /* 14px */
+  --text-16: 1rem; /* 16px */
+  --text-18: 1.125rem; /* 18px */
+  --text-20: 1.25rem; /* 20px */
+  --text-22: 1.375rem; /* 22px */
+  --text-24: 1.5rem; /* 24px */
+  --text-26: 1.625rem; /* 26px */
+  --text-28: 1.75rem; /* 28px */
+  --text-30: 1.875rem; /* 30px */
+  --text-40: 2.5rem; /* 40px */
+  --text-60: 3.75rem; /* 60px */
+  --text-70: 4.375rem; /* 70px */
+  --text-100: 6.25rem; /* 100px */
+
+  /* Отступы */
+
+  --spacing-5: 0.3125rem; /* 5px */
+  --spacing-10: 0.625rem; /* 10px */
+  --spacing-12: 0.75rem; /* 12px */
+  --spacing-15: 0.9375rem; /* 15px */
+  --spacing-16: 1rem; /* 16px */
+  --spacing-20: 1.25rem; /* 20px */
+  --spacing-25: 1.5625rem; /* 25px */
+  --spacing-30: 1.875rem; /* 30px */
+  --spacing-35: 2.188rem; /* 30px */
+  --spacing-40: 2.5rem; /* 40px */
+  --spacing-50: 3.125rem; /* 50px */
+  --spacing-60: 3.75rem; /* 60px */
+  --spacing-70: 4.375rem; /* 70px */
+  --spacing-80: 5rem; /* 80px */
+  --spacing-90: 5.625rem; /* 90px */
+  --spacing-100: 6.25rem; /* 100px */
+  --spacing-120: 7.5rem; /* 120px */
+  --spacing-140: 8.75rem; /* 140px */
+  --spacing-150: 9.375rem; /* 150px */
+  --spacing-160: 10rem; /* 160px */
+  --spacing-180: 11.25rem; /* 180px */
+  --spacing-200: 12.5rem; /* 200px */
+
+  /* Скругления */
+  
+  --radius-10: 0.625rem; /* 10px */
+  --radius-20: 1.25rem; /* 20px */
+  --radius-30: 1.875rem; /* 30px */
+  --radius-50: 3.125rem; /* 50px */
+  --radius-100: 6.25rem; /* 100px */
+
 }
 
 .container {
@@ -22,6 +81,309 @@ body {
   margin: 0 auto;
 }
 
+html body[data-scroll-locked] {
+  overflow: visible !important;
+  margin-right: 0 !important;
+}
+
+/* Стили для инпута номера телефона */
+
+.phone-field-container {
+  --react-international-phone-country-selector-arrow-color: var(--color-beige);
+  --react-international-phone-country-selector-arrow-size: 0.25rem;
+}
+
+.phone-field-container .react-international-phone-country-selector-button[aria-expanded="true"] .react-international-phone-country-selector-button__dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.phone-field-container {
+  position: relative;
+}
+
+.phone-field-container .react-international-phone-country-selector {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.phone-field-container .react-international-phone-country-selector-button {
+  background: #95BAA8;
+  border: none;
+  box-shadow: none;
+  width: 2.62rem;
+  height: 1.5rem;
+  border-radius: 6.25rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  overflow: visible;
+  padding: 0;
+  cursor: pointer;
+}
+
+.phone-field-container .react-international-phone-country-selector-button__flag-emoji {
+  width: 1.37rem;
+  height: 3.12rem;
+  border-radius: 3.12rem;
+  object-fit: contain;
+}
+
+.phone-field-container .react-international-phone-country-selector-dropdown {
+  z-index: 50;
+}
+
+.phone-field-container .react-international-phone-country-selector-button {
+  transition: background-color .15s ease;
+}
+
+.phone-field-container .react-international-phone-country-selector-button:hover,
+.phone-field-container .react-international-phone-country-selector-button:focus-visible,
+.phone-field-container .react-international-phone-country-selector-button[aria-expanded="true"] {
+  background-color: #7fb19a;
+}
+
+@media (min-width: 768px) {
+  .phone-field-container .react-international-phone-country-selector {
+    left: 2.18rem;
+  }
+}
+
+@media(max-width: 768px) {
+
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .phone-field-container .react-international-phone-country-selector {
+    left: 1.87rem;
+  }
+}
+
+
 @media (min-width: 1920px) {
-  html { font-size: calc(100vw / 120); }
+  html {
+    font-size: calc(100vw / 120);
+  }
+}
+
+@theme inline {
+
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --radius-md: calc(var(--radius) - 2px);
+
+  --radius-lg: var(--radius);
+
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+
+  --color-border: var(--border);
+
+  --color-input: var(--input);
+
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+
+  --color-chart-2: var(--chart-2);
+
+  --color-chart-3: var(--chart-3);
+
+  --color-chart-4: var(--chart-4);
+
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  --color-sidebar-primary: var(--sidebar-primary);
+
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+
+  --color-sidebar-accent: var(--sidebar-accent);
+
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+
+  --color-sidebar-border: var(--sidebar-border);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+
+}
+
+:root {
+
+  --radius: 0.625rem;
+
+  --background: oklch(1 0 0);
+
+  --foreground: oklch(0.141 0.005 285.823);
+
+  --card: oklch(1 0 0);
+
+  --card-foreground: oklch(0.141 0.005 285.823);
+
+  --popover: oklch(1 0 0);
+
+  --popover-foreground: oklch(0.141 0.005 285.823);
+
+  --primary: oklch(0.21 0.006 285.885);
+
+  --primary-foreground: oklch(0.985 0 0);
+
+  --secondary: oklch(0.967 0.001 286.375);
+
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+
+  --muted: oklch(0.967 0.001 286.375);
+
+  --muted-foreground: oklch(0.552 0.016 285.938);
+
+  --accent: oklch(0.967 0.001 286.375);
+
+  --accent-foreground: oklch(0.21 0.006 285.885);
+
+  --destructive: oklch(0.577 0.245 27.325);
+
+  --border: oklch(0.92 0.004 286.32);
+
+  --input: oklch(0.92 0.004 286.32);
+
+  --ring: oklch(0.705 0.015 286.067);
+
+  --chart-1: oklch(0.646 0.222 41.116);
+
+  --chart-2: oklch(0.6 0.118 184.704);
+
+  --chart-3: oklch(0.398 0.07 227.392);
+
+  --chart-4: oklch(0.828 0.189 84.429);
+
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  --sidebar: oklch(0.985 0 0);
+
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+
+  --sidebar-primary: oklch(0.21 0.006 285.885);
+
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+
+  --sidebar-border: oklch(0.92 0.004 286.32);
+
+  --sidebar-ring: oklch(0.705 0.015 286.067);
+
+}
+
+.dark {
+
+  --background: oklch(0.141 0.005 285.823);
+
+  --foreground: oklch(0.985 0 0);
+
+  --card: oklch(0.21 0.006 285.885);
+
+  --card-foreground: oklch(0.985 0 0);
+
+  --popover: oklch(0.21 0.006 285.885);
+
+  --popover-foreground: oklch(0.985 0 0);
+
+  --primary: oklch(0.92 0.004 286.32);
+
+  --primary-foreground: oklch(0.21 0.006 285.885);
+
+  --secondary: oklch(0.274 0.006 286.033);
+
+  --secondary-foreground: oklch(0.985 0 0);
+
+  --muted: oklch(0.274 0.006 286.033);
+
+  --muted-foreground: oklch(0.705 0.015 286.067);
+
+  --accent: oklch(0.274 0.006 286.033);
+
+  --accent-foreground: oklch(0.985 0 0);
+
+  --destructive: oklch(0.704 0.191 22.216);
+
+  --border: oklch(1 0 0 / 10%);
+
+  --input: oklch(1 0 0 / 15%);
+
+  --ring: oklch(0.552 0.016 285.938);
+
+  --chart-1: oklch(0.488 0.243 264.376);
+
+  --chart-2: oklch(0.696 0.17 162.48);
+
+  --chart-3: oklch(0.769 0.188 70.08);
+
+  --chart-4: oklch(0.627 0.265 303.9);
+
+  --chart-5: oklch(0.645 0.246 16.439);
+
+  --sidebar: oklch(0.21 0.006 285.885);
+
+  --sidebar-foreground: oklch(0.985 0 0);
+
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+
+  --sidebar-border: oklch(1 0 0 / 10%);
+
+  --sidebar-ring: oklch(0.552 0.016 285.938);
+
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+
+  }
+
+  body {
+    @apply bg-background text-foreground;
+
+  }
+
 }
