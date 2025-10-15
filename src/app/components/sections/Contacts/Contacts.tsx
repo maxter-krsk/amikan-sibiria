@@ -7,7 +7,7 @@ import ContactsForm from "./ContactsForm";
 
 export default function Contacts() {
   return (
-    <section id="contacts" className="mb-100 md:mb-120 desk:mb-150">
+    <section id="contacts" className="mb-100 scroll-mt-100 md:mb-120 md:scroll-mt-120 desk:mb-150 desk:scroll-mt-150">
       <div className="container">
         <div className="flex flex-col items-end md:items-center md:flex-row gap-20 md:gap-40 mb-20 md:mb-40 desk:mb-50">
           <h1 className={`${t["heading"]} uppercase font-bold text-darkGreen`}>

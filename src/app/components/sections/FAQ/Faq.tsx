@@ -3,7 +3,7 @@ import FaqList from "./FaqList";
 
 export default function Faq() {
   return (
-    <section id="faq" className="mb-100 md:mb-120 desk:mb-150">
+    <section id="faq" className="mb-100 scroll-mt-100 md:mb-120 md:scroll-mt-120 desk:mb-150 desk:scroll-mt-150">
       <div className="container">
         <h1
           className={`${t.heading} font-bold text-darkGreen flex justify-end md:justify-start mb-30 md:mb-50`}
