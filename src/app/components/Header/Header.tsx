@@ -5,11 +5,15 @@ import BurgerMenu from "./Burger";
 import { Button } from "@/app/components/ui/Button";
 import clsx from "clsx";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // git push usePathname ^
 
   const scrolledActive = isScrolled && !isOpen;
 
@@ -28,6 +32,10 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll, false);
     };
   }, []);
+
+  useEffect(() => {
+    if (isOpen) setIsOpen(false);
+  }, [pathname]);
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
