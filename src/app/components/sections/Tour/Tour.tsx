@@ -1,5 +1,15 @@
+"use client";
+
 import t from "@/app/styles/modules/typography.module.css";
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
+
 export default function Tour() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
   const tour = [
     {
       dayNumber: "1",
@@ -54,9 +64,17 @@ export default function Tour() {
   ];
 
   return (
-    <section id="program" className="relative pb-100 md:pb-120 desk:pb-150 bg-no-repeat bg-cover [background-position:-270px_70px] md:bg-[url('/icons/ui/background-line.svg')] bg-none">
-      <div
+    <section 
+      ref={containerRef}
+      id="program" 
+      className="relative pb-100 md:pb-120 desk:pb-150 bg-no-repeat bg-cover [background-position:-270px_70px] md:bg-[url('/icons/ui/background-line.svg')] bg-none"
+    >
+      <motion.div
         aria-hidden
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
         className="pointer-events-none absolute inset-y-0 left-12 md:left-1/2 md:-translate-x-1/2 w-[3rem] md:w-[8.37rem] desk:w-[16.18rem] bg-darkGreen z-0"
       />
       <div className="container relative">
@@ -70,7 +88,11 @@ export default function Tour() {
         {tour.map((touritem, i) => {
           const isEven = (i + 1) % 2 === 0;
           return (
-            <div
+            <motion.div
+              initial={{ opacity: 0, x: isEven ? 50 : -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: i * 0.01}}
               key={i}
               className={`
                 md:max-w-[50%] flex
@@ -131,7 +153,7 @@ export default function Tour() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>
