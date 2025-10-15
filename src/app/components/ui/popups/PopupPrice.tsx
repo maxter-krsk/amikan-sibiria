@@ -34,7 +34,7 @@ export default function PopupPrice({ open, onOpenChange }: Props) {
         }}
       >
         <input
-          className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[1.12rem] mb-[0.62rem] focus:border-sand focus:outline-none"
+          className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[1.12rem] mb-[0.62rem] focus:border-sand transition-colors duration-200 focus:outline-none"
           type="text"
           name="Имя"
           placeholder="Имя"
