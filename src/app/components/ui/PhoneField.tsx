@@ -17,7 +17,7 @@ type PhoneFieldProps = {
 export function PhoneField({ name = "Телефон", inputClassName = "", containerClassName = "",}: PhoneFieldProps) {
   const [value, setValue] = useState("");
 
-  const CIS_COUNTRIES = ["ru", "kz", "by", "uz", "kg", "am", "az", "tj", "tm"];
+  const CIS_COUNTRIES = ["ru", "kz", "by", "uz", "kg", "am", "az", "tj", "tm", "cn", "mn"];
   const countries = defaultCountries.filter((c) => {
     const { iso2 } = parseCountry(c);
     return CIS_COUNTRIES.includes(iso2);

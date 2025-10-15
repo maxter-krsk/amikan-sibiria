@@ -3,8 +3,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Termsuser() {
   return (
-    <section className="mb-100 md:mb-120 desk:mb-150 relative text-14 md:text-16 lg:text-18 text-beige">
-      <div className="container max-w-4xl mx-auto px-4 relative z-10">
+    <section className="mb-100 md:mb-120 desk:mb-150 text-14 md:text-16 lg:text-18 text-beige">
+      <div className="container max-w-4xl mx-auto px-4">
         <h1 className="uppercase text-20 md:text-30 desk:text-70 font-bold text-darkGreen text-left mt-120 desk:mt-150 text-balance mb-30 md:mb-50 relative">
           Пользовательское соглашение
         </h1>

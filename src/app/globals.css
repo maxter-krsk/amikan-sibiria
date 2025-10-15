@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme {
 
   /* Брейкпоинты */
@@ -16,56 +14,112 @@
   --breakpoint-desk: 90rem;
   /* 1440px */
 
-  /* Цвета */
+  /* Цвет */
 
   --color-darkGreen: #142B23;
   --color-lightGreen: #5E785F;
   --color-beige: #EFE5D9;
   --color-sand: #BC9C5F;
 
-  /* Тексты */
+  /* Текст */
 
-  --text-10: 0.625rem; /* 10px */
-  --text-12: 0.75rem; /* 12px */
-  --text-14: 0.875rem; /* 14px */
-  --text-16: 1rem; /* 16px */
-  --text-18: 1.125rem; /* 18px */
-  --text-20: 1.25rem; /* 20px */
-  --text-22: 1.375rem; /* 22px */
-  --text-24: 1.5rem; /* 24px */
-  --text-26: 1.625rem; /* 26px */
-  --text-28: 1.75rem; /* 28px */
-  --text-30: 1.875rem; /* 30px */
-  --text-40: 2.5rem; /* 40px */
-  --text-60: 3.75rem; /* 60px */
-  --text-70: 4.375rem; /* 70px */
-  --text-100: 6.25rem; /* 100px */
+  --text-10: 0.625rem;
+  /* 10px */
+  --text-12: 0.75rem;
+  /* 12px */
+  --text-14: 0.875rem;
+  /* 14px */
+  --text-16: 1rem;
+  /* 16px */
+  --text-18: 1.125rem;
+  /* 18px */
+  --text-20: 1.25rem;
+  /* 20px */
+  --text-22: 1.375rem;
+  /* 22px */
+  --text-24: 1.5rem;
+  /* 24px */
+  --text-26: 1.625rem;
+  /* 26px */
+  --text-28: 1.75rem;
+  /* 28px */
+  --text-30: 1.875rem;
+  /* 30px */
+  --text-40: 2.5rem;
+  /* 40px */
+  --text-60: 3.75rem;
+  /* 60px */
+  --text-70: 4.375rem;
+  /* 70px */
+  --text-100: 6.25rem;
+  /* 100px */
 
-  /* отступы */
+  /* Отступы */
 
-  --spacing-5: 0.3125rem; /* 5px */
-  --spacing-10: 0.625rem; /* 10px */
-  --spacing-12: 0.75rem; /* 12px */
-  --spacing-15: 0.9375rem; /* 15px */
-  --spacing-16: 1rem; /* 16px */
-  --spacing-20: 1.25rem; /* 20px */
-  --spacing-25: 1.5625rem; /* 25px */
-  --spacing-30: 1.875rem; /* 30px */
-  --spacing-35: 2.188rem; /* 30px */
-  --spacing-40: 2.5rem; /* 40px */
-  --spacing-50: 3.125rem; /* 50px */
-  --spacing-60: 3.75rem; /* 60px */
-  --spacing-70: 4.375rem; /* 70px */
-  --spacing-80: 5rem; /* 80px */
-  --spacing-90: 5.625rem; /* 90px */
-  --spacing-100: 6.25rem; /* 100px */
-  --spacing-120: 7.5rem; /* 120px */
-  --spacing-140: 8.75rem; /* 140px */
-  --spacing-150: 9.375rem; /* 150px */
-  --spacing-160: 10rem; /* 160px */
-  --spacing-180: 11.25rem; /* 180px */
-  --spacing-200: 12.5rem; /* 200px */
+  --spacing-5: 0.3125rem;
+  /* 5px */
+  --spacing-10: 0.625rem;
+  /* 10px */
+  --spacing-12: 0.75rem;
+  /* 12px */
+  --spacing-15: 0.9375rem;
+  /* 15px */
+  --spacing-16: 1rem;
+  /* 16px */
+  --spacing-20: 1.25rem;
+  /* 20px */
+  --spacing-25: 1.5625rem;
+  /* 25px */
+  --spacing-30: 1.875rem;
+  /* 30px */
+  --spacing-35: 2.188rem;
+  /* 30px */
+  --spacing-40: 2.5rem;
+  /* 40px */
+  --spacing-50: 3.125rem;
+  /* 50px */
+  --spacing-60: 3.75rem;
+  /* 60px */
+  --spacing-70: 4.375rem;
+  /* 70px */
+  --spacing-80: 5rem;
+  /* 80px */
+  --spacing-90: 5.625rem;
+  /* 90px */
+  --spacing-100: 6.25rem;
+  /* 100px */
+  --spacing-120: 7.5rem;
+  /* 120px */
+  --spacing-140: 8.75rem;
+  /* 140px */
+  --spacing-150: 9.375rem;
+  /* 150px */
+  --spacing-160: 10rem;
+  /* 160px */
+  --spacing-180: 11.25rem;
+  /* 180px */
+  --spacing-200: 12.5rem;
+  /* 200px */
 
+  /* Скругления */
+
+  --radius-10: 0.625rem;
+  /* 10px */
+  --radius-20: 1.25rem;
+  /* 20px */
+  --radius-30: 1.875rem;
+  /* 30px */
+  --radius-50: 3.125rem;
+  /* 50px */
+  --radius-100: 6.25rem;
+  /* 100px */
+
+}
+
+html,
+body,
+* {
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -106,7 +160,7 @@ html body[data-scroll-locked] {
   border: none;
   box-shadow: none;
   width: 2.62rem;
-  height: 1.5rem;
+  height: 1.25rem;
   border-radius: 6.25rem !important;
   display: flex;
   align-items: center;
@@ -114,6 +168,18 @@ html body[data-scroll-locked] {
   overflow: visible;
   padding: 0;
   cursor: pointer;
+}
+
+.phone-field-container .react-international-phone-country-selector-button img {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0 0.125rem;
+}
+
+.react-international-phone-country-selector-button__button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.438rem;
 }
 
 .phone-field-container .react-international-phone-country-selector-button__flag-emoji {
@@ -149,6 +215,7 @@ html body[data-scroll-locked] {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
+
   .phone-field-container .react-international-phone-country-selector {
     left: 1.87rem;
   }

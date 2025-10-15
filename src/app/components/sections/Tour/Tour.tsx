@@ -54,7 +54,7 @@ export default function Tour() {
   ];
 
   return (
-    <section className="relative pb-100 md:pb-120 desk:pb-150 bg-no-repeat bg-cover [background-position:-270px_70px] md:bg-[url('/icons/ui/background-line.svg')] bg-none">
+    <section id="program" className="relative pb-100 md:pb-120 desk:pb-150 bg-no-repeat bg-cover [background-position:-270px_70px] md:bg-[url('/icons/ui/background-line.svg')] bg-none">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-y-0 left-12 md:left-1/2 md:-translate-x-1/2 w-[3rem] md:w-[8.37rem] desk:w-[16.18rem] bg-darkGreen z-0"

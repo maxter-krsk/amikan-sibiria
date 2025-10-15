@@ -4,19 +4,18 @@ import { Button } from "@/app/components/ui/Button";
 export default function NotFound() {
   return (
     <section className="bg-darkGreen">
-      <div className="container flex flex-col items-center text-center pt-[206px] md:pt-[100px] desk:pt-[144px] pb-[216px] md:pb-[90px] desk:pb-[120px]">
+      <div className="container flex flex-col items-center text-center pt-[12.875rem] md:pt-100 desk:pt-[9rem] pb-[13.5rem] md:pb-90 desk:pb-120">
         <Image
           src="/images/error-page/error-404.svg"
           alt="Изображение с 404 ошибкой"
           width={1042}
-          height={540}
-          className="w-[297px] h-[150px] md:w-[728px] md:h-[380px] desk:w-[1042px] desk:h-[400S px] mx-auto object-contain"
+          height={676}
+          className="block bg-darkGreen w-[18.5625rem] h-[9.375rem] md:w-[45.5rem] md:h-[23.75rem] desk:w-[65.125rem] desk:h-[25rem] mx-auto"
         />
-        <p className="text-[#FFFFFF] text-[18px] md:text-[22px] font-medium">Страница не найдена</p>
-        <Button
-          className="mt-[20px] md:mt-[30px]"
-          href="/"
-        >
+        <p className="text-[#FFFFFF] text-18 md:text-22 font-medium">
+          Страница не найдена
+        </p>
+        <Button className="mt-20 md:mt-30" href="/">
           Вернуться на главную
         </Button>
       </div>
