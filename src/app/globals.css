@@ -160,7 +160,7 @@ html body[data-scroll-locked] {
   border: none;
   box-shadow: none;
   width: 2.62rem;
-  height: 1.5rem;
+  height: 1.25rem;
   border-radius: 6.25rem !important;
   display: flex;
   align-items: center;
@@ -168,6 +168,18 @@ html body[data-scroll-locked] {
   overflow: visible;
   padding: 0;
   cursor: pointer;
+}
+
+.phone-field-container .react-international-phone-country-selector-button img {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0 0.125rem;
+}
+
+.react-international-phone-country-selector-button__button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.438rem;
 }
 
 .phone-field-container .react-international-phone-country-selector-button__flag-emoji {
