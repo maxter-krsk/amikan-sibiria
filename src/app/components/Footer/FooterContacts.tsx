@@ -15,7 +15,7 @@ export default function FooterContacts({ className }: FooterContactsProps) {
       <div className="flex gap-20 mb-10">
         <PhoneIcon className="w-[1.43rem] h-[1.43rem] hidden md:block" />
         <Link
-          className="text-12 md:text-16 desk:text-18"
+          className="text-12 md:text-16 desk:text-18 underline-animation"
           href="tel:+79080233438"
         >
           +7 (908) 023-34-38
@@ -24,7 +24,7 @@ export default function FooterContacts({ className }: FooterContactsProps) {
       <div className="flex gap-20">
         <EmailIcon className="w-[1.43rem] h-[1.43rem] hidden md:block" />
         <Link
-          className="block text-[0.75rem] md:text-[1rem] desk:text-[1.12rem]"
+          className="block text-[0.75rem] md:text-[1rem] desk:text-[1.12rem] underline-animation"
           href="mailto:amikantravel@mail.ru"
         >
           amikantravel@mail.ru
