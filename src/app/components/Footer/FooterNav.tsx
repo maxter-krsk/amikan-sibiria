@@ -10,25 +10,25 @@ export default function FooterNav({ className }: FooterNavProps) {
         <nav className="text-beige text-14 desk:text-18">
           <ul className="flex flex-col gap-10 md:gap-20">
             <li>
-              <Link href="#">О туре</Link>
+              <Link href="/#about">О туре</Link>
             </li>
             <li>
-              <Link href="#">Преимущества</Link>
+              <Link href="/#features">Преимущества</Link>
             </li>
             <li>
-              <Link href="#">Программа</Link>
+              <Link href="/#program">Программа</Link>
             </li>
             <li>
-              <Link href="#">Галерея</Link>
+              <Link href="/#gallery">Галерея</Link>
             </li>
             <li>
-              <Link href="#">Отзывы</Link>
+              <Link href="/#feedbacks">Отзывы</Link>
             </li>
             <li>
-              <Link href="#">FAQ</Link>
+              <Link href="/#faq">FAQ</Link>
             </li>
             <li>
-              <Link href="#">Контакты</Link>
+              <Link href="/#contacts">Контакты</Link>
             </li>
           </ul>
         </nav>
