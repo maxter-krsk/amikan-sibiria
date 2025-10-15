@@ -4,11 +4,11 @@ export default function ServicesCard() {
   const servicesCard = [
     {
       image: "/images/included/accommodation.jpg",
-      title: "Проживание (плавучая база, таежная база, отель со спа)",
+      title: "Проживание (плавучая база,<br/>таежная база, отель со спа)",
     },
     {
       image: "/images/included/food.jpg",
-      title: "Питание на всём маршруте — услуги профессиональных поваров",
+      title: "Питание на всём маршруте —</br>услуги профессиональных поваров",
     },
     {
       image: "/images/included/various-services.jpg",
@@ -38,9 +38,10 @@ export default function ServicesCard() {
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="block w-full h-auto object-cover"
               />
-              <h3 className="absolute inset-x-0 bottom-0 m-0 p-20 md:p-15 desk:p-30 text-beige text-12 desk:text-24 font-semibold bg-gradient-to-t from-[#142B23E6] via-[#142B2380] to-[#142B2300]">
-                {card.title}
-              </h3>
+              <h3
+                className="absolute inset-x-0 bottom-0 m-0 p-20 md:p-15 desk:p-30 text-beige text-12 lg:text-18 font-semibold bg-gradient-to-t from-[#142B23E6] via-[#142B2380] to-[#142B2300]"
+                dangerouslySetInnerHTML={{ __html: String(card.title) }}
+              />
             </div>
           </div>
         ))}
@@ -57,7 +58,7 @@ export default function ServicesCard() {
                 className="object-cover object-[30%_30%]"
                 sizes="(min-width: 768px) 50vw, 100vw"
               />
-              <h3 className="absolute inset-x-0 bottom-0 m-0 p-20 md:p-15 desk:p-30 text-beige text-12 desk:text-24 font-semibold bg-gradient-to-t from-[#142B23E6] via-[#142B2380] to-[#142B2300]">
+              <h3 className="absolute inset-x-0 bottom-0 m-0 p-20 md:p-15 desk:p-30 text-beige text-12 lg:text-18 font-semibold bg-gradient-to-t from-[#142B23E6] via-[#142B2380] to-[#142B2300]">
                 {card.title}
               </h3>
             </div>
