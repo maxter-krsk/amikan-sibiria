@@ -56,13 +56,15 @@ export default function MainFeatures() {
                   {card.title}
                 </h2>
               </div>
-              <Image
-                src={card.image}
-                alt={card.title}
-                width={260}
-                height={287}
-                className="w-[16.25rem] h-[17.94rem] block w-full h-auto object-cover rounded-10 hover:scale-115 transition-transform duration-350 ease-in-out"
-              />
+              <div className="overflow-hidden rounded-10">
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  width={260}
+                  height={287}
+                  className="block w-full h-auto object-cover rounded-10 hover:scale-110 transition-transform duration-400"
+                />
+              </div>
               <p className="text-center text-12 md:text-14 desk:text-16 text-beige">
                 {card.description}
               </p>

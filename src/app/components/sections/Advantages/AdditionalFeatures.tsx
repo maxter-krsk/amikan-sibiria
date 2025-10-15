@@ -73,7 +73,7 @@ export default function FeaturesCards() {
                     src={item.image}
                     alt={item.alt ?? ""}
                     fill
-                    className="object-cover"
+                    className="object-cover hover:scale-110 transition-transform duration-400"
                   />
                 </div>
               );
