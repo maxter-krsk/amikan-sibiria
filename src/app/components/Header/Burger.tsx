@@ -149,37 +149,37 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
                         className="flex flex-col gap-10 text-darkGreen text-14"
                       >
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#about">
                             О туре
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#features">
                             Преимущества
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#program">
                             Программа
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#gallery">
                             Галерея
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#feedbacks">
                             Отзывы
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#faq">
                             FAQ
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#contacts">
                             Контакты
                           </Link>
                         </li>
@@ -188,7 +188,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
 
                     <Button
                       onClick={toggleMenu}
-                      href="/"
+                      href="/#contacts"
                       className="inline-block w-full mt-30 !text-center sm:hidden"
                     >
                       Оставить заявку
