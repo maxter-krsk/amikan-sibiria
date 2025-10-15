@@ -90,25 +90,25 @@ export default function Header() {
           <nav className="hidden desk:block px-35 py-20 bg-beige rounded-[6.25rem]">
             <ul className="flex text-18 gap-20 text-darkGreen">
               <li>
-                <Link href="/">О туре</Link>
+                <Link href="/#about">О туре</Link>
               </li>
               <li>
-                <Link href="/">Преимущества</Link>
+                <Link href="/#features">Преимущества</Link>
               </li>
               <li>
-                <Link href="/">Программа</Link>
+                <Link href="/#program">Программа</Link>
               </li>
               <li>
-                <Link href="/">Галерея</Link>
+                <Link href="/#gallery">Галерея</Link>
               </li>
               <li>
-                <Link href="/">Отзывы</Link>
+                <Link href="/#feedbacks">Отзывы</Link>
               </li>
               <li>
-                <Link href="/">FAQ</Link>
+                <Link href="/#faq">FAQ</Link>
               </li>
               <li>
-                <Link href="/">Контакты</Link>
+                <Link href="/#contacts">Контакты</Link>
               </li>
             </ul>
           </nav>
@@ -119,7 +119,7 @@ export default function Header() {
                 isOpen && "opacity-0 pointer-events-none"
               )}
             >
-              <Button href="/" className="hidden sm:block">
+              <Button href="/#contacts" className="hidden sm:block">
                 Оставить заявку
               </Button>
             </div>
