@@ -37,20 +37,39 @@ export default function ContactsForm() {
         containerClassName="!mb-0"
         name="Телефон"
       />
-      <div className="flex gap-10 items-center">
-        <Checkbox
-          className="h-[1rem] w-[1rem] border border-darkGreen rounded-[0.2rem] data-[state=checked]:bg-transparent
+      <div className="flex flex-col gap-10 md:gap-20 desk:flex-row justify-between">
+        <div className="flex gap-10 items-top w-full">
+          <Checkbox
+            className="h-[1rem] w-[1rem] border border-darkGreen rounded-[0.2rem] data-[state=checked]:bg-transparent
           data-[state=checked]:text-darkGreen data-[state=checked]:border-darkGreen"
-          required
-        />
-        <p className={`${t["overline"]}`}>
-          Я согласен с{" "}
-          <Link className="underline" href="/privacy-policy">
-            политикой конфиденциальности
-          </Link>
-        </p>
+            required
+          />
+          <p className={`${t["overline"]} w-full`}>
+            Я подтверждаю, что ознакомился и согласен с условиями обработки моих
+            персональных данных, а также с{" "}
+            <Link className="underline" href="/privacy-policy">
+              политикой конфиденциальности
+            </Link>
+          </p>
+        </div>
+        <Button
+          className="flex justify-start items-center gap-10 lg:gap-20 w-full"
+          type="submit"
+        >
+          Отправить
+          <svg
+            viewBox="0 0 218 8"
+            preserveAspectRatio="none"
+            className="flex-1 min-w-0 block"
+            aria-hidden="true"
+          >
+            <path
+              d="M217.354 4.35355C217.549 4.15829 217.549 3.84171 217.354 3.64645L214.172 0.464466C213.976 0.269204 213.66 0.269204 213.464 0.464466C213.269 0.659728 213.269 0.976311 213.464 1.17157L216.293 4L213.464 6.82843C213.269 7.02369 213.269 7.34027 213.464 7.53553C213.66 7.7308 213.976 7.7308 214.172 7.53553L217.354 4.35355ZM0 4V4.5H217V4V3.5H0V4Z"
+              fill="currentColor"
+            />
+          </svg>
+        </Button>
       </div>
-      <Button type="submit">Отправить</Button>
     </form>
   );
 }
