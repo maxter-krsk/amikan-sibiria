@@ -2,7 +2,6 @@
 @import "tw-animate-css";
 
 @theme {
-
   /* Брейкпоинты */
 
   --breakpoint-sm: 30rem;
@@ -16,10 +15,10 @@
 
   /* Цвет */
 
-  --color-darkGreen: #142B23;
-  --color-lightGreen: #5E785F;
-  --color-beige: #EFE5D9;
-  --color-sand: #BC9C5F;
+  --color-darkGreen: #142b23;
+  --color-lightGreen: #5e785f;
+  --color-beige: #efe5d9;
+  --color-sand: #bc9c5f;
 
   /* Текст */
 
@@ -113,7 +112,6 @@
   /* 50px */
   --radius-100: 6.25rem;
   /* 100px */
-
 }
 
 html,
@@ -134,6 +132,37 @@ html body[data-scroll-locked] {
   margin-right: 0 !important;
 }
 
+/* Анимация подчёркивания */
+
+.underline-animation {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1.5px;
+  background-color: var(--color-lightGreen);
+  border-radius: 9999px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease 0.08s;
+}
+
+.underline-animation:hover::after,
+.underline-animation:focus-visible::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
 /* Стили для инпута номера телефона */
 
 .phone-field-container {
@@ -141,7 +170,9 @@ html body[data-scroll-locked] {
   --react-international-phone-country-selector-arrow-size: 0.25rem;
 }
 
-.phone-field-container .react-international-phone-country-selector-button[aria-expanded="true"] .react-international-phone-country-selector-button__dropdown-arrow {
+.phone-field-container
+  .react-international-phone-country-selector-button[aria-expanded="true"]
+  .react-international-phone-country-selector-button__dropdown-arrow {
   transform: rotate(180deg);
 }
 
@@ -156,7 +187,7 @@ html body[data-scroll-locked] {
 }
 
 .phone-field-container .react-international-phone-country-selector-button {
-  background: #95BAA8;
+  background: #95baa8;
   border: none;
   box-shadow: none;
   width: 2.62rem;
@@ -182,7 +213,8 @@ html body[data-scroll-locked] {
   gap: 0.438rem;
 }
 
-.phone-field-container .react-international-phone-country-selector-button__flag-emoji {
+.phone-field-container
+  .react-international-phone-country-selector-button__flag-emoji {
   width: 1.37rem;
   height: 3.12rem;
   border-radius: 3.12rem;
@@ -194,12 +226,14 @@ html body[data-scroll-locked] {
 }
 
 .phone-field-container .react-international-phone-country-selector-button {
-  transition: background-color .15s ease;
+  transition: background-color 0.15s ease;
 }
 
 .phone-field-container .react-international-phone-country-selector-button:hover,
-.phone-field-container .react-international-phone-country-selector-button:focus-visible,
-.phone-field-container .react-international-phone-country-selector-button[aria-expanded="true"] {
+.phone-field-container
+  .react-international-phone-country-selector-button:focus-visible,
+.phone-field-container
+  .react-international-phone-country-selector-button[aria-expanded="true"] {
   background-color: #7fb19a;
 }
 
@@ -209,8 +243,7 @@ html body[data-scroll-locked] {
   }
 }
 
-@media(max-width: 768px) {
-
+@media (max-width: 768px) {
   .container {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -221,7 +254,6 @@ html body[data-scroll-locked] {
   }
 }
 
-
 @media (min-width: 1920px) {
   html {
     font-size: calc(100vw / 120);
@@ -229,7 +261,6 @@ html body[data-scroll-locked] {
 }
 
 @theme inline {
-
   --radius-sm: calc(var(--radius) - 4px);
 
   --radius-md: calc(var(--radius) - 2px);
@@ -299,11 +330,9 @@ html body[data-scroll-locked] {
   --color-sidebar-border: var(--sidebar-border);
 
   --color-sidebar-ring: var(--sidebar-ring);
-
 }
 
 :root {
-
   --radius: 0.625rem;
 
   --background: oklch(1 0 0);
@@ -367,11 +396,9 @@ html body[data-scroll-locked] {
   --sidebar-border: oklch(0.92 0.004 286.32);
 
   --sidebar-ring: oklch(0.705 0.015 286.067);
-
 }
 
 .dark {
-
   --background: oklch(0.141 0.005 285.823);
 
   --foreground: oklch(0.985 0 0);
@@ -433,18 +460,14 @@ html body[data-scroll-locked] {
   --sidebar-border: oklch(1 0 0 / 10%);
 
   --sidebar-ring: oklch(0.552 0.016 285.938);
-
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-
   }
 
   body {
     @apply bg-background text-foreground;
-
   }
-
 }
