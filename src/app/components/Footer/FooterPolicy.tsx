@@ -7,7 +7,7 @@ type FooterPolicyProps = {
 export default function FooterPolicy({ className }: FooterPolicyProps) {
   return (
     <div className={`${className}`}>
-      <div className="flex flex-col gap-10 text-beige text-12 lg:text-14 relative z-20 w-fit">
+      <div className="flex flex-col gap-10 text-beige text-12 lg:text-14 w-fit">
         <Link
           className="w-fit block pointer-events-auto underline-animation"
           href="/privacy-policy"

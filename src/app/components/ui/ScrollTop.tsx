@@ -51,8 +51,7 @@ export default function ScrollTop() {
           }}
           onClick={scrollToTop}
           className="cursor-pointer flex items-center justify-center fixed bottom-3 right-3 rounded-full w-[2.68rem] h-[2.68rem]
-                       hover:bg-[#142B23] hover:text-[#95BAA8]
-                     z-50"
+                       hover:bg-[#142B23] hover:text-[#95BAA8]"
           aria-label="Прокрутить вверх"
         >
           <svg
