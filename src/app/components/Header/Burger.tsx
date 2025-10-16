@@ -196,7 +196,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
 
                     <div className="flex justify-center sm:justify-start gap-20 mt-30">
                       <IconLink
-                        href={"/"}
+                        href={"https://www.youtube.com/channel/UCTROFo9BTCoMUu8e8XCBWkA"}
                         label={"YouTube"}
                         icon={
                           <Image
@@ -208,7 +208,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
                         }
                       />
                       <IconLink
-                        href={"/"}
+                        href={"https://t.me/AmikanSiberia"}
                         label={"Телеграм"}
                         icon={
                           <Image
@@ -220,7 +220,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
                         }
                       />
                       <IconLink
-                        href={"/"}
+                        href={"https://vk.com/amikan.travel"}
                         label={"Вконтакте"}
                         icon={
                           <Image
@@ -232,7 +232,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
                         }
                       />
                       <IconLink
-                        href={"/"}
+                        href={"http://wa.me/79080233438"}
                         label={"WhatsApp"}
                         icon={
                           <Image

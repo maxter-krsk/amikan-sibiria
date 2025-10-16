@@ -33,7 +33,7 @@ export default function FooterContacts({ className }: FooterContactsProps) {
       <ul className="inline-grid grid-rows-2 grid-cols-2 gap-10 md:flex md:gap-20 md:py-20 py-15">
         <li>
           <IconLink
-            href="#"
+            href="https://www.youtube.com/channel/UCTROFo9BTCoMUu8e8XCBWkA"
             label="Youtube"
             icon={
               <img
@@ -46,7 +46,7 @@ export default function FooterContacts({ className }: FooterContactsProps) {
         </li>
         <li>
           <IconLink
-            href="#"
+            href="https://t.me/AmikanSiberia"
             label="Telegram"
             icon={
               <img
@@ -59,7 +59,7 @@ export default function FooterContacts({ className }: FooterContactsProps) {
         </li>
         <li>
           <IconLink
-            href="#"
+            href="https://vk.com/amikan.travel"
             label="VK"
             icon={
               <img
@@ -72,7 +72,7 @@ export default function FooterContacts({ className }: FooterContactsProps) {
         </li>
         <li>
           <IconLink
-            href="#"
+            href="http://wa.me/79080233438"
             label="WhatsApp"
             icon={
               <img
