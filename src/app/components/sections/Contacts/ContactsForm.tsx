@@ -23,7 +23,7 @@ export default function ContactsForm() {
       className={`${t["body-lg"]} flex flex-col gap-20 text-darkGreen w-full`}
     >
       <input
-        className="bg-transparent text-12 md:text-16 lg:text-18 md:py-20 md:px-35 border border-darkGreen focus:border-sand transition-colors duration-200 focus:outline-none rounded-[3.12rem] py-15 px-30"
+        className="bg-transparent text-12 md:text-16 lg:text-18 md:py-20 md:px-35 border border-darkGreen focus:border-sand transition-colors duration-200 focus:outline-none rounded-[3.12rem] py-15 px-30 leading-none"
         type="text"
         name="Имя"
         placeholder="Имя"
