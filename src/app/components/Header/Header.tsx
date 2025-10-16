@@ -13,8 +13,6 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  // git push usePathname ^
-
   const scrolledActive = isScrolled && !isOpen;
 
   useEffect(() => {

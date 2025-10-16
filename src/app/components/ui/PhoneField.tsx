@@ -26,7 +26,7 @@ export function PhoneField({ name = "Телефон", inputClassName = "", conta
   const customFlags = [{ iso2: "ru", src: "/icons/ui/flags/ru-flag.svg" }];
 
  return (
-    <div className={`relative mb-[1.25rem] ${containerClassName}`}>
+    <div className={`relative ${containerClassName}`}>
       <PhoneInput
         value={value}
         onChange={setValue}
@@ -37,7 +37,7 @@ export function PhoneField({ name = "Телефон", inputClassName = "", conta
         className="phone-field-container relative w-full"
         inputClassName={[
           "phone-field-input",
-          "w-full !h-full !mb-[0.62rem] !outline-none !transition-colors !duration-200",
+          "w-full !h-full !outline-none !transition-colors !duration-200",
           "!rounded-[3.12rem] !border !border-beige",
           "!bg-transparent !text-[0.75rem] md:!text-[1rem] desk:!text-[1.12rem] !text-beige placeholder-[#EFE5D9]/50",
           "!py-[0.93rem] md:!py-[1.25rem]",

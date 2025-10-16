@@ -5,7 +5,7 @@ export default function SocialsLinks() {
     <ul className="flex gap-20">
       <li>
         <IconLink
-          href="#"
+          href="https://www.youtube.com/channel/UCTROFo9BTCoMUu8e8XCBWkA"
           label="Youtube"
           icon={
             <img
@@ -18,7 +18,7 @@ export default function SocialsLinks() {
       </li>
       <li>
         <IconLink
-          href="#"
+          href="https://t.me/AmikanSiberia"
           label="Telegram"
           icon={
             <img
@@ -31,7 +31,7 @@ export default function SocialsLinks() {
       </li>
       <li>
         <IconLink
-          href="#"
+          href="https://vk.com/amikan.travel"
           label="VK"
           icon={
             <img
@@ -44,7 +44,7 @@ export default function SocialsLinks() {
       </li>
       <li>
         <IconLink
-          href="#"
+          href="https://wa.me/79080233438"
           label="WhatsApp"
           icon={
             <img

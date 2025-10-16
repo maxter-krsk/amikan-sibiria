@@ -43,7 +43,7 @@ export default function FooterForm({ className }: FooterFormProps) {
           title="2–40 символов, только буквы, пробелы, дефис и апостроф"
         />
         <PhoneField name="Телефон" />
-        <div className="flex gap-10 items-center my-10">
+        <div className="flex gap-10 items-center md:my-10">
           <Checkbox
             className="h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] data-[state=checked]:bg-transparent
     data-[state=checked]:text-beige data-[state=checked]:border-beige"

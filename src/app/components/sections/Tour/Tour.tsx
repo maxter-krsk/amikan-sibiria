@@ -121,7 +121,7 @@ export default function Tour() {
               variants={variants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: i * 0.01 }}
               className={`
                 md:max-w-[50%] flex

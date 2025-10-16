@@ -12,6 +12,8 @@ export function IconLink({ href, label, icon, className }: IconLinkProps) {
   return (
     <Link
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={label}
       className={cn(
         "inline-flex h-[2.69rem] w-[2.69rem] items-center justify-center rounded-full bg-sand hover:bg-lightGreen transition-colors duration-500",
