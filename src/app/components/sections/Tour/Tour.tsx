@@ -2,14 +2,39 @@
 
 import t from "@/app/styles/modules/typography.module.css";
 import { motion, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
+
+type Dir = "right" | "left";
+
+const variants = {
+  hidden: (dir: Dir) => ({ opacity: 0, x: dir === "right" ? 50 : -50 }),
+  visible: { opacity: 1, x: 0 },
+};
 
 export default function Tour() {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
+  const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const apply = () => {
+      setIsMobile(mq.matches);
+      setMounted(true);
+    };
+    apply();
+    if (mq.addEventListener) {
+      mq.addEventListener("change", apply);
+      return () => mq.removeEventListener("change", apply);
+    } else {
+      mq.addListener(apply);
+      return () => mq.removeListener(apply);
+    }
+  }, []);
   const tour = [
     {
       dayNumber: "1",
@@ -64,10 +89,10 @@ export default function Tour() {
   ];
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      id="program" 
-      className="relative pb-100 md:pb-120 desk:pb-150 bg-no-repeat bg-cover [background-position:-270px_70px] md:bg-[url('/icons/ui/background-line.svg')] bg-none"
+      id="program"
+      className="relative overflow-x-hidden pb-100 md:pb-120 desk:pb-150 bg-no-repeat bg-cover [background-position:-270px_70px] md:bg-[url('/icons/ui/background-line.svg')] bg-none"
     >
       <motion.div
         aria-hidden
@@ -77,7 +102,7 @@ export default function Tour() {
         transition={{ duration: 0.8 }}
         className="pointer-events-none absolute inset-y-0 left-12 md:left-1/2 md:-translate-x-1/2 w-[3rem] md:w-[8.37rem] desk:w-[16.18rem] bg-darkGreen z-0"
       />
-      <div className="container relative">
+      <div className="container overflow-x-hidden relative">
         <h1
           className={`${t.heading} pt-100 md:pt-120 desk:pt-150 mb-30 md:mb-0 text-right md:text-left font-bold uppercase text-darkGreen`}
         >
@@ -85,15 +110,19 @@ export default function Tour() {
           <br />
           тура
         </h1>
+
         {tour.map((touritem, i) => {
           const isEven = (i + 1) % 2 === 0;
+          const dir: Dir = isMobile || isEven ? "right" : "left";
           return (
             <motion.div
-              initial={{ opacity: 0, x: isEven ? 50 : -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.6, delay: i * 0.01}}
-              key={i}
+              key={`${i}-${isMobile ? "m" : "d"}`}
+              custom={dir}
+              variants={variants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: i * 0.01 }}
               className={`
                 md:max-w-[50%] flex
                 ${
@@ -127,7 +156,7 @@ export default function Tour() {
                 </div>
               </div>
               <div
-                className={` flex flex-col gap-10 mb-10 md-mb-0 md:gap-30
+                className={` flex flex-col gap-10 mb-10 md:mb-0 md:gap-30
                 ${
                   isEven
                     ? "ml-[2.43rem] md:ml-0 desk:mr-50"
