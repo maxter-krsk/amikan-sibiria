@@ -68,7 +68,7 @@ export default function ServicesCard() {
                 src={card.image}
                 alt={card.title}
                 fill
-                className="object-cover object-[30%_30%]"
+                className="object-cover object-[30%_10%]"
                 sizes="(min-width: 768px) 50vw, 100vw"
               />
               <h3 className="absolute inset-x-0 bottom-0 m-0 p-20 md:p-15 desk:p-30 text-beige text-12 lg:text-18 font-semibold bg-gradient-to-t from-[#142B23E6] via-[#142B2380] to-[#142B2300]">
