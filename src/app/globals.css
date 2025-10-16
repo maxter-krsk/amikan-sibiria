@@ -120,6 +120,10 @@ body,
   scroll-behavior: smooth;
 }
 
+input[type="checkbox"] {
+  color-scheme: light;
+}
+
 .container {
   max-width: 90rem;
   padding-left: 1.25rem;

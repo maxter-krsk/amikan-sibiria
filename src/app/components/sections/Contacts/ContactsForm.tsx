@@ -40,8 +40,8 @@ export default function ContactsForm() {
       <div className="flex flex-col gap-10 md:gap-20 desk:flex-row justify-between">
         <div className="flex gap-10 items-top w-full">
           <Checkbox
-            className="h-[1rem] w-[1rem] border border-darkGreen rounded-[0.2rem] data-[state=checked]:bg-transparent
-          data-[state=checked]:text-darkGreen data-[state=checked]:border-darkGreen"
+            className="h-[1rem] w-[1rem] border border-darkGreen rounded-[0.2rem] data-[state=checked]:bg-transparent dark:data-[state=checked]:bg-transparent
+          data-[state=checked]:text-darkGreen data-[state=checked]:border-darkGreen color-scheme-light"
             required
           />
           <p className={`${t["overline"]} w-full`}>
