@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/app/components/ui/Button";
 import { IconLink } from "@/app/components/ui/socials/IconLink";
-import t from "@/app/styles/modules/typography.module.css";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
@@ -146,7 +145,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
                   <div className="mt-90 md:mt-0">
                     <nav>
                       <ul
-                        className="flex flex-col gap-10 text-darkGreen text-14"
+                        className="flex flex-col gap-20 text-darkGreen text-16"
                       >
                         <li>
                           <Link onClick={toggleMenu} href="/#about">
