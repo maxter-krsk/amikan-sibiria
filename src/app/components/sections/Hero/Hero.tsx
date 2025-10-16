@@ -15,7 +15,7 @@ export default function Hero() {
 
   return (
     <section
-      className={`${bg.heroBg} mx-0 desk:mt-20 desk:mx-20 mb-100 md:mb-120 desk:mb-150 pb-20 md:pb-50 desk:pb-60 pt-80 md:pt-120 desk:pt-[9.063rem] relative`}
+      className={`${bg.heroBg} mx-0 desk:mt-20 desk:mx-20 mb-100 md:mb-120 desk:mb-150 pb-20 md:pb-50 desk:pb-60 pt-80 md:pt-120 desk:pt-[9.063rem] relative min-h-screen`}
       aria-labelledby="hero-title"
     >
       <div className="container">
