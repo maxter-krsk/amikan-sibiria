@@ -23,7 +23,7 @@ export default function Contacts() {
           </p>
         </div>
         <div className="flex flex-col-reverse gap-35 md:flex md:flex-row  desk:gap-200 md:items-end items-stretch">
-          <div className="flex flex-col gap-20">
+          <div className="flex flex-col gap-20 desk:self-start">
             <div className="flex flex-col gap-5 md:gap-20">
               <Link
                 className="group inline-flex gap-20 items-center text-16 lg:text-18"
