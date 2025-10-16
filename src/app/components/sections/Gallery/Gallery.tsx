@@ -35,8 +35,8 @@ export default function Gallery() {
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
-      whileInView={{ opacity: 1, y: -50 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: false }}
       id="gallery"
