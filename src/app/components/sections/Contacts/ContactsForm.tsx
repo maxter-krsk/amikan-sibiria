@@ -53,7 +53,7 @@ export default function ContactsForm() {
           </p>
         </div>
         <Button
-          className="flex justify-start items-center gap-10 lg:gap-20 w-full"
+          className="flex justify-start items-center gap-20 md:gap-10 lg:gap-20 w-full"
           type="submit"
         >
           Отправить
