@@ -45,7 +45,7 @@ export default function FooterForm({ className }: FooterFormProps) {
         <PhoneField name="Телефон" />
         <div className="flex gap-10 items-center md:my-10">
           <Checkbox
-            className="h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] data-[state=checked]:bg-transparent
+            className="h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] dark:bg-transparent data-[state=checked]:bg-transparent dark:data-[state=checked]:bg-transparent
     data-[state=checked]:text-beige data-[state=checked]:border-beige"
             required
           />

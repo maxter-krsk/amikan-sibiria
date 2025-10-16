@@ -48,7 +48,7 @@ export default function ProgramPopup({ open, onOpenChange }: Props) {
         <input type="hidden" name="Источник" value="program" />
         <div className="flex gap-[0.62rem] items-center mb-[1.25rem]">
           <Checkbox
-            className="h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] data-[state=checked]:bg-transparent data-[state=checked]:text-beige data-[state=checked]:border-beige"
+            className="h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] dark:bg-transparent data-[state=checked]:bg-transparent dark:data-[state=checked]:bg-transparent data-[state=checked]:text-beige data-[state=checked]:border-beige"
             required
           />
           <p className={t["overline"]}>
