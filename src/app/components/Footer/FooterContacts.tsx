@@ -72,7 +72,7 @@ export default function FooterContacts({ className }: FooterContactsProps) {
         </li>
         <li>
           <IconLink
-            href="http://wa.me/79080233438"
+            href="https://wa.me/79080233438"
             label="WhatsApp"
             icon={
               <img
