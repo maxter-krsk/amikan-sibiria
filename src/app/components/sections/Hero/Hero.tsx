@@ -15,7 +15,7 @@ export default function Hero() {
 
   return (
     <section
-      className={`${bg.heroBg} mx-0 desk:mt-20 desk:mx-20 mb-100 md:mb-120 desk:mb-150 pb-20 md:pb-50 desk:pb-60 pt-80 md:pt-120 desk:pt-[9.063rem] relative`}
+      className={`${bg.heroBg} mx-0 desk:mt-20 desk:mx-20 mb-100 md:mb-120 desk:mb-150 pb-20 md:pb-50 desk:pb-60 pt-80 md:pt-120 desk:pt-[9.063rem] relative min-h-screen`}
       aria-labelledby="hero-title"
     >
       <div className="container">
@@ -97,14 +97,14 @@ export default function Hero() {
                   интересно и уютно
                 </p>
                 <p className="hidden md:block uppercase font-semibold md:text-18 desk:text-20 md:ml-[3.94rem] desk:ml-[4.56rem]">
-                  <Link href="/" aria-label="Узнать больше о туре">
+                  <Link className="underline-animation" href="/#features" aria-label="Узнать больше о туре">
                     Узнать больше
                   </Link>
                 </p>
               </div>
             </div>
             <Link
-              href="/"
+              href="/#features"
               aria-label="Перейти к информации о туре"
               className="absolute left-[7.813rem] bottom-[0.063rem] md:left-[0.063rem] md:bottom-[0.063rem]
              w-[3.125rem] h-[3.125rem] md:w-[3.625rem] md:h-[3.625rem]
