@@ -183,7 +183,7 @@ html body[data-scroll-locked] {
 
 .phone-field-container .react-international-phone-country-selector {
   position: absolute;
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
 }
 
