@@ -97,14 +97,14 @@ export default function Hero() {
                   интересно и уютно
                 </p>
                 <p className="hidden md:block uppercase font-semibold md:text-18 desk:text-20 md:ml-[3.94rem] desk:ml-[4.56rem]">
-                  <Link href="/" aria-label="Узнать больше о туре">
+                  <Link className="underline-animation" href="/#features" aria-label="Узнать больше о туре">
                     Узнать больше
                   </Link>
                 </p>
               </div>
             </div>
             <Link
-              href="/"
+              href="/#features"
               aria-label="Перейти к информации о туре"
               className="absolute left-[7.813rem] bottom-[0.063rem] md:left-[0.063rem] md:bottom-[0.063rem]
              w-[3.125rem] h-[3.125rem] md:w-[3.625rem] md:h-[3.625rem]
