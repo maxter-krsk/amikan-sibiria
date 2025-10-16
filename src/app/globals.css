@@ -150,17 +150,18 @@ html body[data-scroll-locked] {
   background-color: var(--color-lightGreen);
   border-radius: 9999px;
   transform: scaleX(0);
-  transform-origin: left center;
+  transform-origin: right center;
   opacity: 0;
   transition:
-    transform 0.35s ease,
-    opacity 0.35s ease 0.08s;
+    transform 0.4s ease,
+    opacity 0.4s ease;
 }
 
 .underline-animation:hover::after,
 .underline-animation:focus-visible::after {
   transform: scaleX(1);
   opacity: 1;
+  transform-origin: left;
 }
 
 /* Стили для инпута номера телефона */
