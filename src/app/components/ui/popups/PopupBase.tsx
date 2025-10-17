@@ -28,7 +28,7 @@ export default function PopupBase({
       <DialogContent
         showCloseButton={false}
         className="
-          bg-darkGreen text-beige border-none !rounded-20 desk:!rounded-50
+          bg-darkGreen text-beige border-none
           p-20 md:p-30
           max-w-[calc(100vw-0.62rem*2)] md:max-w-[38.75rem] desk:max-w-[64.37rem]
           gap-20 md:gap-30 desk:gap-40
