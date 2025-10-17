@@ -32,7 +32,7 @@ export default function ServicesAccordion() {
           <AccordionContent
             className="overflow-hidden data-[state=open]:smoothDown data-[state=closed]:smoothUp data-[state=open]:mt-0"
           >
-            <div className="w-full border border-sand rounded-[1.87rem] mb-20">
+            <div className="w-full border border-sand rounded-10 md:rounded-20 mb-20">
               <p className="text-beige text-12 md:text-16 desk:text-18 p-15 md:p-20 desk:p-30">
                 Рюкзак, солнцезащитные очки, личная аптечка, средства личной
                 гигиены, дождевик, лёгкий пуховик, головной убор, термобельё,
