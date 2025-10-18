@@ -1,5 +1,5 @@
 @reference "../../globals.css";
 
 .heroBg {
-    @apply bg-[url('/images/hero/hero-background.jpg')] bg-cover bg-no-repeat bg-center top-0 w-auto rounded-b-[20] md:rounded-b-[40] desk:rounded-[3.12rem] h-auto;
+    @apply bg-[url('/images/hero/hero-background.webp')] bg-cover bg-no-repeat bg-center top-0 w-auto rounded-b-[20] md:rounded-b-[40] desk:rounded-[3.12rem] h-auto;
 }
