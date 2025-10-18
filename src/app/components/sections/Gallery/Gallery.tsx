@@ -62,6 +62,7 @@ export default function Gallery() {
                 width={325}
                 height={495}
                 alt="image"
+                quality={70}
                 className="rounded-[0.625rem] md:rounded-[1.87rem] w-[20.31rem] h-[30.93rem]"
               />
             </CarouselItem>
