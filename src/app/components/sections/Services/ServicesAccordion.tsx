@@ -14,7 +14,7 @@ export default function ServicesAccordion() {
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="what-to-bring" className="border-none">
           <AccordionTrigger className="group hover:no-underline focus:no-underline [&>svg]:hidden">
-            <button className="group flex gap-25 md:gap-30 desk:gap-50 items-center pb-15 md:pb-20 cursor-pointer">
+            <div className="group flex gap-25 md:gap-30 desk:gap-50 items-center pb-15 md:pb-20 cursor-pointer">
               <span className={`${t.display} uppercase font-bold text-beige`}>
                 Что взять с собой
               </span>
@@ -27,7 +27,7 @@ export default function ServicesAccordion() {
               >
                 +
               </span>
-            </button>
+            </div>
           </AccordionTrigger>
           <AccordionContent
             className="overflow-hidden data-[state=open]:smoothDown data-[state=closed]:smoothUp data-[state=open]:mt-0"
