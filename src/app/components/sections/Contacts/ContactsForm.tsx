@@ -1,25 +1,42 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import t from "@/app/styles/modules/typography.module.css";
 import { Button } from "@/app/components/ui/Button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { PhoneField } from "@/app/components/ui/PhoneField";
 import { sendContact } from "@/app/actions/sendContact";
+import { useSuccessPopup } from "@/app/providers/SuccessPopupProvider";
 
 export default function ContactsForm() {
+  const [pending, setPending] = useState(false);
+  const { showSuccess } = useSuccessPopup();
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setPending(true);
+    try {
+      const form = e.currentTarget;
+      const fd = new FormData(form);
+      fd.set("source", "Форма из блока Контакты");
+
+      const res = await sendContact(fd);
+      if (res?.ok) {
+        form.reset();
+        showSuccess();
+      } else {
+        alert(res?.error ?? "Заявка не отправилась. Повторите попытку.");
+      }
+    } finally {
+      setPending(false);
+    }
+  };
+
   return (
     <form
-      action={async (fd) => {
-        fd.set("source", "Форма из блока Контакты");
-        const res = await sendContact(fd);
-        if (res.ok) {
-          alert("Заявка отправлена");
-        } else {
-          alert(res.error ?? "Заявка не отправилась. Повторите попытку.");
-        }
-      }}
+      onSubmit={onSubmit}
+      method="post"
       className={`${t["body-lg"]} flex flex-col gap-20 text-darkGreen w-full`}
     >
       <input
@@ -53,11 +70,8 @@ export default function ContactsForm() {
             </Link>
           </p>
         </div>
-        <Button
-          className="!text-center"
-          type="submit"
-        >
-          Отправить
+        <Button type="submit" disabled={pending} className="!text-center">
+          {pending ? "Отправляем..." : "Отправить"}
         </Button>
       </div>
     </form>

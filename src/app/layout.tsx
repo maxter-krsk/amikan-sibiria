@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { montserrat } from "./components/ui/fonts"
+import { montserrat } from "./components/ui/fonts";
 import "./globals.css";
 
-import Footer from "@/app/components/Footer/Footer"
-import Header from "@/app/components/Header/Header"
+import Footer from "@/app/components/Footer/Footer";
+import Header from "@/app/components/Header/Header";
+import { SuccessPopupProvider } from "@/app/providers/SuccessPopupProvider";
 
 import ScrollTop from "./components/ui/ScrollTop";
-
 
 // Мета-данные
 
@@ -25,10 +25,12 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} font-light flex flex-col min-h-screen overflow-x-hidden antialiased bg-beige`}
       >
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <ScrollTop />
+        <SuccessPopupProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <ScrollTop />
+        </SuccessPopupProvider>
       </body>
     </html>
   );
