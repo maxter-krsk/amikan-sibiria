@@ -32,7 +32,7 @@ export default function Contacts() {
                 <span className="bg-sand rounded-full p-10 flex items-center justify-center group-hover:bg-lightGreen transition-colors duration-500">
                   <PhoneIcon className="w-[1.43rem] h-[1.43rem]" />
                 </span>
-                +7 (908) 023-34-38
+                <span className="underline-animation">+7 (908) 023-34-38</span>
               </Link>
               <Link
                 className="inline-flex gap-20 items-center text-16 lg:text-18 group"
@@ -41,7 +41,7 @@ export default function Contacts() {
                 <span className="bg-sand duration-500 rounded-full p-10 flex items-center justify-center group-hover:bg-lightGreen transition-colors">
                   <EmailIcon className="w-[1.43rem] h-[1.43rem]" />
                 </span>
-                amikantravel@mail.ru
+                <span className="underline-animation">amikantravel@mail.ru</span>
               </Link>
             </div>
             <SocialsLinks />

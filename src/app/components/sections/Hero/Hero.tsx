@@ -15,10 +15,10 @@ export default function Hero() {
 
   return (
     <section
-      className={`${bg.heroBg} mx-0 desk:mt-20 desk:mx-20 mb-100 md:mb-120 desk:mb-150 pb-20 md:pb-50 desk:pb-60 pt-80 md:pt-120 desk:pt-[9.063rem] relative min-h-screen`}
+      className={`${bg.heroBg} mx-0 desk:mt-20 desk:mx-20 mb-100 md:mb-120 desk:mb-150 pt-20 md:pt-60 relative min-h-screen`}
       aria-labelledby="hero-title"
     >
-      <div className="container">
+      <div className="container mx-auto flex flex-col justify-center min-h-screen">
         <div className="flex gap-10 desk:gap-40 desk:flex-row desk:items-end mb-20 desk:mb-30 md:flex-col flex-col">
           <h1 className="font-bold desk:text-70 md:text-40 text-28 text-center md:text-left leading-[1.2] uppercase text-[#FFFFFF]">
             Сибирь, которую
@@ -32,7 +32,7 @@ export default function Hero() {
           </p>
         </div>
         <div
-          className="flex flex-col gap-10 md:gap-20 mb-40 md:mb-90 desk:mb-50 items-center md:items-start"
+          className="flex flex-col gap-10 md:gap-20 mb-20 md:mb-90 desk:mb-50 items-center md:items-start"
           aria-describedby="cta-hint"
         >
           <Button
