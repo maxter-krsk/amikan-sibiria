@@ -71,3 +71,4 @@ export default function ProgramPopup({ open, onOpenChange }: Props) {
     </PopupBase>
   );
 }
+
