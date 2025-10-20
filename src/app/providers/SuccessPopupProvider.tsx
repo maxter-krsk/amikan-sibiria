@@ -2,6 +2,20 @@
 
 import { createContext, useContext, useState, ReactNode, useMemo } from "react";
 import PopupSuccess from "@/app/components/ui/popups/PopupSuccess";
+import { createPortal } from "react-dom";
+
+type PortalPopupProps = {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+};
+
+function PortalPopup({ open, onOpenChange }: PortalPopupProps) {
+  if (typeof document === "undefined") return null;
+  return createPortal(
+    <PopupSuccess open={open} onOpenChange={onOpenChange} />,
+    document.body
+  );
+}
 
 type Ctx = {
   showSuccess: () => void;
@@ -22,7 +36,7 @@ export function SuccessPopupProvider({ children }: { children: ReactNode }) {
   return (
     <SuccessPopupCtx.Provider value={value}>
       {children}
-      <PopupSuccess open={isOpen} onOpenChange={setIsOpen} />
+      <PortalPopup open={isOpen} onOpenChange={setIsOpen} />
     </SuccessPopupCtx.Provider>
   );
 }
