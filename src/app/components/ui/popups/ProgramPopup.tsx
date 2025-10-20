@@ -32,9 +32,7 @@ export default function ProgramPopup({ open, onOpenChange }: Props) {
       if (res?.ok) {
         form.reset();
         onOpenChange(false);
-        setTimeout(() => {
-          showSuccess();
-        }, 0);
+        setTimeout(() => showSuccess(), 0);
       } else {
         alert(res?.error ?? "Заявка не отправилась. Повторите попытку.");
       }
@@ -62,46 +60,31 @@ export default function ProgramPopup({ open, onOpenChange }: Props) {
           pattern="^(?=.{2,40}$)[A-Za-zÀ-ÖØ-öø-ÿА-Яа-яЁё]+(?:[ '\-’][A-Za-zÀ-ÖØ-öø-ÿА-Яа-яЁё]+)*$"
           title="2–40 символов, только буквы, пробелы, дефис и апостроф"
         />
+
         <PhoneField name="Телефон" />
+
+        {/* Если нужно — оставь скрытое поле. Имя отличается от fd.set('source', ...), но это не мешает. */}
         <input type="hidden" name="Источник" value="program" />
-        <div className="flex gap-[0.62rem] items-center mb-[1.25rem]">
+
+        <div className="flex gap-[0.62rem] items-start mb-[1.25rem]">
           <Checkbox
             className="h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] dark:bg-transparent data-[state=checked]:bg-transparent dark:data-[state=checked]:bg-transparent data-[state=checked]:text-beige data-[state=checked]:border-beige"
-        <div className="flex flex-col gap-10 md:gap-20">
-          <input
-            className="border border-beige rounded-50 w-full py-15 px-30 md:py-20 md:px-35 text-12 md:text-16 desk:text-18 focus:border-sand transition-colors duration-200 focus:outline-none leading-none"
-            type="text"
-            name="Имя"
-            placeholder="Имя"
             required
-            minLength={2}
-            maxLength={40}
-            pattern="^(?=.{2,40}$)[A-Za-zÀ-ÖØ-öø-ÿА-Яа-яЁё]+(?:[ '\-’][A-Za-zÀ-ÖØ-öø-ÿА-Яа-яЁё]+)*$"
-            title="2–40 символов, только буквы, пробелы, дефис и апостроф"
+            id="policy"
           />
-          <PhoneField name="Телефон" />
-          <input type="hidden" name="Источник" value="program" />
-          <div className="flex gap-10 items-center my-10 md:my-0">
-            <Checkbox
-              className="self-start desk:self-center h-[1rem] w-[1rem] border border-beige rounded-[0.2rem] dark:bg-transparent data-[state=checked]:bg-transparent dark:data-[state=checked]:bg-transparent data-[state=checked]:text-beige data-[state=checked]:border-beige"
-              required
-            />
-            <p className={t["overline"]}>
-              Я согласен с{" "}
-              <Link className="underline" href="/privacy-policy">
-                политикой конфиденциальности
-              </Link>{" "}
-              и{" "}
-              <Link className="underline" href="/terms-user">
-                пользовательским соглашением
-              </Link>
-            </p>
-          </div>
-          <Button type="submit" className="w-full !text-center">
-            Отправить
-          </Button>
+          <p className={t["overline"]}>
+            Я согласен с{" "}
+            <Link className="underline" href="/privacy-policy">
+              политикой конфиденциальности
+            </Link>{" "}
+            и{" "}
+            <Link className="underline" href="/terms-user">
+              пользовательским соглашением
+            </Link>
+          </p>
         </div>
-        <Button type="submit" disabled={pending} className="w-full">
+
+        <Button type="submit" disabled={pending} className="w-full !text-center">
           {pending ? "Отправляем..." : "Отправить"}
         </Button>
       </form>
