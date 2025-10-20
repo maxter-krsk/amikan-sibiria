@@ -1,13 +1,15 @@
 "use client";
 
+import { useState } from "react";
+import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/app/components/ui/Button";
 import PopupClose from "./PopupClose";
 import t from "@/app/styles/modules/typography.module.css";
-import Link from "next/link";
 import PopupBase from "./PopupBase";
 import { sendContact } from "@/app/actions/sendContact";
 import { PhoneField } from "@/app/components/ui/PhoneField";
+import { useSuccessPopup } from "@/app/providers/SuccessPopupProvider";
 
 type Props = {
   open: boolean;
@@ -15,6 +17,32 @@ type Props = {
 };
 
 export default function ProgramPopup({ open, onOpenChange }: Props) {
+  const [pending, setPending] = useState(false);
+  const { showSuccess } = useSuccessPopup();
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setPending(true);
+    try {
+      const form = e.currentTarget;
+      const fd = new FormData(form);
+      fd.set("source", "Форма из Программа тура");
+
+      const res = await sendContact(fd);
+      if (res?.ok) {
+        form.reset();
+        onOpenChange(false);
+        setTimeout(() => {
+          showSuccess();
+        }, 0);
+      } else {
+        alert(res?.error ?? "Заявка не отправилась. Повторите попытку.");
+      }
+    } finally {
+      setPending(false);
+    }
+  };
+
   return (
     <PopupBase
       open={open}
@@ -22,17 +50,7 @@ export default function ProgramPopup({ open, onOpenChange }: Props) {
       title="Получить программу тура"
       closeIt={<PopupClose />}
     >
-      <form
-        action={async (fd) => {
-          fd.set("source", "Попап: Получить программу");
-          const res = await sendContact(fd);
-          if (res.ok) {
-            onOpenChange(false);
-          } else {
-            alert(res.error ?? "Заявка не отправилась. Повторите попытку.");
-          }
-        }}
-      >
+      <form onSubmit={onSubmit} method="post">
         <input
           className="border border-beige rounded-[3.12rem] w-full py-[0.93rem] px-[1.87rem] md:py-[1.25rem] md:px-[2.18rem] text-[0.75rem] md:text-[1rem] desk:text-[1.12rem] mb-[0.62rem] focus:border-sand transition-colors duration-200 focus:outline-none"
           type="text"
@@ -62,8 +80,8 @@ export default function ProgramPopup({ open, onOpenChange }: Props) {
             </Link>
           </p>
         </div>
-        <Button type="submit" className="w-full">
-          Отправить
+        <Button type="submit" disabled={pending} className="w-full">
+          {pending ? "Отправляем..." : "Отправить"}
         </Button>
       </form>
     </PopupBase>

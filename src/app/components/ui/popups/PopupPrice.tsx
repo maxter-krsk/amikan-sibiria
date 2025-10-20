@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import t from "@/app/styles/modules/typography.module.css";
 import PopupClose from "./PopupClose";
@@ -8,6 +9,7 @@ import { Button } from "@/app/components/ui/Button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { sendContact } from "@/app/actions/sendContact";
 import { PhoneField } from "@/app/components/ui/PhoneField";
+import { useSuccessPopup } from "@/app/providers/SuccessPopupProvider";
 
 type Props = {
   open: boolean;
@@ -15,6 +17,32 @@ type Props = {
 };
 
 export default function PopupPrice({ open, onOpenChange }: Props) {
+  const [pending, setPending] = useState(false);
+  const { showSuccess } = useSuccessPopup();
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setPending(true);
+    try {
+      const form = e.currentTarget;
+      const fd = new FormData(form);
+      fd.set("source", "Форма из Уточнить стоимость тура");
+
+      const res = await sendContact(fd);
+      if (res?.ok) {
+        form.reset();
+        onOpenChange(false);
+        setTimeout(() => {
+          showSuccess();
+        }, 0);
+      } else {
+        alert(res?.error ?? "Заявка не отправилась. Повторите попытку.");
+      }
+    } finally {
+      setPending(false);
+    }
+  };
+
   return (
     <PopupBase
       open={open}
@@ -22,17 +50,7 @@ export default function PopupPrice({ open, onOpenChange }: Props) {
       title="Уточнить стоимость тура"
       closeIt={<PopupClose />}
     >
-      <form
-        action={async (fd) => {
-          fd.set("source", "Попап: Уточнить стоимость тура");
-          const res = await sendContact(fd);
-          if (res.ok) {
-            onOpenChange(false);
-          } else {
-            alert(res.error ?? "Заявка не отправилась. Повторите попытку.");
-          }
-        }}
-      >
+      <form onSubmit={onSubmit} method="post">
         <div className="flex flex-col gap-10 md:gap-20">
           <input
             className="border border-beige rounded-50 w-full py-15 px-30 md:py-20 md:px-35 text-12 md:text-16 desk:text-18 focus:border-sand transition-colors duration-200 focus:outline-none leading-none"
@@ -62,8 +80,12 @@ export default function PopupPrice({ open, onOpenChange }: Props) {
               </Link>
             </p>
           </div>
-          <Button type="submit" className="w-full !text-center">
-            Отправить
+          <Button
+            type="submit"
+            disabled={pending}
+            className="w-full !text-center"
+          >
+            {pending ? "Отправляем..." : "Отправить"}
           </Button>
         </div>
       </form>
