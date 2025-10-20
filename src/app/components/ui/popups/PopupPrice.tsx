@@ -92,3 +92,4 @@ export default function PopupPrice({ open, onOpenChange }: Props) {
     </PopupBase>
   );
 }
+
