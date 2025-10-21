@@ -11,8 +11,37 @@ import ScrollTop from "./components/ui/ScrollTop";
 // Мета-данные
 
 export const metadata: Metadata = {
-  title: "Название сайта",
-  description: "Описание для сайта",
+  title: "Amikan Travel | Экскурсионно‑рыболовный тур в Саянах",
+  description:
+    "Организованный тур по Саяно‑Шушенскому водохранилищу и Кантегиру: комфорт, прогулки, музей, рыбалка, баня и джип‑тур на вершину Гладенькой. Заявка онлайн.",
+
+  icons: {
+    icon: [
+      {
+        url: "/icons/favicons/favicon-light.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+
+      {
+        url: "/icons/favicons/favicon-dark.png",
+        type: "image/svg+xml",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icons/favicons/favicon-light.png",
+        type: "image/svg+xml",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+
+    apple: [{ url: "/icons/favicons/favicon-large.png", sizes: "180x180" }],
+  },
+
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0b0b" },
+  ],
 };
 
 export default function RootLayout({
