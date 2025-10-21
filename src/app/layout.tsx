@@ -11,9 +11,37 @@ import ScrollTop from "./components/ui/ScrollTop";
 // Мета-данные
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://domain.ru"),
+  alternates: { canonical: "/" },
+
   title: "Amikan Travel | Экскурсионно‑рыболовный тур в Саянах",
   description:
     "Организованный тур по Саяно‑Шушенскому водохранилищу и Кантегиру: комфорт, прогулки, музей, рыбалка, баня и джип‑тур на вершину Гладенькой. Заявка онлайн.",
+
+  openGraph: {
+    title: "Amikan Travel | Экскурсионно‑рыболовный тур в Саянах",
+    description:
+      "Организованный тур по Саяно‑Шушенскому водохранилищу и Кантегиру: комфорт, прогулки, музей, рыбалка, баня и джип‑тур на вершину Гладенькой. Заявка онлайн.",
+    url: "https://domain.ru",
+    siteName: "Amikan Travel | Экскурсионно‑рыболовный тур в Саянах",
+    images: [
+      {
+        url: "/og/og-img.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Превью сайта",
+      },
+    ],
+    locale: "ru_RU",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Amikan Travel | Экскурсионно‑рыболовный тур в Саянах",
+    description:
+      "Организованный тур по Саяно‑Шушенскому водохранилищу и Кантегиру: комфорт, прогулки, музей, рыбалка, баня и джип‑тур на вершину Гладенькой. Заявка онлайн.",
+    images: ["/og/og-img.jpg"],
+  },
 
   icons: {
     icon: [
@@ -25,12 +53,12 @@ export const metadata: Metadata = {
 
       {
         url: "/icons/favicons/favicon-dark.png",
-        type: "image/svg+xml",
+        type: "image/png",
         media: "(prefers-color-scheme: light)",
       },
       {
         url: "/icons/favicons/favicon-light.png",
-        type: "image/svg+xml",
+        type: "image/png",
         media: "(prefers-color-scheme: dark)",
       },
     ],
@@ -39,8 +67,8 @@ export const metadata: Metadata = {
   },
 
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b0b0b" },
+    { media: "(prefers-color-scheme: light)", color: "#BC9C5F" },
+    { media: "(prefers-color-scheme: dark)", color: "#BC9C5F" },
   ],
 };
 
