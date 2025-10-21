@@ -24,7 +24,7 @@ export default function FaqList({
   return (
     <div>
       <motion.button
-        className={`${btn.faqButton} relative z-10 w-full text-left`}
+        className={`${btn.faqButton} w-full text-left`}
         onClick={HandleClick}
         aria-expanded={isOpen}
         animate={{
