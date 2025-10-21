@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { IconLink } from "@/app/components/ui/socials/IconLink";
 import { PhoneIcon } from "../ui/socials/PhoneIcon";
 import { EmailIcon } from "../ui/socials/EmailIcon";
@@ -9,9 +10,7 @@ type FooterContactsProps = {
 
 export default function FooterContacts({ className }: FooterContactsProps) {
   return (
-    <div
-      className={`text-beige text-12 md:text-16 desk:text-18 ${className}`}
-    >
+    <div className={`text-beige text-12 md:text-16 desk:text-18 ${className}`}>
       <div className="flex gap-20 mb-10">
         <PhoneIcon className="w-[1.43rem] h-[1.43rem] hidden md:block" />
         <Link
@@ -36,7 +35,9 @@ export default function FooterContacts({ className }: FooterContactsProps) {
             href="https://www.youtube.com/channel/UCTROFo9BTCoMUu8e8XCBWkA"
             label="Youtube"
             icon={
-              <img
+              <Image
+                width={22}
+                height={15}
                 src="/icons/ui/socials-icons/youtube.svg"
                 alt="Youtube"
                 className="w-[1.37rem] h-[0.93rem]"
@@ -49,7 +50,9 @@ export default function FooterContacts({ className }: FooterContactsProps) {
             href="https://t.me/AmikanSiberia"
             label="Telegram"
             icon={
-              <img
+              <Image
+                width={23}
+                height={23}
                 src="/icons/ui/socials-icons/telegram.svg"
                 alt="Telegram"
                 className="w-[1.43rem] h-[1.43rem]"
@@ -62,7 +65,9 @@ export default function FooterContacts({ className }: FooterContactsProps) {
             href="https://vk.com/amikan.travel"
             label="VK"
             icon={
-              <img
+              <Image
+                width={23}
+                height={23}
                 src="/icons/ui/socials-icons/vk.svg"
                 alt="VK"
                 className="w-[1.43rem] h-[1.43rem]"
@@ -75,7 +80,9 @@ export default function FooterContacts({ className }: FooterContactsProps) {
             href="https://wa.me/79080233438"
             label="WhatsApp"
             icon={
-              <img
+              <Image
+                width={23}
+                height={23}
                 src="/icons/ui/socials-icons/wa.svg"
                 alt="WhatsApp"
                 className="w-[1.43rem] h-[1.43rem]"
