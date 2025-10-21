@@ -5,6 +5,7 @@ import "./globals.css";
 import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
 import { SuccessPopupProvider } from "@/app/providers/SuccessPopupProvider";
+import CookiesBanner from "@/app/components/ui/CookiesBanner";
 
 import ScrollTop from "./components/ui/ScrollTop";
 
@@ -87,6 +88,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <ScrollTop />
+          <CookiesBanner />
         </SuccessPopupProvider>
       </body>
     </html>
