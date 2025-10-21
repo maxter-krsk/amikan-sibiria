@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import btn from "@/app/styles/modules/faq-button.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 type FaqListProps = {
@@ -18,7 +17,7 @@ export default function FaqList({ name, descr, className, isOpened }: FaqListPro
     <motion.div
       className="border border-lightGreen rounded-[1.875rem] overflow-hidden mb-10 desk:mb-20 last:mb-0"
       animate={{
-        borderRadius: isOpen ? "1.875rem" : "1.875rem", // радиус общий, без разрывов
+        borderRadius: isOpen ? "1.875rem" : "1.875rem",
       }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
     >

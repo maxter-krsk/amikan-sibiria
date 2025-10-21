@@ -142,7 +142,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
                   exit="exit"
                   className="flex flex-col bg-beige fixed z-[90] top-0 right-0 w-full h-full p-20 md:w-[50%]"
                 >
-                  <div className="mt-90 md:mt-0">
+                  <div className="mt-90 md:mt-60">
                     <nav>
                       <ul
                         className="flex flex-col gap-20 text-darkGreen text-16"
