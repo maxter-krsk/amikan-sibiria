@@ -61,7 +61,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
   }, [isOpen, mounted]);
 
   return (
-    <div className="desk:hidden">
+    <div className="desk:hidden ">
       <button
         onClick={toggleMenu}
         aria-expanded={isOpen}
@@ -140,7 +140,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="flex flex-col bg-beige fixed z-[90] top-0 right-0 w-full h-full p-20 md:w-[50%]"
+                  className="flex flex-col overflow-y-auto bg-beige fixed z-[90] top-0 right-0 w-full h-full p-20 md:w-[50%]"
                 >
                   <div className="mt-90 md:mt-60">
                     <nav>
