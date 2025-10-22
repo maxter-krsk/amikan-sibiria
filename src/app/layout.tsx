@@ -6,6 +6,7 @@ import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
 import { SuccessPopupProvider } from "@/app/providers/SuccessPopupProvider";
 import CookiesBanner from "@/app/components/ui/CookiesBanner";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import ScrollTop from "./components/ui/ScrollTop";
 
@@ -91,6 +92,7 @@ export default function RootLayout({
           <Footer />
           <ScrollTop />
           <CookiesBanner />
+          <SpeedInsights />
         </SuccessPopupProvider>
       </body>
     </html>
