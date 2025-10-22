@@ -6,12 +6,10 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
-type Props = { className?: string };
-
-export default function FeaturesCarousel({ className }: Props) {
+export default function FeaturesCarousel() {
   const [api, setApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 
@@ -72,8 +70,8 @@ export default function FeaturesCarousel({ className }: Props) {
         <CarouselContent className="px-10">
           {card.map((carditem, i) => (
             <CarouselItem key={i} className="basis-full">
-              <div className="h-full bg-beige text-darkGreen rounded-[0.625rem] py-[2.75rem] px-[1.50rem]">
-                <div className="flex flex-col gap-[1.25rem] items-center text-center">
+              <div className="h-full bg-beige text-darkGreen rounded-10 py-40 px-25">
+                <div className="flex flex-col gap-20 items-center text-center">
                   <Image
                     src={`${carditem.icon}`}
                     width={36}
@@ -81,10 +79,10 @@ export default function FeaturesCarousel({ className }: Props) {
                     alt="Иконка преимущества"
                     className="w-[2.25rem] h-[3.12rem]"
                   />
-                  <h2 className="uppercase text-[1.00rem] font-semibold text-darkGreen">
+                  <h2 className="uppercase text-16 font-semibold text-darkGreen">
                     {carditem.title}
                   </h2>
-                  <p className="text-[0.75rem] leading-[1.25] text-darkGreen">
+                  <p className="text-12 leading-[1.25] text-darkGreen">
                     {carditem.description}
                   </p>
                 </div>
@@ -94,7 +92,7 @@ export default function FeaturesCarousel({ className }: Props) {
         </CarouselContent>
       </Carousel>
 
-      <div className="block md:hidden flex justify-center mt-[1.00rem] gap-[0.31rem] md:gap-[0.62rem]">
+      <div className="md:hidden flex justify-center mt-16 gap-5 md:gap-10">
         {card.map((_, i) => (
           <button
             key={i}

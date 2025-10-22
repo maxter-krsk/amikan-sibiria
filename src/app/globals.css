@@ -2,7 +2,6 @@
 @import "tw-animate-css";
 
 @theme {
-
   /* Брейкпоинты */
 
   --breakpoint-sm: 30rem;
@@ -16,62 +15,113 @@
 
   /* Цвет */
 
-  --color-darkGreen: #142B23;
-  --color-lightGreen: #5E785F;
-  --color-beige: #EFE5D9;
-  --color-sand: #BC9C5F;
+  --color-darkGreen: #142b23;
+  --color-lightGreen: #5e785f;
+  --color-beige: #efe5d9;
+  --color-sand: #bc9c5f;
 
   /* Текст */
 
-  --text-10: 0.625rem; /* 10px */
-  --text-12: 0.75rem; /* 12px */
-  --text-14: 0.875rem; /* 14px */
-  --text-16: 1rem; /* 16px */
-  --text-18: 1.125rem; /* 18px */
-  --text-20: 1.25rem; /* 20px */
-  --text-22: 1.375rem; /* 22px */
-  --text-24: 1.5rem; /* 24px */
-  --text-26: 1.625rem; /* 26px */
-  --text-28: 1.75rem; /* 28px */
-  --text-30: 1.875rem; /* 30px */
-  --text-40: 2.5rem; /* 40px */
-  --text-60: 3.75rem; /* 60px */
-  --text-70: 4.375rem; /* 70px */
-  --text-100: 6.25rem; /* 100px */
+  --text-10: 0.625rem;
+  /* 10px */
+  --text-12: 0.75rem;
+  /* 12px */
+  --text-14: 0.875rem;
+  /* 14px */
+  --text-16: 1rem;
+  /* 16px */
+  --text-18: 1.125rem;
+  /* 18px */
+  --text-20: 1.25rem;
+  /* 20px */
+  --text-22: 1.375rem;
+  /* 22px */
+  --text-24: 1.5rem;
+  /* 24px */
+  --text-26: 1.625rem;
+  /* 26px */
+  --text-28: 1.75rem;
+  /* 28px */
+  --text-30: 1.875rem;
+  /* 30px */
+  --text-40: 2.5rem;
+  /* 40px */
+  --text-60: 3.75rem;
+  /* 60px */
+  --text-70: 4.375rem;
+  /* 70px */
+  --text-100: 6.25rem;
+  /* 100px */
 
   /* Отступы */
 
-  --spacing-5: 0.3125rem; /* 5px */
-  --spacing-10: 0.625rem; /* 10px */
-  --spacing-12: 0.75rem; /* 12px */
-  --spacing-15: 0.9375rem; /* 15px */
-  --spacing-16: 1rem; /* 16px */
-  --spacing-20: 1.25rem; /* 20px */
-  --spacing-25: 1.5625rem; /* 25px */
-  --spacing-30: 1.875rem; /* 30px */
-  --spacing-35: 2.188rem; /* 30px */
-  --spacing-40: 2.5rem; /* 40px */
-  --spacing-50: 3.125rem; /* 50px */
-  --spacing-60: 3.75rem; /* 60px */
-  --spacing-70: 4.375rem; /* 70px */
-  --spacing-80: 5rem; /* 80px */
-  --spacing-90: 5.625rem; /* 90px */
-  --spacing-100: 6.25rem; /* 100px */
-  --spacing-120: 7.5rem; /* 120px */
-  --spacing-140: 8.75rem; /* 140px */
-  --spacing-150: 9.375rem; /* 150px */
-  --spacing-160: 10rem; /* 160px */
-  --spacing-180: 11.25rem; /* 180px */
-  --spacing-200: 12.5rem; /* 200px */
+  --spacing-5: 0.3125rem;
+  /* 5px */
+  --spacing-10: 0.625rem;
+  /* 10px */
+  --spacing-12: 0.75rem;
+  /* 12px */
+  --spacing-15: 0.9375rem;
+  /* 15px */
+  --spacing-16: 1rem;
+  /* 16px */
+  --spacing-20: 1.25rem;
+  /* 20px */
+  --spacing-25: 1.5625rem;
+  /* 25px */
+  --spacing-30: 1.875rem;
+  /* 30px */
+  --spacing-35: 2.188rem;
+  /* 30px */
+  --spacing-40: 2.5rem;
+  /* 40px */
+  --spacing-50: 3.125rem;
+  /* 50px */
+  --spacing-60: 3.75rem;
+  /* 60px */
+  --spacing-70: 4.375rem;
+  /* 70px */
+  --spacing-80: 5rem;
+  /* 80px */
+  --spacing-90: 5.625rem;
+  /* 90px */
+  --spacing-100: 6.25rem;
+  /* 100px */
+  --spacing-120: 7.5rem;
+  /* 120px */
+  --spacing-140: 8.75rem;
+  /* 140px */
+  --spacing-150: 9.375rem;
+  /* 150px */
+  --spacing-160: 10rem;
+  /* 160px */
+  --spacing-180: 11.25rem;
+  /* 180px */
+  --spacing-200: 12.5rem;
+  /* 200px */
 
   /* Скругления */
-  
-  --radius-10: 0.625rem; /* 10px */
-  --radius-20: 1.25rem; /* 20px */
-  --radius-30: 1.875rem; /* 30px */
-  --radius-50: 3.125rem; /* 50px */
-  --radius-100: 6.25rem; /* 100px */
 
+  --radius-10: 0.625rem;
+  /* 10px */
+  --radius-20: 1.25rem;
+  /* 20px */
+  --radius-30: 1.875rem;
+  /* 30px */
+  --radius-50: 3.125rem;
+  /* 50px */
+  --radius-100: 6.25rem;
+  /* 100px */
+}
+
+html,
+body,
+* {
+  scroll-behavior: smooth;
+}
+
+input[type="checkbox"] {
+  color-scheme: light;
 }
 
 .container {
@@ -84,6 +134,38 @@
 html body[data-scroll-locked] {
   overflow: visible !important;
   margin-right: 0 !important;
+}
+
+/* Анимация подчёркивания */
+
+.underline-animation {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1.5px;
+  background-color: var(--color-lightGreen);
+  border-radius: 9999px;
+  transform: scaleX(0);
+  transform-origin: right center;
+  opacity: 0;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.underline-animation:hover::after,
+.underline-animation:focus-visible::after {
+  transform: scaleX(1);
+  opacity: 1;
+  transform-origin: left;
 }
 
 /* Стили для инпута номера телефона */
@@ -103,16 +185,16 @@ html body[data-scroll-locked] {
 
 .phone-field-container .react-international-phone-country-selector {
   position: absolute;
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
 }
 
 .phone-field-container .react-international-phone-country-selector-button {
-  background: #95BAA8;
+  background: #95baa8;
   border: none;
   box-shadow: none;
   width: 2.62rem;
-  height: 1.5rem;
+  height: 1.25rem;
   border-radius: 6.25rem !important;
   display: flex;
   align-items: center;
@@ -120,6 +202,18 @@ html body[data-scroll-locked] {
   overflow: visible;
   padding: 0;
   cursor: pointer;
+}
+
+.phone-field-container .react-international-phone-country-selector-button img {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0 0.125rem;
+}
+
+.react-international-phone-country-selector-button__button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.438rem;
 }
 
 .phone-field-container .react-international-phone-country-selector-button__flag-emoji {
@@ -134,7 +228,7 @@ html body[data-scroll-locked] {
 }
 
 .phone-field-container .react-international-phone-country-selector-button {
-  transition: background-color .15s ease;
+  transition: background-color 0.15s ease;
 }
 
 .phone-field-container .react-international-phone-country-selector-button:hover,
@@ -143,23 +237,76 @@ html body[data-scroll-locked] {
   background-color: #7fb19a;
 }
 
+/* Анимация аккордеона */
+
+@layer utilities {
+  [data-slot='accordion-content'] {
+    overflow: hidden;
+    transition:
+      max-height 300ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 200ms ease-out;
+  }
+
+  [data-slot='accordion-content'][data-state='open'],
+  [data-slot='accordion-content'][data-state='closed'] {
+    will-change: max-height, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  [data-slot='accordion-content'][data-state='open'] {
+    animation: smoothDown 300ms ease-out forwards;
+  }
+
+  [data-slot='accordion-content'][data-state='closed'] {
+    animation: smoothUp 250ms ease-in forwards;
+  }
+
+  @keyframes smoothDown {
+    from {
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+
+    to {
+      max-height: var(--radix-accordion-content-height);
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes smoothUp {
+    from {
+      max-height: var(--radix-accordion-content-height);
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    to {
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .phone-field-container .react-international-phone-country-selector {
     left: 2.18rem;
   }
 }
 
-@media(max-width: 768px) {
-
+@media (max-width: 768px) {
   .container {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
+
   .phone-field-container .react-international-phone-country-selector {
     left: 1.87rem;
   }
 }
-
 
 @media (min-width: 1920px) {
   html {
@@ -168,7 +315,6 @@ html body[data-scroll-locked] {
 }
 
 @theme inline {
-
   --radius-sm: calc(var(--radius) - 4px);
 
   --radius-md: calc(var(--radius) - 2px);
@@ -238,11 +384,9 @@ html body[data-scroll-locked] {
   --color-sidebar-border: var(--sidebar-border);
 
   --color-sidebar-ring: var(--sidebar-ring);
-
 }
 
 :root {
-
   --radius: 0.625rem;
 
   --background: oklch(1 0 0);
@@ -306,11 +450,9 @@ html body[data-scroll-locked] {
   --sidebar-border: oklch(0.92 0.004 286.32);
 
   --sidebar-ring: oklch(0.705 0.015 286.067);
-
 }
 
 .dark {
-
   --background: oklch(0.141 0.005 285.823);
 
   --foreground: oklch(0.985 0 0);
@@ -372,18 +514,14 @@ html body[data-scroll-locked] {
   --sidebar-border: oklch(1 0 0 / 10%);
 
   --sidebar-ring: oklch(0.552 0.016 285.938);
-
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-
   }
 
   body {
     @apply bg-background text-foreground;
-
   }
-
 }

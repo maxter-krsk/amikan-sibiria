@@ -47,7 +47,6 @@ export default function DevelopedBy() {
 
           <span className="relative inline-block">
             <motion.span
-              className="relative z-10"
               variants={{
                 rest: {
                   color: "#EFE5D9",

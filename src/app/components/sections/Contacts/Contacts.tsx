@@ -7,7 +7,10 @@ import ContactsForm from "./ContactsForm";
 
 export default function Contacts() {
   return (
-    <section className="mb-100 md:mb-120 desk:mb-150">
+    <section
+      id="contacts"
+      className="mb-100 scroll-mt-100 md:mb-120 md:scroll-mt-120 desk:mb-150 desk:scroll-mt-150"
+    >
       <div className="container">
         <div className="flex flex-col items-end md:items-center md:flex-row gap-20 md:gap-40 mb-20 md:mb-40 desk:mb-50">
           <h1 className={`${t["heading"]} uppercase font-bold text-darkGreen`}>
@@ -19,8 +22,8 @@ export default function Contacts() {
             свяжется с вами и проконсультирует по всем вопросам
           </p>
         </div>
-        <div className="flex flex-col-reverse gap-35 md:flex md:flex-row md:gap-150 desk:gap-200 md:items-end items-stretch">
-          <div className="flex flex-col gap-20">
+        <div className="flex flex-col-reverse gap-35 md:flex md:flex-row  desk:gap-200 md:items-end items-stretch">
+          <div className="flex flex-col gap-20 desk:self-start">
             <div className="flex flex-col gap-5 md:gap-20">
               <Link
                 className="group inline-flex gap-20 items-center text-16 lg:text-18"
@@ -29,7 +32,7 @@ export default function Contacts() {
                 <span className="bg-sand rounded-full p-10 flex items-center justify-center group-hover:bg-lightGreen transition-colors duration-500">
                   <PhoneIcon className="w-[1.43rem] h-[1.43rem]" />
                 </span>
-                +7 (908) 023-34-38
+                <span className="underline-animation">+7 (908) 023-34-38</span>
               </Link>
               <Link
                 className="inline-flex gap-20 items-center text-16 lg:text-18 group"
@@ -38,7 +41,7 @@ export default function Contacts() {
                 <span className="bg-sand duration-500 rounded-full p-10 flex items-center justify-center group-hover:bg-lightGreen transition-colors">
                   <EmailIcon className="w-[1.43rem] h-[1.43rem]" />
                 </span>
-                amikantravel@mail.ru
+                <span className="underline-animation">amikantravel@mail.ru</span>
               </Link>
             </div>
             <SocialsLinks />

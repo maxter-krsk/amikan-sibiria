@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/app/components/ui/Button";
 import { IconLink } from "@/app/components/ui/socials/IconLink";
-import t from "@/app/styles/modules/typography.module.css";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
@@ -45,7 +44,7 @@ const overlayAnimation = {
   },
 } as const satisfies Variants;
 
-export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenuProps) {
+export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -62,7 +61,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
   }, [isOpen, mounted]);
 
   return (
-    <div className="desk:hidden">
+    <div className="desk:hidden ">
       <button
         onClick={toggleMenu}
         aria-expanded={isOpen}
@@ -141,45 +140,45 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="flex flex-col bg-beige fixed z-[90] top-0 right-0 w-full h-full p-20 md:w-[50%]"
+                  className="flex flex-col overflow-y-auto bg-beige fixed z-[90] top-0 right-0 w-full h-full p-20 md:w-[50%]"
                 >
-                  <div className="mt-90 md:mt-0">
+                  <div className="mt-90 md:mt-60">
                     <nav>
                       <ul
-                        className="flex flex-col gap-10 text-darkGreen text-14"
+                        className="flex flex-col gap-20 text-darkGreen text-16"
                       >
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#about">
                             О туре
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#features">
                             Преимущества
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#program">
                             Программа
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#gallery">
                             Галерея
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#feedbacks">
                             Отзывы
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#faq">
                             FAQ
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={toggleMenu} href="/">
+                          <Link onClick={toggleMenu} href="/#contacts">
                             Контакты
                           </Link>
                         </li>
@@ -188,7 +187,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
 
                     <Button
                       onClick={toggleMenu}
-                      href="/"
+                      href="/#contacts"
                       className="inline-block w-full mt-30 !text-center sm:hidden"
                     >
                       Оставить заявку
@@ -196,7 +195,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
 
                     <div className="flex justify-center sm:justify-start gap-20 mt-30">
                       <IconLink
-                        href={"/"}
+                        href={"https://www.youtube.com/channel/UCTROFo9BTCoMUu8e8XCBWkA"}
                         label={"YouTube"}
                         icon={
                           <Image
@@ -208,7 +207,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
                         }
                       />
                       <IconLink
-                        href={"/"}
+                        href={"https://t.me/AmikanSiberia"}
                         label={"Телеграм"}
                         icon={
                           <Image
@@ -220,7 +219,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
                         }
                       />
                       <IconLink
-                        href={"/"}
+                        href={"https://vk.com/amikan.travel"}
                         label={"Вконтакте"}
                         icon={
                           <Image
@@ -232,7 +231,7 @@ export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenu
                         }
                       />
                       <IconLink
-                        href={"/"}
+                        href={"https://wa.me/79080233438"}
                         label={"WhatsApp"}
                         icon={
                           <Image

@@ -3,7 +3,7 @@ import FaqList from "./FaqList";
 
 export default function Faq() {
   return (
-    <section className="mb-100 md:mb-120 desk:mb-150">
+    <section id="faq" className="mb-100 scroll-mt-100 md:mb-120 md:scroll-mt-120 desk:mb-150 desk:scroll-mt-150">
       <div className="container">
         <h1
           className={`${t.heading} font-bold text-darkGreen flex justify-end md:justify-start mb-30 md:mb-50`}
@@ -12,7 +12,7 @@ export default function Faq() {
         </h1>
         <FaqList
           isOpened={true}
-          name=" Когда лучше отправляться?"
+          name="Когда лучше отправляться?"
           descr="Тур проводится с конца мая по сентябрь (конкретные даты уточняет менеджер)"
         />
         <FaqList

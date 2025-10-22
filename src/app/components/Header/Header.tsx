@@ -13,8 +13,6 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  // git push usePathname ^
-
   const scrolledActive = isScrolled && !isOpen;
 
   useEffect(() => {
@@ -34,7 +32,9 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (isOpen) setIsOpen(false);
+    if (isOpen) {
+      setIsOpen(false);
+    }
   }, [pathname]);
 
   const toggleMenu = () => {
@@ -48,9 +48,9 @@ export default function Header() {
     <header
       className={clsx(
         "fixed left-0 right-0 z-40 desk:px-20 transition-[background-color,box-shadow,backdrop-filter,padding]",
-        "duration-300 ease-out will-change-[background-color,box-shadow,backdrop-filter,padding]",
+        "duration-300 ease-out will-change-[background-color,box-shadow,backdrop-filter,padding] rounded-b-3xl",
         {
-          "py-10 md:py-20 bg-darkGreen/70 backdrop-blur-xl shadow-md":
+          "py-10 md:py-20 bg-darkGreen/70 backdrop-blur-xl shadow-md rounded-b-3xl":
             scrolledActive,
           "py-10 md:py-20 desk:py-40 bg-transparent shadow-none":
             !scrolledActive,
@@ -90,25 +90,39 @@ export default function Header() {
           <nav className="hidden desk:block px-35 py-20 bg-beige rounded-[6.25rem]">
             <ul className="flex text-18 gap-20 text-darkGreen">
               <li>
-                <Link href="/">О туре</Link>
+                <Link className="underline-animation" href="/#about">
+                  О туре
+                </Link>
               </li>
               <li>
-                <Link href="/">Преимущества</Link>
+                <Link className="underline-animation" href="/#features">
+                  Преимущества
+                </Link>
               </li>
               <li>
-                <Link href="/">Программа</Link>
+                <Link className="underline-animation" href="/#program">
+                  Программа
+                </Link>
               </li>
               <li>
-                <Link href="/">Галерея</Link>
+                <Link className="underline-animation" href="/#gallery">
+                  Галерея
+                </Link>
               </li>
               <li>
-                <Link href="/">Отзывы</Link>
+                <Link className="underline-animation" href="/#feedbacks">
+                  Отзывы
+                </Link>
               </li>
               <li>
-                <Link href="/">FAQ</Link>
+                <Link className="underline-animation" href="/#faq">
+                  FAQ
+                </Link>
               </li>
               <li>
-                <Link href="/">Контакты</Link>
+                <Link className="underline-animation" href="/#contacts">
+                  Контакты
+                </Link>
               </li>
             </ul>
           </nav>
@@ -119,7 +133,7 @@ export default function Header() {
                 isOpen && "opacity-0 pointer-events-none"
               )}
             >
-              <Button href="/" className="hidden sm:block">
+              <Button href="/#contacts" className="hidden sm:block">
                 Оставить заявку
               </Button>
             </div>

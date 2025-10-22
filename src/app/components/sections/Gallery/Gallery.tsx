@@ -1,9 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { motion } from "framer-motion";
 
 export default function Gallery() {
   const images = [
@@ -30,7 +33,15 @@ export default function Gallery() {
   ];
 
   return (
-    <section className="mb-100 md:mb-120 desk:mb-150">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: false }}
+      id="gallery"
+      className="mb-100 scroll-mt-100 md:mb-120 md:scroll-mt-120 desk:mb-150 desk:scroll-mt-150"
+    >
       <Carousel
         opts={{
           align: "center",
@@ -51,12 +62,13 @@ export default function Gallery() {
                 width={325}
                 height={495}
                 alt="image"
+                quality={70}
                 className="rounded-[0.625rem] md:rounded-[1.87rem] w-[20.31rem] h-[30.93rem]"
               />
             </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>
-    </section>
+    </motion.section>
   );
 }

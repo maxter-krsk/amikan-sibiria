@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { DialogClose } from "@/components/ui/dialog";
 import { motion } from "framer-motion";
 export default function PopupClose() {
@@ -14,7 +15,13 @@ export default function PopupClose() {
           rotate: 90,
         }}
       >
-        <img src="/icons/ui/close-icon.svg" alt="Закрыть" />
+        <Image
+          src="/icons/ui/close-icon.svg"
+          width={15}
+          height={15}
+          alt="Закрыть"
+          className="w-[0.938rem] h-[0.938rem]"
+        />
       </motion.button>
     </DialogClose>
   );
