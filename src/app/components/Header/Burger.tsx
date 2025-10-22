@@ -44,7 +44,7 @@ const overlayAnimation = {
   },
 } as const satisfies Variants;
 
-export default function BurgerMenu({ isOpen, toggleMenu, className }: BurgerMenuProps) {
+export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 

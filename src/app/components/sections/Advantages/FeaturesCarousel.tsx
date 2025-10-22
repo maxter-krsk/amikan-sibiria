@@ -6,12 +6,10 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
-type Props = { className?: string };
-
-export default function FeaturesCarousel({ className }: Props) {
+export default function FeaturesCarousel() {
   const [api, setApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 

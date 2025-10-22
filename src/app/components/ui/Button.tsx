@@ -22,7 +22,7 @@ export function Button(props: ButtonProps) {
   const classes = cn(`${t["btn"]} cursor-pointer`, props.className);
 
   if ("href" in props && props.href) {
-    const { href, children, className, ...anchorProps } = props;
+    const { href, children, ...anchorProps } = props;
     return (
       <Link href={href} className={classes} {...anchorProps}>
         {children}
@@ -30,7 +30,7 @@ export function Button(props: ButtonProps) {
     );
   }
 
-  const { children, className, ...buttonProps } = props as ButtonAsButtonProps;
+  const { children, ...buttonProps } = props as ButtonAsButtonProps;
   return (
     <button className={classes} {...buttonProps}>
       {children}
