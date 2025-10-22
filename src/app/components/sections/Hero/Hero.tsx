@@ -18,7 +18,7 @@ export default function Hero() {
       className={`${bg.heroBg} mx-0 desk:mt-20 desk:mx-20 mb-100 md:mb-120 desk:mb-150 pt-20 md:pt-60 relative min-h-screen`}
       aria-labelledby="hero-title"
     >
-      <div className="container mx-auto flex flex-col justify-center min-h-screen">
+      <div className="container p-50 mx-auto flex flex-col justify-center min-h-screen">
         <div className="flex gap-10 desk:gap-40 desk:flex-row desk:items-end mb-20 desk:mb-30 md:flex-col flex-col">
           <h1 className="font-bold desk:text-70 md:text-40 text-28 text-center md:text-left leading-[1.2] uppercase text-[#FFFFFF]">
             Сибирь, которую
