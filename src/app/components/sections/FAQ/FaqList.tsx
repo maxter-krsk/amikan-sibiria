@@ -10,7 +10,7 @@ type FaqListProps = {
   isOpened?: boolean;
 };
 
-export default function FaqList({ name, descr, className, isOpened }: FaqListProps) {
+export default function FaqList({ name, descr, isOpened }: FaqListProps) {
   const [isOpen, setIsOpen] = useState<boolean>(!!isOpened);
 
   return (
@@ -22,7 +22,7 @@ export default function FaqList({ name, descr, className, isOpened }: FaqListPro
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
     >
       <button
-        className="bg-lightGreen w-full uppercase text-left text-beige font-bold text-14 md:text-24 desk:text-30 px-15 md:px-30 py-15 md:py-25"
+        className="bg-lightGreen cursor-pointer w-full uppercase text-left text-beige font-bold text-14 md:text-24 desk:text-30 px-15 md:px-30 py-15 md:py-25"
         onClick={() => setIsOpen(v => !v)}
         aria-expanded={isOpen}
       >
