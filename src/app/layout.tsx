@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 // Мета-данные
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://domain.ru"),
+  metadataBase: new URL("https://amikan-sshges.ru"),
   alternates: { canonical: "/" },
 
   title: "Amikan Travel | Экскурсионно‑рыболовный тур в Саянах",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Amikan Travel | Экскурсионно‑рыболовный тур в Саянах",
     description:
       "Организованный тур по Саяно‑Шушенскому водохранилищу и Кантегиру: комфорт, прогулки, музей, рыбалка, баня и джип‑тур на вершину Гладенькой. Заявка онлайн.",
-    url: "https://domain.ru",
+    url: "https://amikan-sshges.ru",
     siteName: "Amikan Travel | Экскурсионно‑рыболовный тур в Саянах",
     images: [
       {

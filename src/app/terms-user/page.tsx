@@ -18,7 +18,7 @@ export default function Termsuser() {
             Настоящее пользовательское соглашение (далее — Соглашение)
             определяет порядок и условия использования материалов и сервисов,
             размещённых в сети Интернет по адресу{" "}
-            <Link href="/policy-privacy">https://domain/policy-privacy</Link>{" "}
+            <Link href="/policy-privacy">https://amikan-sshges/policy-privacy</Link>{" "}
             (далее - Сайт) Пользователями (как этот термин определён ниже)
             данного Сайта. Использование Пользователями Сайта означает, что они
             безоговорочно принимают и обязуются соблюдать все условия настоящего
@@ -43,7 +43,7 @@ export default function Termsuser() {
             <b className="font-bold">Акцепт</b> — полное и безоговорочное
             принятие условий настоящего Соглашения, размещённого на Сайте по
             адресу:{" "}
-            <Link href="/policy-privacy">https://domain.ru/policy-privacy</Link>{" "}
+            <Link href="/policy-privacy">https://amikan-sshges.ru/policy-privacy</Link>{" "}
             осуществляемое путём совершения Пользователем любых действий по
             использованию Сайта.
           </p>
@@ -51,7 +51,7 @@ export default function Termsuser() {
             <b className="font-bold">Пользователь</b> — лицо, осуществляющее
             доступ к Сайту и использующее материалы и сервисы, размещённые на
             Сайте.{" "}
-            <Link href="/policy-privacy">https://domain.ru/policy-privacy</Link>{" "}
+            <Link href="/policy-privacy">https://amikan-sshges.ru/policy-privacy</Link>{" "}
             осуществляемое путём совершения Пользователем любых действий по
             использованию Сайта.
           </p>
@@ -77,7 +77,7 @@ export default function Termsuser() {
             различных пользовательских устройств, подключённых к сети Интернет,
             посредством специального программного обеспечения для просмотра
             веб-страниц (браузер) по сетевому адресу{" "}
-            <Link href="/">https://domain.ru</Link>
+            <Link href="/">https://amikan-sshges.ru</Link>
             (и адресам подразделов Сайта).
           </p>
           <p className="mb-20">
