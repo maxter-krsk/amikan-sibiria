@@ -21,7 +21,7 @@ export default function Policy() {
             персональных данных (далее - Политика конфиденциальности) размещена
             на сайте в сети Интернет по адресу:
             <Link href="/policy-privacy">
-              https://domain/policy-privacy
+              https://amikan-sshges/policy-privacy
             </Link>{" "}
             (далее - Сайт).
           </p>
@@ -65,11 +65,11 @@ export default function Policy() {
             </li>
             <li className="mb-20">
               1.1.3. Настоящая Политика конфиденциальности применяется только к
-              Сайту <Link href="/">https://domain.ru</Link> Сайт{" "}
-              <Link href="/">https://domain.ru</Link> не контролирует и не несет
+              Сайту <Link href="/">https://amikan-sshges.ru</Link> Сайт{" "}
+              <Link href="/">https://amikan-sshges.ru</Link> не контролирует и не несет
               ответственности за сайты третьих лиц, на которые Пользователь
               может перейти по ссылкам, доступным на Сайте
-              <Link href="/">https://domain.ru</Link>.
+              <Link href="/">https://amikan-sshges.ru</Link>.
             </li>
           </ul>
           <h2 className="uppercase text-center text-18 md:text-20 font-semibold mb-20">
