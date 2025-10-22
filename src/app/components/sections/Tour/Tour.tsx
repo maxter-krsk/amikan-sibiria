@@ -13,18 +13,16 @@ const variants = {
 
 export default function Tour() {
   const containerRef = useRef<HTMLElement | null>(null);
-  const { scrollYProgress } = useScroll({
+  useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
   const [isMobile, setIsMobile] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
     const apply = () => {
       setIsMobile(mq.matches);
-      setMounted(true);
     };
     apply();
     if (mq.addEventListener) {

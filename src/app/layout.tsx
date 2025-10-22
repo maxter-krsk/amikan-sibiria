@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { montserrat } from "./components/ui/fonts";
 import "./globals.css";
 
@@ -8,6 +8,13 @@ import { SuccessPopupProvider } from "@/app/providers/SuccessPopupProvider";
 import CookiesBanner from "@/app/components/ui/CookiesBanner";
 
 import ScrollTop from "./components/ui/ScrollTop";
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#142B23" },
+    { media: "(prefers-color-scheme: dark)", color: "#142B23" },
+  ],
+};
 
 // Мета-данные
 
@@ -66,11 +73,6 @@ export const metadata: Metadata = {
 
     apple: [{ url: "/icons/favicons/favicon-large.png", sizes: "180x180" }],
   },
-
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#BC9C5F" },
-    { media: "(prefers-color-scheme: dark)", color: "#BC9C5F" },
-  ],
 };
 
 export default function RootLayout({

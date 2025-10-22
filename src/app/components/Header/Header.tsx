@@ -32,7 +32,9 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (isOpen) setIsOpen(false);
+    if (isOpen) {
+      setIsOpen(false);
+    }
   }, [pathname]);
 
   const toggleMenu = () => {
@@ -88,25 +90,39 @@ export default function Header() {
           <nav className="hidden desk:block px-35 py-20 bg-beige rounded-[6.25rem]">
             <ul className="flex text-18 gap-20 text-darkGreen">
               <li>
-                <Link className="underline-animation" href="/#about">О туре</Link>
+                <Link className="underline-animation" href="/#about">
+                  О туре
+                </Link>
               </li>
               <li>
-                <Link className="underline-animation" href="/#features">Преимущества</Link>
+                <Link className="underline-animation" href="/#features">
+                  Преимущества
+                </Link>
               </li>
               <li>
-                <Link className="underline-animation" href="/#program">Программа</Link>
+                <Link className="underline-animation" href="/#program">
+                  Программа
+                </Link>
               </li>
               <li>
-                <Link className="underline-animation" href="/#gallery">Галерея</Link>
+                <Link className="underline-animation" href="/#gallery">
+                  Галерея
+                </Link>
               </li>
               <li>
-                <Link className="underline-animation" href="/#feedbacks">Отзывы</Link>
+                <Link className="underline-animation" href="/#feedbacks">
+                  Отзывы
+                </Link>
               </li>
               <li>
-                <Link className="underline-animation" href="/#faq">FAQ</Link>
+                <Link className="underline-animation" href="/#faq">
+                  FAQ
+                </Link>
               </li>
               <li>
-                <Link className="underline-animation" href="/#contacts">Контакты</Link>
+                <Link className="underline-animation" href="/#contacts">
+                  Контакты
+                </Link>
               </li>
             </ul>
           </nav>
