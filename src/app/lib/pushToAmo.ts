@@ -8,7 +8,6 @@ type AmoCustomFieldValue = {
 type AmoLeadPayload = {
   name: string;
   pipeline_id?: number | string;
-  status_id?: number | string;
   _embedded: { tags: Array<{ name: string }> };
   custom_fields_values: AmoCustomFieldValue[];
 };
@@ -108,11 +107,6 @@ export async function pushToAmo(p: PushParams) {
       p.pipeline_id ||
       (process.env.AMO_PIPELINE_ID
         ? Number(process.env.AMO_PIPELINE_ID)
-        : undefined),
-    status_id:
-      p.status_id ||
-      (process.env.AMO_STATUS_ID
-        ? Number(process.env.AMO_STATUS_ID)
         : undefined),
     _embedded: {
       tags: [{ name: p.source || "Сайт" }],
