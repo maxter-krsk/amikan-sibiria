@@ -1,5 +1,7 @@
 "use server";
 
+import { pushToAmo } from "@/app/lib/pushToAmo";
+
 const NAME_RE = /^(?=.{2,40}$)\p{L}+(?:[ \-'\u2019]\p{L}+)*$/u;
 
 function normalizeName(raw: string) {
@@ -34,17 +36,14 @@ function getErrorMessage(e: unknown) {
 
 type SendContactResult = { ok: true } | { ok: false; error: string };
 
-export async function sendContact(
-  formData: FormData
-): Promise<SendContactResult> {
+export async function sendContact(formData: FormData): Promise<SendContactResult> {
   "use server";
 
   const { Resend } = await import("resend");
 
   const key = process.env.RESEND_API_KEY;
-  if (!key) {
-    return { ok: false, error: "RESEND_API_KEY не задан" };
-  }
+  if (!key) return { ok: false, error: "RESEND_API_KEY не задан" };
+
   const resend = new Resend(key);
 
   try {
@@ -54,13 +53,12 @@ export async function sendContact(
     const name = normalizeName(nameRaw);
     const phoneE164 = normalizePhone(phoneRaw);
 
-    if (!NAME_RE.test(name))
-      return {
-        ok: false,
-        error: "Введите корректное имя (2–40 символов, только буквы).",
-      };
-    if (!phoneE164)
+    if (!NAME_RE.test(name)) {
+      return { ok: false, error: "Введите корректное имя (2–40 символов, только буквы)." };
+    }
+    if (!phoneE164) {
       return { ok: false, error: "Введите корректный номер телефона." };
+    }
 
     const source =
       String(
@@ -70,14 +68,15 @@ export async function sendContact(
           ""
       ).trim() || "Не указано";
 
+    // письмо
+    const fromEmail = process.env.RESEND_FROM || "onboarding@resend.dev";
+    const to = process.env.RESEND_TO || "nigazzz2000@gmail.com";
+
     const safeName = escapeHtml(name);
     const safePhone = escapeHtml(phoneE164);
     const safeSource = escapeHtml(source);
 
-    const fromEmail = process.env.RESEND_FROM || "onboarding@resend.dev";
-    const to = process.env.RESEND_TO || "nigazzz2000@gmail.com";
-
-    const { error } = await resend.emails.send({
+    const { error: mailError } = await resend.emails.send({
       from: `Amikan-Siberia <${fromEmail}>`,
       to: [to],
       subject: `Заявка с сайта • ${safeSource}`,
@@ -96,10 +95,19 @@ export async function sendContact(
         </div>
       `,
     });
+    if (mailError) throw mailError;
 
-    if (error) throw error;
+    // лид в amoCRM — запускаем без await, чтобы не блокировать ответ пользователю
+    pushToAmo({
+      name,
+      phone: phoneE164,
+      source,
+      // pipeline_id: Number(process.env.AMO_PIPELINE_ID) || undefined,
+      // status_id: Number(process.env.AMO_STATUS_ID) || undefined,
+    }).catch((e) => console.error("[AMO] push error", e));
+
     return { ok: true };
-  } catch (e: unknown) {
+  } catch (e) {
     return { ok: false, error: getErrorMessage(e) };
   }
 }
