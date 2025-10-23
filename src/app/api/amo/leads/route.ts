@@ -1,17 +1,23 @@
 import { NextResponse } from "next/server";
 import { pushToAmo } from "@/app/lib/pushToAmo";
 
-const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN ?? "https://www.amikan-sshges.ru";
+const ALLOWED_ORIGIN =
+  process.env.ALLOWED_ORIGIN ?? "https://www.amikan-sshges.ru";
 const DEV_ORIGIN = "http://localhost:3000";
 
 function cors(req: Request, res: NextResponse) {
   const origin = req.headers.get("origin");
   const allow =
-    origin && [ALLOWED_ORIGIN, DEV_ORIGIN].includes(origin) ? origin : ALLOWED_ORIGIN;
+    origin && [ALLOWED_ORIGIN, DEV_ORIGIN].includes(origin)
+      ? origin
+      : ALLOWED_ORIGIN;
   res.headers.set("Access-Control-Allow-Origin", allow);
   res.headers.set("Vary", "Origin");
   res.headers.set("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
-  res.headers.set("Access-Control-Allow-Headers", "content-type, x-webhook-secret");
+  res.headers.set(
+    "Access-Control-Allow-Headers",
+    "content-type, x-webhook-secret"
+  );
   return res;
 }
 
@@ -43,13 +49,16 @@ async function readBody(req: Request): Promise<Body> {
   }
   if (ctype.includes("application/x-www-form-urlencoded")) {
     const text = await req.text();
-    const p = Object.fromEntries(new URLSearchParams(text)) as any;
+    const params = Object.fromEntries(new URLSearchParams(text)) as Record<
+      string,
+      string
+    >;
     return {
-      name: p.name,
-      phone: p.phone,
-      source: p.source,
-      pipeline_id: p.pipeline_id,
-      status_id: p.status_id,
+      name: params.name,
+      phone: params.phone,
+      source: params.source,
+      pipeline_id: params.pipeline_id,
+      status_id: params.status_id,
     };
   }
   if (ctype.includes("multipart/form-data")) {
@@ -82,7 +91,10 @@ export async function POST(req: Request) {
     if (!body?.name || !body?.phone) {
       return cors(
         req,
-        NextResponse.json({ ok: false, error: "name and phone are required" }, { status: 400 })
+        NextResponse.json(
+          { ok: false, error: "name and phone are required" },
+          { status: 400 }
+        )
       );
     }
 
@@ -90,7 +102,12 @@ export async function POST(req: Request) {
     return cors(req, NextResponse.json({ ok: true }));
   } catch (e: unknown) {
     const msg = e instanceof Error ? e.message : "failed";
-    const status = msg === "unauthorized" ? 401 : msg === "unsupported content-type" ? 415 : 500;
+    const status =
+      msg === "unauthorized"
+        ? 401
+        : msg === "unsupported content-type"
+        ? 415
+        : 500;
     console.error("[/api/amo/leads] error:", msg);
     return cors(req, NextResponse.json({ ok: false, error: msg }, { status }));
   }
