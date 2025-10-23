@@ -1,5 +1,18 @@
 import { amoFetch } from "./amocrm";
 
+type AmoCustomFieldValue = {
+  field_id: number;
+  values: Array<{ value?: string | number; enum_id?: number }>;
+};
+
+type AmoLeadPayload = {
+  name: string;
+  pipeline_id?: number | string;
+  status_id?: number | string;
+  _embedded: { tags: Array<{ name: string }> };
+  custom_fields_values: AmoCustomFieldValue[];
+};
+
 type PushParams = {
   name: string;
   phone: string;
@@ -42,7 +55,7 @@ export async function pushToAmo(p: PushParams) {
   const SOURCE_FIELD_ID = Number(process.env.AMO_SOURCE_FIELD_ID || "873463"); // можно захардкодить или оставить из .env
   const LEAD_NAME_FIELD_ID = Number(process.env.AMO_LEAD_NAME_FIELD_ID || "");
 
-  const customFields: any[] = [];
+  const customFields: AmoCustomFieldValue[] = [];
   if (SOURCE_FIELD_ID) {
     customFields.push({
       field_id: SOURCE_FIELD_ID,
@@ -89,7 +102,7 @@ export async function pushToAmo(p: PushParams) {
     contactId = cJson?._embedded?.contacts?.[0]?.id ?? null;
   }
 
-  const leadPayload: any = {
+  const leadPayload: AmoLeadPayload = {
     name: leadName,
     pipeline_id:
       p.pipeline_id ||
