@@ -1,3 +1,4 @@
+// app/actions/sendContact.ts
 "use server";
 
 import { pushToAmo } from "@/app/lib/pushToAmo";
@@ -47,8 +48,8 @@ export async function sendContact(formData: FormData): Promise<SendContactResult
   const resend = new Resend(key);
 
   try {
-    const nameRaw = String(formData.get("Имя") ?? "");
-    const phoneRaw = String(formData.get("Телефон") ?? "");
+    const nameRaw  = String(formData.get("name")    ?? formData.get("Имя")      ?? "");
+    const phoneRaw = String(formData.get("phone")   ?? formData.get("Телефон")  ?? "");
 
     const name = normalizeName(nameRaw);
     const phoneE164 = normalizePhone(phoneRaw);
@@ -63,23 +64,18 @@ export async function sendContact(formData: FormData): Promise<SendContactResult
     const source =
       String(
         formData.get("source") ??
-          formData.get("Источник") ??
-          formData.get("Форма:") ??
-          ""
-      ).trim() || "Не указано";
+        formData.get("Источник") ??
+        formData.get("Форма:") ??
+        ""
+      ).trim() || "сайт";
 
-    // письмо
     const fromEmail = process.env.RESEND_FROM || "onboarding@resend.dev";
     const to = process.env.RESEND_TO || "nigazzz2000@gmail.com";
-
-    const safeName = escapeHtml(name);
-    const safePhone = escapeHtml(phoneE164);
-    const safeSource = escapeHtml(source);
 
     const { error: mailError } = await resend.emails.send({
       from: `Amikan-Siberia <${fromEmail}>`,
       to: [to],
-      subject: `Заявка с сайта • ${safeSource}`,
+      subject: `Заявка с сайта • ${escapeHtml(source)}`,
       html: `
         <div style="font-family: Arial, sans-serif; background-color: #EFE5D9; padding: 30px;">
           <div style="max-width: 620px; margin: 0 auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(20, 43, 35, 0.15);">
@@ -87,9 +83,9 @@ export async function sendContact(formData: FormData): Promise<SendContactResult
               <h2 style="margin: 0; font-size: 22px;">Новая заявка с сайта <span style="color: #BC9C5F;">Amikan-Siberia</span></h2>
             </div>
             <div style="padding: 24px 30px; color: #142B23; background-color: #fff;">
-              <p style="margin: 8px 0; font-size: 16px;"><b style="color: #5E785F;">Источник:</b> ${safeSource}</p>
-              <p style="margin: 8px 0; font-size: 16px;"><b style="color: #5E785F;">Имя:</b> ${safeName}</p>
-              <p style="margin: 8px 0; font-size: 16px;"><b style="color: #5E785F;">Телефон:</b> ${safePhone}</p>
+              <p style="margin: 8px 0; font-size: 16px;"><b style="color: #5E785F;">Источник:</b> ${escapeHtml(source)}</p>
+              <p style="margin: 8px 0; font-size: 16px;"><b style="color: #5E785F;">Имя:</b> ${escapeHtml(name)}</p>
+              <p style="margin: 8px 0; font-size: 16px;"><b style="color: #5E785F;">Телефон:</b> ${escapeHtml(phoneE164)}</p>
             </div>
           </div>
         </div>
@@ -97,17 +93,11 @@ export async function sendContact(formData: FormData): Promise<SendContactResult
     });
     if (mailError) throw mailError;
 
-    // лид в amoCRM — запускаем без await, чтобы не блокировать ответ пользователю
-    pushToAmo({
-      name,
-      phone: phoneE164,
-      source,
-      // pipeline_id: Number(process.env.AMO_PIPELINE_ID) || undefined,
-      // status_id: Number(process.env.AMO_STATUS_ID) || undefined,
-    }).catch((e) => console.error("[AMO] push error", e));
+    await pushToAmo({ name, phone: phoneE164, source });
 
     return { ok: true };
   } catch (e) {
+    console.error("[sendContact] error:", e);
     return { ok: false, error: getErrorMessage(e) };
   }
 }
