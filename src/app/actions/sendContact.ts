@@ -70,7 +70,7 @@ export async function sendContact(formData: FormData): Promise<SendContactResult
       ).trim() || "сайт";
 
     const fromEmail = process.env.RESEND_FROM || "onboarding@resend.dev";
-    const to = process.env.RESEND_TO || "nigazzz2000@gmail.com";
+    const to = process.env.RESEND_TO || "amikantravel@mail.ru";
 
     const { error: mailError } = await resend.emails.send({
       from: `Amikan-Siberia <${fromEmail}>`,
