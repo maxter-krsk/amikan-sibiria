@@ -68,6 +68,7 @@ export default function Hero() {
                 alt="Панорамный вид на СШГЭС"
                 width={305}
                 height={196}
+                quality={70}
               />
               <div className="flex flex-col gap-10 md:gap-40 desk:gap-[3rem] desk:justify-between text-darkGreen">
                 <p className="font-semibold text-12 md:text-16 leading-[1.25] text-center md:text-start">
@@ -88,6 +89,7 @@ export default function Hero() {
                 className="w-auto h-auto object-cover rounded-20 hidden desk:block shrink-0"
                 src="/images/hero/hero-man.jpg"
                 alt="Мужчина с уловом"
+                quality={70}
                 width={305}
                 height={196}
               />

@@ -41,6 +41,7 @@ export default function ServicesCard() {
               <Image
                 src={card.image}
                 alt={card.title}
+                quality={70}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="block w-full h-auto object-cover"

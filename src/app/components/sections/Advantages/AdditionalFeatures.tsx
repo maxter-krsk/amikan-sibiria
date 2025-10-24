@@ -72,6 +72,7 @@ export default function FeaturesCards() {
                   <Image
                     src={item.image}
                     alt={item.alt ?? ""}
+                    quality={70}
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-400"
                   />
@@ -89,6 +90,7 @@ export default function FeaturesCards() {
                   className="md:w-[3.50rem] md:h-[3.50rem] desk:w-[4.88rem] desk:h-[4.88rem]"
                   src={item.icon}
                   alt=""
+                  quality={70}
                   width={78}
                   height={78}
                 />
