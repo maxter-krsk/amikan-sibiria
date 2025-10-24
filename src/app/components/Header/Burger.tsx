@@ -68,7 +68,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
         aria-controls="mobile-menu"
         aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
       >
-        <div className="relative w-[3.125rem] h-[3.125rem] bg-sand rounded-full flex flex-col justify-center items-center gap-[0.2rem]">
+        <div className="relative w-[3.125rem] h-[3.125rem] cursor-pointer bg-sand rounded-full flex flex-col justify-center items-center gap-[0.2rem]">
           <motion.span
             className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
             variants={{
@@ -144,9 +144,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                 >
                   <div className="mt-90 md:mt-60">
                     <nav>
-                      <ul
-                        className="flex flex-col gap-20 text-darkGreen text-16"
-                      >
+                      <ul className="flex flex-col gap-20 text-darkGreen text-16">
                         <li>
                           <Link onClick={toggleMenu} href="/#about">
                             О туре
@@ -195,7 +193,9 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
 
                     <div className="flex justify-center sm:justify-start gap-20 mt-30">
                       <IconLink
-                        href={"https://www.youtube.com/channel/UCTROFo9BTCoMUu8e8XCBWkA"}
+                        href={
+                          "https://www.youtube.com/channel/UCTROFo9BTCoMUu8e8XCBWkA"
+                        }
                         label={"YouTube"}
                         icon={
                           <Image
@@ -203,6 +203,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                             alt="YouTube"
                             width={23}
                             height={23}
+                            loading="eager"
                           />
                         }
                       />
@@ -215,6 +216,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                             alt="Телеграм"
                             width={23}
                             height={23}
+                            loading="eager"
                           />
                         }
                       />
@@ -227,6 +229,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                             alt="Вконтакте"
                             width={23}
                             height={23}
+                            loading="eager"
                           />
                         }
                       />
@@ -239,6 +242,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                             alt="WhatsApp"
                             width={23}
                             height={23}
+                            loading="eager"
                           />
                         }
                       />

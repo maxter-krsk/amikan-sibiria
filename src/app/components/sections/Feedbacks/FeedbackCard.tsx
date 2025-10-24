@@ -91,6 +91,7 @@ export default function FeedbackCard() {
                     src={`${carditem.image}`}
                     width={92}
                     height={92}
+                    quality={70}
                     alt="Фотография клиента"
                     className="rounded-full w-[4.12rem] h-[4.12rem] desk:w-[5.75rem] desk:h-[5.75rem]"
                   />

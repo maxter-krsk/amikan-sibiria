@@ -62,6 +62,7 @@ export default function MainFeatures() {
                   alt={card.title}
                   width={260}
                   height={287}
+                  quality={70}
                   className="block w-full h-auto object-cover rounded-10 hover:scale-110 transition-transform duration-400"
                 />
               </div>
