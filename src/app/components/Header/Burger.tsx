@@ -68,7 +68,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
         aria-controls="mobile-menu"
         aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
       >
-        <div className="relative w-[3.125rem] h-[3.125rem] bg-sand rounded-full flex flex-col justify-center items-center gap-[0.2rem]">
+        <div className="relative w-[3.125rem] h-[3.125rem] cursor-pointer bg-sand rounded-full flex flex-col justify-center items-center gap-[0.2rem]">
           <motion.span
             className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
             variants={{

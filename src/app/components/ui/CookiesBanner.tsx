@@ -56,7 +56,7 @@ export default function CookiesBanner() {
                   onClick={accept}
                   className="px-50 py-15 cursor-pointer rounded-30 bg-sand hover:bg-lightGreen text-[#efe5d9] text-14 font-medium transition-colors duration-500 hover:shadow-lg"
                 >
-                  Ок, понятно
+                  Принять
                 </button>
               </div>
             </div>
