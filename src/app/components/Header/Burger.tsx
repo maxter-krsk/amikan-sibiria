@@ -2,258 +2,90 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { Button } from "@/app/components/ui/Button";
-import { IconLink } from "@/app/components/ui/socials/IconLink";
-import { motion, AnimatePresence, type Variants } from "framer-motion";
-import { createPortal } from "react-dom";
-import { useEffect, useState } from "react";
+import SocialsLinks from "../sections/Contacts/SocialsLinks";
+
+const nav = [
+  { href: "/#about", label: "О туре" },
+  { href: "/#features", label: "Преимущества" },
+  { href: "/#program", label: "Программа" },
+  { href: "/#gallery", label: "Галерея" },
+  { href: "/#feedbacks", label: "Отзывы" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/#contacts", label: "Контакты" },
+];
 
 type BurgerMenuProps = {
   isOpen: boolean;
-  toggleMenu: () => void;
-  className?: string;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const panelAnimation = {
-  hidden: { x: "100%", opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    scale: 1,
-    rotate: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.6, 1] as const },
-  },
-  exit: {
-    x: "100%",
-    opacity: 0,
-    scale: 1,
-    rotate: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.6, 1] as const },
-  },
-} as const satisfies Variants;
-
-const overlayAnimation = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 0.5,
-    transition: { duration: 0.25, ease: "linear" },
-  },
-  exit: {
-    opacity: 0,
-    transition: { duration: 0.2, ease: "linear" },
-  },
-} as const satisfies Variants;
-
-export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
-  useEffect(() => {
-    if (!mounted) return;
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen, mounted]);
-
+export function BurgerMenu({ isOpen, setIsOpen }: BurgerMenuProps) {
   return (
-    <div className="desk:hidden ">
-      <button
-        onClick={toggleMenu}
-        aria-expanded={isOpen}
-        aria-controls="mobile-menu"
-        aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+      <SheetTrigger asChild>
+        <button
+          aria-label="Открыть меню"
+          className="inline-flex desk:hidden cursor-pointer h-50 w-50 flex-col items-center justify-center gap-[0.219rem] rounded-full bg-sand hover:bg-lightGreen transition-colors duration-500"
+        >
+          <span className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]" />
+          <span className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]" />
+          <span className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]" />
+          <span className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]" />
+        </button>
+      </SheetTrigger>
+
+      <SheetContent
+        side="right"
+        className="max-w-none w-full sm:w-screen bg-beige border-none px-10 py-10 md:py-20 gap-0 overflow-y-auto"
       >
-        <div className="relative w-[3.125rem] h-[3.125rem] cursor-pointer bg-sand rounded-full flex flex-col justify-center items-center gap-[0.2rem]">
-          <motion.span
-            className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
-            variants={{
-              closed: { rotate: 0, y: 0 },
-              open: { rotate: 45, y: 7.25 },
-            }}
-            initial={false}
-            animate={isOpen ? "open" : "closed"}
-            transition={{ duration: 0.3 }}
-          ></motion.span>
-
-          <motion.span
-            className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
-            variants={{
-              closed: { opacity: 1 },
-              open: { opacity: 0 },
-            }}
-            initial={false}
-            animate={isOpen ? "open" : "closed"}
-            transition={{ duration: 0.2 }}
-          />
-
-          <motion.span
-            className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
-            variants={{
-              closed: { opacity: 1 },
-              open: { opacity: 0 },
-            }}
-            initial={false}
-            animate={isOpen ? "open" : "closed"}
-            transition={{ duration: 0.2 }}
-          />
-
-          <motion.span
-            className="w-[1.25rem] h-[0.1rem] bg-beige rounded-[0.125rem]"
-            variants={{
-              closed: { rotate: 0, y: 0 },
-              open: { rotate: -45, y: -7.25 },
-            }}
-            initial={false}
-            animate={isOpen ? "open" : "closed"}
-            transition={{ duration: 0.3 }}
-          />
+        <SheetHeader className="p-0 pb-30 sm:hidden">
+          <SheetClose asChild className="mr-auto justify-start">
+            <Link href="/" className="w-fit inline-flex">
+              <Image
+                src="/icons/logos/logo-dark.svg"
+                alt="Тёмный логотип Amikan"
+                width={50}
+                height={50}
+              />
+            </Link>
+          </SheetClose>
+        </SheetHeader>
+        <nav>
+          <ul className="flex flex-col items-start gap-20 text-16">
+            {nav.map((item) => (
+              <li key={item.href}>
+                <SheetClose asChild>
+                  <Link
+                    href={item.href}
+                    className="underline-animation inline-flex"
+                  >
+                    {item.label}
+                  </Link>
+                </SheetClose>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <SheetClose asChild>
+          <Button
+            href="/#contacts"
+            className="!text-center mt-30 block sm:hidden"
+          >
+            Оставить заявку
+          </Button>
+        </SheetClose>
+        <div className="flex justify-center sm:justify-start mt-30">
+          <SocialsLinks />
         </div>
-      </button>
-
-      {mounted &&
-        createPortal(
-          <AnimatePresence initial={false}>
-            {isOpen && (
-              <div
-                className="fixed inset-0"
-                id="mobile-menu"
-                role="dialog"
-                aria-modal="true"
-              >
-                <motion.div
-                  onClick={toggleMenu}
-                  className="fixed inset-0 z-[80] bg-black"
-                  variants={overlayAnimation}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                />
-
-                <motion.div
-                  role="document"
-                  variants={panelAnimation}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className="flex flex-col overflow-y-auto bg-beige fixed z-[90] top-0 right-0 w-full h-full p-20 md:w-[50%]"
-                >
-                  <div className="mt-90 md:mt-60">
-                    <nav>
-                      <ul className="flex flex-col gap-20 text-darkGreen text-16">
-                        <li>
-                          <Link onClick={toggleMenu} href="/#about">
-                            О туре
-                          </Link>
-                        </li>
-                        <li>
-                          <Link onClick={toggleMenu} href="/#features">
-                            Преимущества
-                          </Link>
-                        </li>
-                        <li>
-                          <Link onClick={toggleMenu} href="/#program">
-                            Программа
-                          </Link>
-                        </li>
-                        <li>
-                          <Link onClick={toggleMenu} href="/#gallery">
-                            Галерея
-                          </Link>
-                        </li>
-                        <li>
-                          <Link onClick={toggleMenu} href="/#feedbacks">
-                            Отзывы
-                          </Link>
-                        </li>
-                        <li>
-                          <Link onClick={toggleMenu} href="/#faq">
-                            FAQ
-                          </Link>
-                        </li>
-                        <li>
-                          <Link onClick={toggleMenu} href="/#contacts">
-                            Контакты
-                          </Link>
-                        </li>
-                      </ul>
-                    </nav>
-
-                    <Button
-                      onClick={toggleMenu}
-                      href="/#contacts"
-                      className="inline-block w-full mt-30 !text-center sm:hidden"
-                    >
-                      Оставить заявку
-                    </Button>
-
-                    <div className="flex justify-center sm:justify-start gap-20 mt-30">
-                      <IconLink
-                        href={
-                          "https://www.youtube.com/channel/UCTROFo9BTCoMUu8e8XCBWkA"
-                        }
-                        label={"YouTube"}
-                        icon={
-                          <Image
-                            src="/icons/ui/socials-icons/youtube.svg"
-                            alt="YouTube"
-                            width={23}
-                            height={23}
-                            loading="eager"
-                          />
-                        }
-                      />
-                      <IconLink
-                        href={"https://t.me/AmikanSiberia"}
-                        label={"Телеграм"}
-                        icon={
-                          <Image
-                            src="/icons/ui/socials-icons/telegram.svg"
-                            alt="Телеграм"
-                            width={23}
-                            height={23}
-                            loading="eager"
-                          />
-                        }
-                      />
-                      <IconLink
-                        href={"https://vk.com/amikan.travel"}
-                        label={"Вконтакте"}
-                        icon={
-                          <Image
-                            src="/icons/ui/socials-icons/vk.svg"
-                            alt="Вконтакте"
-                            width={23}
-                            height={23}
-                            loading="eager"
-                          />
-                        }
-                      />
-                      <IconLink
-                        href={"https://wa.me/79080233438"}
-                        label={"WhatsApp"}
-                        icon={
-                          <Image
-                            src="/icons/ui/socials-icons/wa.svg"
-                            alt="WhatsApp"
-                            width={23}
-                            height={23}
-                            loading="eager"
-                          />
-                        }
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            )}
-          </AnimatePresence>,
-          document.body
-        )}
-    </div>
+      </SheetContent>
+    </Sheet>
   );
 }
