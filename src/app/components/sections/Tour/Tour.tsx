@@ -98,7 +98,7 @@ export default function Tour() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="pointer-events-none absolute inset-y-0 md:left-1/2 md:-translate-x-1/2 w-[3.15rem] md:w-[8.37rem] desk:w-[16.18rem] bg-darkGreen z-0"
+        className="pointer-events-none absolute inset-y-0 md:left-1/2 md:-translate-x-1/2 w-[3.5rem] xs:w-[4.3rem] md:w-[8.37rem] desk:w-[16.18rem] bg-darkGreen z-0"
       />
       <div className="container overflow-x-hidden relative">
         <h1
@@ -157,8 +157,8 @@ export default function Tour() {
                 className={` flex flex-col gap-10 mb-10 md:mb-0 md:gap-30
                 ${
                   isEven
-                    ? "ml-[1.63rem] md:ml-0 desk:mr-50"
-                    : "ml-[1.63rem] md:ml-0 desk:ml-50"
+                    ? "ml-[1.63rem] xs:ml-[2.45rem] md:ml-0 desk:mr-50"
+                    : "ml-[1.63rem] xs:ml-[2.45rem] md:ml-0 desk:ml-50"
                 }
                 `}
               >
