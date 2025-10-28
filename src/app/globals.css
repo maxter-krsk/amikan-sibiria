@@ -310,7 +310,7 @@ html body[data-scroll-locked] {
   }
 }
 
-@media(max-width: 640) {
+@media(max-width: 640px) {
   .container {
     padding-left: 1rem;
     padding-left: 1rem;
