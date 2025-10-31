@@ -54,8 +54,7 @@ export default function Hero() {
             id="cta-hint"
             className="font-normal text-12 md:text-14 desk:text-16 text-center md:text-left text-[#FFFFFF]"
           >
-            Оставьте контакты — мы пришлем
-            <br className="md:hidden" />
+            Оставьте контакты — мы пришлем <br className="md:hidden" />
             подробное описание
           </p>
         </div>
@@ -72,8 +71,8 @@ export default function Hero() {
               />
               <div className="flex flex-col gap-10 md:gap-40 desk:gap-[3rem] desk:justify-between text-darkGreen">
                 <p className="font-semibold text-12 md:text-16 leading-[1.25] text-center md:text-start">
-                  Премиальный тур для тех, кто хочет насладиться природой и
-                  отдохнуть в комфортных условиях
+                  Тур для тех, кто хочет насладиться природой и отдохнуть в
+                  комфортных условиях
                 </p>
                 <p className="font-medium text-center md:text-start text-10 md:text-14 desk:text-18 leading-auto">
                   Панорамные виды, тёплая база, авторская кухня. Заезд на
@@ -99,7 +98,11 @@ export default function Hero() {
                   интересно и уютно
                 </p>
                 <p className="hidden md:block uppercase font-semibold md:text-18 desk:text-20 md:ml-[3.94rem] desk:ml-[4.56rem]">
-                  <Link className="underline-animation" href="/#features" aria-label="Узнать больше о туре">
+                  <Link
+                    className="underline-animation"
+                    href="/#features"
+                    aria-label="Узнать больше о туре"
+                  >
                     Узнать больше
                   </Link>
                 </p>
