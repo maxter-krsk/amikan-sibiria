@@ -5,7 +5,6 @@ import { BurgerMenu } from "./Burger";
 import { Button } from "@/app/components/ui/Button";
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
 
 const nav = [
   { href: "/#about", label: "О туре" },
@@ -29,7 +28,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Следим за размерами хедера и кладём в :root --header-h
   useEffect(() => {
     const el = headerRef.current;
     if (!el) return;
@@ -46,7 +44,6 @@ export default function Header() {
 
     const ro = new ResizeObserver(setVar);
     ro.observe(el);
-    // На мобиле адресная строка/зум меняют высоту — подстрахуемся:
     window.addEventListener("orientationchange", setVar);
     window.addEventListener("resize", setVar);
 
