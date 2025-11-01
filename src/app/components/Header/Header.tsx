@@ -4,8 +4,7 @@ import Image from "next/image";
 import { BurgerMenu } from "./Burger";
 import { Button } from "@/app/components/ui/Button";
 import clsx from "clsx";
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 const nav = [
   { href: "/#about", label: "О туре" },
@@ -20,7 +19,7 @@ const nav = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
+  const headerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 70);
@@ -30,13 +29,34 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (isOpen) {
-      setIsOpen(false);
-    }
-  }, [pathname]);
+    const el = headerRef.current;
+    if (!el) return;
+
+    const setVar = () => {
+      const h = el.getBoundingClientRect().height;
+      document.documentElement.style.setProperty(
+        "--header-h",
+        `${Math.ceil(h)}px`
+      );
+    };
+
+    setVar();
+
+    const ro = new ResizeObserver(setVar);
+    ro.observe(el);
+    window.addEventListener("orientationchange", setVar);
+    window.addEventListener("resize", setVar);
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("orientationchange", setVar);
+      window.removeEventListener("resize", setVar);
+    };
+  }, []);
 
   return (
     <header
+      ref={headerRef}
       className={clsx(
         "fixed left-0 right-0 z-40 desk:px-20 transition-[background-color,box-shadow,backdrop-filter,padding,opacity]",
         "duration-300 ease-out will-change-[background-color,box-shadow,backdrop-filter,padding,opacity] rounded-b-3xl",
