@@ -51,7 +51,7 @@ export default function FeaturesCards() {
   ];
 
   return (
-    <section id="features" className="bg-darkGreen py-50 scroll-mt-100 md:scroll-mt-120 desk:scroll-mt-150">
+    <section id="features" className="bg-darkGreen py-50 lg:scroll-mt-10">
       <div className="h-full hidden md:block mx-auto container">
         <div className="md:grid md:grid-cols-3 desk:grid-cols-4 gap-20 auto-rows-auto">
           {featuresCard.map((item) => {

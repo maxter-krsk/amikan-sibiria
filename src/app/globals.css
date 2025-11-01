@@ -237,6 +237,10 @@ html body[data-scroll-locked] {
   background-color: #7fb19a;
 }
 
+html { 
+  scroll-padding-top: calc(var(--header-h) + 8px);
+}
+
 /* Анимация аккордеона */
 
 @layer utilities {
