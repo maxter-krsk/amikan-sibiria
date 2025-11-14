@@ -28,11 +28,16 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# говорим Next'у, какой порт и интерфейс использовать
+ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
+
 # standalone-вывод + статика + public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 
 EXPOSE 3000
+
 # server.js генерируется Next в режиме standalone
 CMD ["node", "server.js"]
