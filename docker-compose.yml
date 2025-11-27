@@ -2,6 +2,17 @@ services:
   amikan-sshges:
     build: .
     container_name: amikan-sshges
+    environment:
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - RESEND_FROM=${RESEND_FROM}
+      - RESEND_TO=${RESEND_TO}
+      - AMO_BASE_URL=${AMO_BASE_URL}
+      - AMO_CLIENT_ID=${AMO_CLIENT_ID}
+      - AMO_CLIENT_SECRET=${AMO_CLIENT_SECRET}
+      - AMO_REDIRECT_URI=${AMO_REDIRECT_URI}
+      - AMO_ACCESS_TOKEN=${AMO_ACCESS_TOKEN}
+      - AMO_REFRESH_TOKEN=${AMO_REFRESH_TOKEN}
+      - AMO_PIPELINE_ID=${AMO_PIPELINE_ID}
     env_file:
       - .env.production
     ports:
