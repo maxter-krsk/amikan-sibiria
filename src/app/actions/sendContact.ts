@@ -69,7 +69,7 @@ export async function sendContact(formData: FormData): Promise<SendContactResult
         ""
       ).trim() || "сайт";
 
-    const fromEmail = process.env.RESEND_FROM || "onboarding@resend.dev";
+    const fromEmail = process.env.RESEND_FROM || "no-reply@amikan-sshges.ru";
     const to = process.env.RESEND_TO || "amikantravel@mail.ru";
 
     const { error: mailError } = await resend.emails.send({
